@@ -1,0 +1,116 @@
+model Client {
+    id                     String  @id @default(uuid())
+    regNumber              String?
+    name                   String
+    address                String?
+    phone                  String?
+    email                  String?
+    legal                  String?
+    category               String?
+    country                String?
+    contactName            String?
+    contactRole            String?
+    contactPhone           String?
+    contactEmail           String?
+    taxNumber              String?
+    taxAddress             String?
+    taxStatus              Boolean @default(false)
+    procurementName        String?
+    procurementRole        String?
+    procurementPhone       String?
+    procurementEmail       String?
+    billingAddress         String?
+    paymentName            String?
+    paymentRole            String?
+    paymentPhone           String?
+    paymentEmail           String?
+    bankName               String?
+    accountReferenceNumber String?
+    accountOwnerName       String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    notes Note[]
+
+    leads         Lead[]
+    opportunities Opportunity[]
+    quotes        Quote[]
+    contracts     Contract[]
+}
+
+model Vendor {
+    id                     String  @id @default(uuid())
+    regNumber              String?
+    name                   String
+    address                String?
+    phone                  String?
+    email                  String?
+    city                   String?
+    postalCode             String?
+    legal                  String?
+    vendorCategory         String?
+    contactName            String?
+    contactRole            String?
+    contactPhone           String?
+    contactEmail           String?
+    taxNumber              String?
+    taxStatus              Boolean @default(false)
+    siupNumber             String?
+    nibNumber              String?
+    pkpNumber              String?
+    productType            String?
+    description            String?
+    bankName               String?
+    accountReferenceNumber String?
+    accountOwnerName       String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    notes Note[]
+}
+
+model Product {
+    id        String  @id @default(uuid())
+    regNumber String?
+    name      String
+    remarks   String?
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    leads         Lead[]
+    opportunities Opportunity[]
+    quotes        Quote[]
+    contracts     Contract[]
+}
+
+model Category {
+    id    String @id @default(uuid())
+    key   String
+    value String
+    label String
+}
+
+model Country {
+    id   String  @id @default(uuid())
+    name String?
+    code String?
+}

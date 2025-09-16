@@ -1,0 +1,157 @@
+model Budget {
+    id           String    @id @default(uuid())
+    regNumber    String?
+    amount       Decimal?
+    remarks      String?
+    approvedDate DateTime?
+
+    assignee   User?   @relation("Assignee", fields: [assigneeId], references: [id])
+    assigneeId String?
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    items BudgetItem[]
+
+    project   Project? @relation(fields: [projectId], references: [id])
+    projectId String?
+
+    notes  Note[]
+    stages Stage[]
+}
+
+model BudgetItem {
+    id       String @id @default(uuid())
+    budgetId String
+
+    categoryId  String?
+    description String
+    quantity    Decimal
+    timeUnit    Decimal?
+    unitPrice   Decimal
+    amount      Decimal
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    budget   Budget    @relation(fields: [budgetId], references: [id])
+    category CostType? @relation(fields: [categoryId], references: [id])
+}
+
+model Fund {
+    id           String    @id @default(uuid())
+    regNumber    String?
+    type         String?
+    amount       Decimal?
+    remarks      String
+    requestDate  DateTime?
+    approvedDate DateTime?
+    closedDate   DateTime?
+    expiredDate  DateTime?
+    voidDate     DateTime?
+    dueDate      DateTime?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    assignee    User?   @relation("Assignee", fields: [assigneeId], references: [id])
+    assigneeId  String?
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    items FundItem[]
+
+    task   Task?   @relation(fields: [taskId], references: [id])
+    taskId String?
+
+    payments Payment[]
+    expenses Expense[]
+
+    notes  Note[]
+    stages Stage[]
+}
+
+model FundItem {
+    id     String @id @default(uuid())
+    fundId String
+
+    categoryId  String?
+    description String
+    quantity    Decimal
+    timeUnit    Decimal?
+    unitPrice   Decimal
+    amount      Decimal
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    fund     Fund      @relation(fields: [fundId], references: [id])
+    category CostType? @relation(fields: [categoryId], references: [id])
+}
+
+model Expense {
+    id        String  @id @default(uuid())
+    regNumber String?
+
+    description String?
+    amount      Decimal
+    date        DateTime
+
+    category   CostType @relation(fields: [categoryId], references: [id])
+    categoryId String
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    fund   Fund?   @relation(fields: [fundId], references: [id])
+    fundId String?
+
+    task   Task?   @relation(fields: [taskId], references: [id])
+    taskId String?
+
+    project   Project? @relation(fields: [projectId], references: [id])
+    projectId String?
+
+    notes Note[]
+}
+
+model CostType {
+    id       String  @id @default(uuid())
+    order    Int?
+    name     String
+    parentId String?
+
+    parent   CostType?  @relation("CostTypeHierarchy", fields: [parentId], references: [id])
+    children CostType[] @relation("CostTypeHierarchy")
+
+    budgetItems BudgetItem[]
+    fundItems   FundItem[]
+    expenses    Expense[]
+}
+
+model Payment {
+    id          String   @id @default(uuid())
+    regNumber   String?
+    description String?
+    amount      Decimal
+    date        DateTime
+    tag         String
+    type        String
+
+    fund   Fund?   @relation(fields: [fundId], references: [id])
+    fundId String?
+}

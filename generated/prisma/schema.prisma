@@ -1,0 +1,831 @@
+model Budget {
+  id           String    @id @default(uuid())
+  regNumber    String?
+  amount       Decimal?
+  remarks      String?
+  approvedDate DateTime?
+
+  assignee   User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  items BudgetItem[]
+
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+
+  notes  Note[]
+  stages Stage[]
+}
+
+model BudgetItem {
+  id       String @id @default(uuid())
+  budgetId String
+
+  categoryId  String?
+  description String
+  quantity    Decimal
+  timeUnit    Decimal?
+  unitPrice   Decimal
+  amount      Decimal
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  budget   Budget    @relation(fields: [budgetId], references: [id])
+  category CostType? @relation(fields: [categoryId], references: [id])
+}
+
+model Fund {
+  id           String    @id @default(uuid())
+  regNumber    String?
+  type         String?
+  amount       Decimal?
+  remarks      String
+  requestDate  DateTime?
+  approvedDate DateTime?
+  closedDate   DateTime?
+  expiredDate  DateTime?
+  voidDate     DateTime?
+  dueDate      DateTime?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  assignee    User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId  String?
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  items FundItem[]
+
+  task   Task?   @relation(fields: [taskId], references: [id])
+  taskId String?
+
+  payments Payment[]
+  expenses Expense[]
+
+  notes  Note[]
+  stages Stage[]
+}
+
+model FundItem {
+  id     String @id @default(uuid())
+  fundId String
+
+  categoryId  String?
+  description String
+  quantity    Decimal
+  timeUnit    Decimal?
+  unitPrice   Decimal
+  amount      Decimal
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  fund     Fund      @relation(fields: [fundId], references: [id])
+  category CostType? @relation(fields: [categoryId], references: [id])
+}
+
+model Expense {
+  id        String  @id @default(uuid())
+  regNumber String?
+
+  description String?
+  amount      Decimal
+  date        DateTime
+
+  category   CostType @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  fund   Fund?   @relation(fields: [fundId], references: [id])
+  fundId String?
+
+  task   Task?   @relation(fields: [taskId], references: [id])
+  taskId String?
+
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+
+  notes Note[]
+}
+
+model CostType {
+  id       String  @id @default(uuid())
+  order    Int?
+  name     String
+  parentId String?
+
+  parent   CostType?  @relation("CostTypeHierarchy", fields: [parentId], references: [id])
+  children CostType[] @relation("CostTypeHierarchy")
+
+  budgetItems BudgetItem[]
+  fundItems   FundItem[]
+  expenses    Expense[]
+}
+
+model Payment {
+  id          String   @id @default(uuid())
+  regNumber   String?
+  description String?
+  amount      Decimal
+  date        DateTime
+  tag         String
+  type        String
+
+  fund   Fund?   @relation(fields: [fundId], references: [id])
+  fundId String?
+}
+
+model Pipeline {
+  id        String  @id @default(uuid())
+  regNumber String?
+  category  String?
+
+  // Non-unique relations (multiple pipelines can reference same record)
+  leadId String?
+  lead   Lead?   @relation(fields: [leadId], references: [id])
+
+  opportunityId String?
+  opportunity   Opportunity? @relation(fields: [opportunityId], references: [id])
+
+  quoteId String?
+  quote   Quote?  @relation(fields: [quoteId], references: [id])
+
+  contractId String?
+  contract   Contract? @relation(fields: [contractId], references: [id])
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  assignee    User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId  String?
+  members     User[]  @relation("PipelineMembers")
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  // Pipeline owns these
+  stages Stage[]
+  notes  Note[]
+  events Event[]
+}
+
+model Lead {
+  id               String    @id @default(uuid())
+  regNumber        String?
+  name             String?
+  role             String?
+  email            String?
+  phone            String?
+  leadSource       String?
+  leadDate         DateTime?
+  leadAddress      String?
+  prospectLocation String?
+  remarks          String?
+  dueDate          DateTime?
+  approvedDate     DateTime?
+
+  products Product[]
+
+  client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  opportunities Opportunity[]
+  pipeline      Pipeline[]
+}
+
+model Opportunity {
+  id           String    @id @default(uuid())
+  regNumber    String?
+  title        String
+  currency     String?
+  baseAmount   Decimal?
+  exchangeRate Decimal?
+  amount       Decimal?
+  remarks      String?
+  dueDate      DateTime?
+  approvedDate DateTime?
+
+  products Product[]
+
+  client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId String?
+
+  lead   Lead?   @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  leadId String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  quotes   Quote[]
+  pipeline Pipeline[]
+}
+
+model Quote {
+  id           String    @id @default(uuid())
+  regNumber    String?
+  title        String
+  currency     String?
+  baseAmount   Decimal?
+  exchangeRate Decimal?
+  amount       Decimal?
+  remarks      String?
+  dueDate      DateTime?
+  releasedDate DateTime?
+  approvedDate DateTime?
+  expiredDate  DateTime?
+
+  products      Product[]
+  client        Client?      @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId      String?
+  opportunity   Opportunity? @relation(fields: [opportunityId], references: [id], onDelete: SetNull)
+  opportunityId String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  contracts Contract[]
+  pipeline  Pipeline[]
+}
+
+model Contract {
+  id            String    @id @default(uuid())
+  regNumber     String?
+  title         String
+  currency      String?
+  baseAmount    Decimal?
+  exchangeRate  Decimal?
+  amount        Decimal?
+  remarks       String?
+  signedDate    DateTime?
+  startDate     DateTime?
+  endDate       DateTime?
+  penalty       Boolean?  @default(false)
+  clientPicName String?
+
+  products Product[]
+  client   Client?   @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId String?
+
+  quote   Quote?  @relation(fields: [quoteId], references: [id], onDelete: SetNull)
+  quoteId String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  project  Project?
+  pipeline Pipeline[]
+}
+
+model Event {
+  id          String    @id @default(uuid())
+  title       String
+  category    String?
+  description String?
+  startDate   DateTime?
+  endDate     DateTime?
+  url         String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  pipeline   Pipeline? @relation(fields: [pipelineId], references: [id])
+  pipelineId String?
+  project    Project?  @relation(fields: [projectId], references: [id])
+  projectId  String?
+  task       Task?     @relation(fields: [taskId], references: [id])
+  taskId     String?
+}
+
+model Note {
+  id          String  @id @default(uuid())
+  description String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  pipeline    Pipeline?  @relation(fields: [pipelineId], references: [id])
+  pipelineId  String?
+  project     Project?   @relation(fields: [projectId], references: [id])
+  projectId   String?
+  milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+  milestoneId String?
+  task        Task?      @relation(fields: [taskId], references: [id])
+  taskId      String?
+  budget      Budget?    @relation(fields: [budgetId], references: [id])
+  budgetId    String?
+  fund        Fund?      @relation(fields: [fundId], references: [id])
+  fundId      String?
+  expense     Expense?   @relation(fields: [expenseId], references: [id])
+  expenseId   String?
+  client      Client?    @relation(fields: [clientId], references: [id])
+  clientId    String?
+  vendor      Vendor?    @relation(fields: [vendorId], references: [id])
+  vendorId    String?
+}
+
+model Stage {
+  id          String  @id @default(uuid())
+  stageTypeId String
+  comment     String?
+
+  type StageType @relation(fields: [stageTypeId], references: [id])
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  pipeline    Pipeline?  @relation(fields: [pipelineId], references: [id])
+  pipelineId  String?
+  project     Project?   @relation(fields: [projectId], references: [id])
+  projectId   String?
+  milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+  milestoneId String?
+  task        Task?      @relation(fields: [taskId], references: [id])
+  taskId      String?
+  budget      Budget?    @relation(fields: [budgetId], references: [id])
+  budgetId    String?
+  fund        Fund?      @relation(fields: [fundId], references: [id])
+  fundId      String?
+}
+
+model StageType {
+  id    String  @id @default(uuid())
+  model String
+  order Decimal
+  value String
+
+  stages Stage[]
+}
+
+model File {
+  id  String @id @default(uuid())
+  url String
+  key String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  report   Report? @relation(fields: [reportId], references: [id])
+  reportId String?
+}
+
+model Client {
+  id                     String  @id @default(uuid())
+  regNumber              String?
+  name                   String
+  address                String?
+  phone                  String?
+  email                  String?
+  legal                  String?
+  category               String?
+  country                String?
+  contactName            String?
+  contactRole            String?
+  contactPhone           String?
+  contactEmail           String?
+  taxNumber              String?
+  taxAddress             String?
+  taxStatus              Boolean @default(false)
+  procurementName        String?
+  procurementRole        String?
+  procurementPhone       String?
+  procurementEmail       String?
+  billingAddress         String?
+  paymentName            String?
+  paymentRole            String?
+  paymentPhone           String?
+  paymentEmail           String?
+  bankName               String?
+  accountReferenceNumber String?
+  accountOwnerName       String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  notes Note[]
+
+  leads         Lead[]
+  opportunities Opportunity[]
+  quotes        Quote[]
+  contracts     Contract[]
+}
+
+model Vendor {
+  id                     String  @id @default(uuid())
+  regNumber              String?
+  name                   String
+  address                String?
+  phone                  String?
+  email                  String?
+  city                   String?
+  postalCode             String?
+  legal                  String?
+  vendorCategory         String?
+  contactName            String?
+  contactRole            String?
+  contactPhone           String?
+  contactEmail           String?
+  taxNumber              String?
+  taxStatus              Boolean @default(false)
+  siupNumber             String?
+  nibNumber              String?
+  pkpNumber              String?
+  productType            String?
+  description            String?
+  bankName               String?
+  accountReferenceNumber String?
+  accountOwnerName       String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  notes Note[]
+}
+
+model Product {
+  id        String  @id @default(uuid())
+  regNumber String?
+  name      String
+  remarks   String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  leads         Lead[]
+  opportunities Opportunity[]
+  quotes        Quote[]
+  contracts     Contract[]
+}
+
+model Category {
+  id    String @id @default(uuid())
+  key   String
+  value String
+  label String
+}
+
+model Country {
+  id   String  @id @default(uuid())
+  name String?
+  code String?
+}
+
+model Project {
+  id               String    @id @default(uuid())
+  regNumber        String?
+  progress         Decimal?  @default(0)
+  plannedStartDate DateTime?
+  plannedEndDate   DateTime?
+  actualStartDate  DateTime?
+  actualEndDate    DateTime?
+
+  contract   Contract? @relation(fields: [contractId], references: [id])
+  contractId String?   @unique
+
+  assignee   User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId String?
+
+  members User[] @relation("ProjectMembers")
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  milestones Milestone[]
+
+  notes    Note[]
+  stages   Stage[]
+  events   Event[]
+  budgets  Budget[]
+  expenses Expense[]
+}
+
+model Milestone {
+  id               String    @id @default(uuid())
+  order            Decimal?
+  title            String?
+  progress         Decimal?  @default(0)
+  deliverables     String?
+  remarks          String?
+  share            Decimal?
+  amount           Decimal?
+  plannedStartDate DateTime?
+  plannedEndDate   DateTime?
+  actualStartDate  DateTime?
+  actualEndDate    DateTime?
+
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+
+  assignee   User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  tasks Task[]
+
+  notes  Note[]
+  stages Stage[]
+}
+
+model Task {
+  id               String    @id @default(uuid())
+  order            Decimal?
+  title            String
+  progress         Decimal?  @default(0)
+  deliverables     String?
+  remarks          String?
+  plannedStartDate DateTime?
+  plannedEndDate   DateTime?
+  actualStartDate  DateTime?
+  actualEndDate    DateTime?
+
+  milestone   Milestone @relation(fields: [milestoneId], references: [id])
+  milestoneId String
+
+  assignee   User?   @relation("Assignee", fields: [assigneeId], references: [id])
+  assigneeId String?
+
+  members User[] @relation("TaskMembers")
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  notes  Note[]
+  stages Stage[]
+  events Event[]
+
+  expenses Expense[]
+  funds    Fund[]
+}
+
+model ReportCategory {
+  id       String  @id @default(uuid())
+  order    Int     @default(0)
+  name     String  @unique
+  interval String?
+
+  parent   ReportCategory? @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  parentId String?
+
+  children ReportCategory[] @relation("CategoryHierarchy")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reports Report[]
+}
+
+model Report {
+  id         String         @id @default(uuid())
+  category   ReportCategory @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  periodYear  String
+  periodMonth String?
+
+  version Int @default(1)
+
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  files File[]
+}
+
+model User {
+  id       String @id @default(uuid())
+  username String @unique
+  password String
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  status String @default("ACTIVE")
+
+  role           Role?         @relation(fields: [roleId], references: [id])
+  roleId         String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  profile     Profile?
+  permissions UserPermission[]
+
+  CreatorProfile Profile[] @relation("CreatedBy")
+  UpdaterProfile Profile[] @relation("UpdatedBy")
+
+  BudgetAssignee Budget[] @relation("Assignee")
+  CreatorBudget  Budget[] @relation("CreatedBy")
+  UpdaterBudget  Budget[] @relation("UpdatedBy")
+
+  FundAssignee Fund[] @relation("Assignee")
+  CreatorFund  Fund[] @relation("CreatedBy")
+  UpdaterFund  Fund[] @relation("UpdatedBy")
+
+  CreatorExpense Expense[] @relation("CreatedBy")
+  UpdaterExpense Expense[] @relation("UpdatedBy")
+
+  PipelineAssignee Pipeline[] @relation("Assignee")
+  CreatorPipeline  Pipeline[] @relation("CreatedBy")
+  UpdaterPipeline  Pipeline[] @relation("UpdatedBy")
+  PipelineMember   Pipeline[] @relation("PipelineMembers")
+
+  ProjectAssignee Project[] @relation("Assignee")
+  CreatorProject  Project[] @relation("CreatedBy")
+  UpdaterProject  Project[] @relation("UpdatedBy")
+  ProjectMember   Project[] @relation("ProjectMembers")
+
+  MilestoneAssignee Milestone[] @relation("Assignee")
+  CreatorMilestone  Milestone[] @relation("CreatedBy")
+  UpdaterMilestone  Milestone[] @relation("UpdatedBy")
+
+  TaskAssignee Task[] @relation("Assignee")
+  CreatorTask  Task[] @relation("CreatedBy")
+  UpdaterTask  Task[] @relation("UpdatedBy")
+  TaskMember   Task[] @relation("TaskMembers")
+
+  CreatorProduct Product[] @relation("CreatedBy")
+  UpdaterProduct Product[] @relation("UpdatedBy")
+
+  CreatorClient Client[] @relation("CreatedBy")
+  UpdaterClient Client[] @relation("UpdatedBy")
+
+  CreatorVendor Vendor[] @relation("CreatedBy")
+  UpdaterVendor Vendor[] @relation("UpdatedBy")
+
+  CreatorNote Note[] @relation("CreatedBy")
+  UpdaterNote Note[] @relation("UpdatedBy")
+
+  CreatorEvent Event[] @relation("CreatedBy")
+  UpdaterEvent Event[] @relation("UpdatedBy")
+
+  CreatorStage Stage[] @relation("CreatedBy")
+  UpdaterStage Stage[] @relation("UpdatedBy")
+
+  CreatorReport Report[] @relation("CreatedBy")
+  UpdaterReport Report[] @relation("UpdatedBy")
+}
+
+model Role {
+  id    String @id @default(uuid())
+  name  String @unique
+  level Int
+
+  users User[]
+}
+
+model Organization {
+  id   String  @id @default(uuid())
+  name String  @unique
+  code String? @unique
+
+  users  User[]
+  Report Report[]
+}
+
+model Permission {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  resource    String
+  action      String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  users UserPermission[]
+
+  @@unique([resource, action])
+  @@index([resource])
+}
+
+model UserPermission {
+  id           String @id @default(uuid())
+  userId       String
+  permissionId String
+
+  createdAt DateTime @default(now())
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Profile {
+  id       String    @id @default(uuid())
+  name     String?
+  joinDate DateTime?
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+
+  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById String?
+  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+  updatedById String?
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model Session {
+  sid    String   @id(map: "session_pkey") @db.VarChar
+  sess   Json     @db.Json
+  expire DateTime @db.Timestamp(6)
+
+  @@index([expire], map: "IDX_session_expire")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

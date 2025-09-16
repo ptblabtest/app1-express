@@ -1,0 +1,109 @@
+model Event {
+    id          String    @id @default(uuid())
+    title       String
+    category    String?
+    description String?
+    startDate   DateTime?
+    endDate     DateTime?
+    url         String?
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    pipeline   Pipeline? @relation(fields: [pipelineId], references: [id])
+    pipelineId String?
+    project    Project?  @relation(fields: [projectId], references: [id])
+    projectId  String?
+    task       Task?     @relation(fields: [taskId], references: [id])
+    taskId     String?
+}
+
+model Note {
+    id          String  @id @default(uuid())
+    description String?
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    pipeline    Pipeline?  @relation(fields: [pipelineId], references: [id])
+    pipelineId  String?
+    project     Project?   @relation(fields: [projectId], references: [id])
+    projectId   String?
+    milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+    milestoneId String?
+    task        Task?      @relation(fields: [taskId], references: [id])
+    taskId      String?
+    budget      Budget?    @relation(fields: [budgetId], references: [id])
+    budgetId    String?
+    fund        Fund?      @relation(fields: [fundId], references: [id])
+    fundId      String?
+    expense     Expense?   @relation(fields: [expenseId], references: [id])
+    expenseId   String?
+    client      Client?    @relation(fields: [clientId], references: [id])
+    clientId    String?
+    vendor      Vendor?    @relation(fields: [vendorId], references: [id])
+    vendorId    String?
+}
+
+model Stage {
+    id          String  @id @default(uuid())
+    stageTypeId String
+    comment     String?
+
+    type StageType @relation(fields: [stageTypeId], references: [id])
+
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    pipeline    Pipeline?  @relation(fields: [pipelineId], references: [id])
+    pipelineId  String?
+    project     Project?   @relation(fields: [projectId], references: [id])
+    projectId   String?
+    milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+    milestoneId String?
+    task        Task?      @relation(fields: [taskId], references: [id])
+    taskId      String?
+    budget      Budget?    @relation(fields: [budgetId], references: [id])
+    budgetId    String?
+    fund        Fund?      @relation(fields: [fundId], references: [id])
+    fundId      String?
+}
+
+model StageType {
+    id    String  @id @default(uuid())
+    model String
+    order Decimal
+    value String
+
+    stages Stage[]
+}
+
+model File {
+    id  String @id @default(uuid())
+    url String
+    key String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    report   Report? @relation(fields: [reportId], references: [id])
+    reportId String?
+}

@@ -1,0 +1,144 @@
+model Pipeline {
+    id        String  @id @default(uuid())
+    regNumber String?
+    category  String?
+
+    // Non-unique relations (multiple pipelines can reference same record)
+    leadId String?
+    lead   Lead?   @relation(fields: [leadId], references: [id])
+
+    opportunityId String?
+    opportunity   Opportunity? @relation(fields: [opportunityId], references: [id])
+
+    quoteId String?
+    quote   Quote?  @relation(fields: [quoteId], references: [id])
+
+    contractId String?
+    contract   Contract? @relation(fields: [contractId], references: [id])
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    assignee    User?   @relation("Assignee", fields: [assigneeId], references: [id])
+    assigneeId  String?
+    members     User[]  @relation("PipelineMembers")
+    createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
+    createdById String?
+    updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
+    updatedById String?
+
+    // Pipeline owns these
+    stages Stage[]
+    notes  Note[]
+    events Event[]
+}
+
+model Lead {
+    id               String    @id @default(uuid())
+    regNumber        String?
+    name             String?
+    role             String?
+    email            String?
+    phone            String?
+    leadSource       String?
+    leadDate         DateTime?
+    leadAddress      String?
+    prospectLocation String?
+    remarks          String?
+    dueDate          DateTime?
+    approvedDate     DateTime?
+
+    products Product[]
+
+    client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+    clientId String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    opportunities Opportunity[]
+    pipeline      Pipeline[]
+}
+
+model Opportunity {
+    id           String    @id @default(uuid())
+    regNumber    String?
+    title        String
+    currency     String?
+    baseAmount   Decimal?
+    exchangeRate Decimal?
+    amount       Decimal?
+    remarks      String?
+    dueDate      DateTime?
+    approvedDate DateTime?
+
+    products Product[]
+
+    client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+    clientId String?
+
+    lead   Lead?   @relation(fields: [leadId], references: [id], onDelete: SetNull)
+    leadId String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    quotes   Quote[]
+    pipeline Pipeline[]
+}
+
+model Quote {
+    id           String    @id @default(uuid())
+    regNumber    String?
+    title        String
+    currency     String?
+    baseAmount   Decimal?
+    exchangeRate Decimal?
+    amount       Decimal?
+    remarks      String?
+    dueDate      DateTime?
+    releasedDate DateTime?
+    approvedDate DateTime?
+    expiredDate  DateTime?
+
+    products      Product[]
+    client        Client?      @relation(fields: [clientId], references: [id], onDelete: SetNull)
+    clientId      String?
+    opportunity   Opportunity? @relation(fields: [opportunityId], references: [id], onDelete: SetNull)
+    opportunityId String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    contracts Contract[]
+    pipeline  Pipeline[]
+}
+
+model Contract {
+    id            String    @id @default(uuid())
+    regNumber     String?
+    title         String
+    currency      String?
+    baseAmount    Decimal?
+    exchangeRate  Decimal?
+    amount        Decimal?
+    remarks       String?
+    signedDate    DateTime?
+    startDate     DateTime?
+    endDate       DateTime?
+    penalty       Boolean?  @default(false)
+    clientPicName String?
+
+    products Product[]
+    client   Client?   @relation(fields: [clientId], references: [id], onDelete: SetNull)
+    clientId String?
+
+    quote   Quote?  @relation(fields: [quoteId], references: [id], onDelete: SetNull)
+    quoteId String?
+
+    createdAt DateTime? @default(now())
+    updatedAt DateTime? @updatedAt
+
+    project  Project?
+    pipeline Pipeline[]
+}
