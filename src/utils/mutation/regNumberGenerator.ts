@@ -1,4 +1,4 @@
-import prisma from "../../lib/prisma";
+import prisma from "@/lib/prisma";
 
 function getPrefix(model: string): string {
   const prefixMap: { [key: string]: string } = {

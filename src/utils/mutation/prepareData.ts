@@ -1,5 +1,5 @@
-import prisma from "../../lib/prisma";
-import { generateRegNumber } from "../../utils/mutation/regNumberGenerator";
+import prisma from "@/lib/prisma";
+import { generateRegNumber } from "@/utils/mutation/regNumberGenerator";
 
 export const prepareData = async (
   schema: any,
@@ -39,7 +39,9 @@ export const prepareData = async (
         body.stages = {
           create: {
             stageTypeId: stage.id,
-            comment: `${model.charAt(0).toUpperCase() + model.slice(1)} created`,
+            comment: `${
+              model.charAt(0).toUpperCase() + model.slice(1)
+            } created`,
             createdById: user.id,
           },
         };
@@ -59,8 +61,8 @@ export const prepareData = async (
 
   // Handle members
   if (body.memberIds && Array.isArray(body.memberIds)) {
-    body.members = 
-      mode === "create" 
+    body.members =
+      mode === "create"
         ? { connect: body.memberIds.map((id: string) => ({ id })) }
         : { set: body.memberIds.map((id: string) => ({ id })) };
     delete body.memberIds;

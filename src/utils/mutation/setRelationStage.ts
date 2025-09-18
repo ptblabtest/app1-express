@@ -1,4 +1,4 @@
-import prisma from "../../lib/prisma";
+import prisma from "@/lib/prisma";
 
 export const setFieldAndStageForRelation = async (
   relationId: string | null | undefined,
@@ -8,9 +8,9 @@ export const setFieldAndStageForRelation = async (
   stageValue: string
 ) => {
   if (!relationId) return;
-  
+
   const currentDate = new Date();
-  
+
   // Find the stage type for this model
   const stageType = await prisma.stageType.findFirst({
     where: {
@@ -18,25 +18,25 @@ export const setFieldAndStageForRelation = async (
       value: stageValue,
     },
   });
-  
+
   if (!stageType) return;
-  
+
   // Check latest stage for this relation
   const latestStage = await prisma.stage.findFirst({
     where: {
       [`${relationModel}Id`]: relationId,
     },
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
     select: {
       stageTypeId: true,
     },
   });
-  
+
   // If latest stage is same type, don't create new one
   if (latestStage?.stageTypeId === stageType.id) return;
-  
+
   // Update the record with the date field and create the stage
   await prisma[relationModel].update({
     where: { id: relationId },
@@ -45,7 +45,9 @@ export const setFieldAndStageForRelation = async (
       stages: {
         create: {
           stageTypeId: stageType.id,
-          comment: `${relationModel.charAt(0).toUpperCase() + relationModel.slice(1)} - ${stageValue}`,
+          comment: `${
+            relationModel.charAt(0).toUpperCase() + relationModel.slice(1)
+          } - ${stageValue}`,
           createdById: userId,
         },
       },

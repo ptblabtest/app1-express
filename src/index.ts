@@ -3,13 +3,12 @@ import helmet from "helmet";
 import cors from "cors";
 import passport from "passport";
 import session from "express-session";
-import authRoutes from "@/routes/auth";
-import sharedRoutes from "@/routes/sharedRoutes";
 import prisma from "@/lib/prisma";
 import { PrismaSessionStore } from "@/lib/sessionStore";
-import spacesRoutes from '@/routes/spacesRoutes';
-import moduleRoutes from "@/routes/module";
-import fileRoutes from "@/routes/fileRoutes";
+import authRoutes from "@/auth/authRoutes";
+import spacesRoutes from '@/files/routes/spacesRoutes';
+import fileRoutes from "@/files/routes/fileRoutes";
+import moduleRoutes from "@/modules/routes/moduleRoutes";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -82,9 +81,8 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-app.use("/api", sharedRoutes);
-app.use('/api/spaces-test', spacesRoutes);
 app.use("/api", moduleRoutes);
+app.use('/api/spaces-test', spacesRoutes);
 app.use("/api/files", fileRoutes);
 
 app.use((_req, res) => {

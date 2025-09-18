@@ -139,16 +139,6 @@ export type Milestone = $Result.DefaultSelection<Prisma.$MilestonePayload>
  */
 export type Task = $Result.DefaultSelection<Prisma.$TaskPayload>
 /**
- * Model ReportCategory
- * 
- */
-export type ReportCategory = $Result.DefaultSelection<Prisma.$ReportCategoryPayload>
-/**
- * Model Report
- * 
- */
-export type Report = $Result.DefaultSelection<Prisma.$ReportPayload>
-/**
  * Model User
  * 
  */
@@ -158,26 +148,6 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  * 
  */
 export type Role = $Result.DefaultSelection<Prisma.$RolePayload>
-/**
- * Model Organization
- * 
- */
-export type Organization = $Result.DefaultSelection<Prisma.$OrganizationPayload>
-/**
- * Model Permission
- * 
- */
-export type Permission = $Result.DefaultSelection<Prisma.$PermissionPayload>
-/**
- * Model UserPermission
- * 
- */
-export type UserPermission = $Result.DefaultSelection<Prisma.$UserPermissionPayload>
-/**
- * Model Profile
- * 
- */
-export type Profile = $Result.DefaultSelection<Prisma.$ProfilePayload>
 /**
  * Model Session
  * 
@@ -553,26 +523,6 @@ export class PrismaClient<
   get task(): Prisma.TaskDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.reportCategory`: Exposes CRUD operations for the **ReportCategory** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more ReportCategories
-    * const reportCategories = await prisma.reportCategory.findMany()
-    * ```
-    */
-  get reportCategory(): Prisma.ReportCategoryDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.report`: Exposes CRUD operations for the **Report** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Reports
-    * const reports = await prisma.report.findMany()
-    * ```
-    */
-  get report(): Prisma.ReportDelegate<ExtArgs, ClientOptions>;
-
-  /**
    * `prisma.user`: Exposes CRUD operations for the **User** model.
     * Example usage:
     * ```ts
@@ -591,46 +541,6 @@ export class PrismaClient<
     * ```
     */
   get role(): Prisma.RoleDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.organization`: Exposes CRUD operations for the **Organization** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Organizations
-    * const organizations = await prisma.organization.findMany()
-    * ```
-    */
-  get organization(): Prisma.OrganizationDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.permission`: Exposes CRUD operations for the **Permission** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Permissions
-    * const permissions = await prisma.permission.findMany()
-    * ```
-    */
-  get permission(): Prisma.PermissionDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.userPermission`: Exposes CRUD operations for the **UserPermission** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more UserPermissions
-    * const userPermissions = await prisma.userPermission.findMany()
-    * ```
-    */
-  get userPermission(): Prisma.UserPermissionDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.profile`: Exposes CRUD operations for the **Profile** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Profiles
-    * const profiles = await prisma.profile.findMany()
-    * ```
-    */
-  get profile(): Prisma.ProfileDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.session`: Exposes CRUD operations for the **Session** model.
@@ -1106,14 +1016,8 @@ export namespace Prisma {
     Project: 'Project',
     Milestone: 'Milestone',
     Task: 'Task',
-    ReportCategory: 'ReportCategory',
-    Report: 'Report',
     User: 'User',
     Role: 'Role',
-    Organization: 'Organization',
-    Permission: 'Permission',
-    UserPermission: 'UserPermission',
-    Profile: 'Profile',
     Session: 'Session'
   };
 
@@ -1133,7 +1037,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "budget" | "budgetItem" | "fund" | "fundItem" | "expense" | "costType" | "payment" | "pipeline" | "lead" | "opportunity" | "quote" | "contract" | "event" | "note" | "stage" | "stageType" | "file" | "client" | "vendor" | "product" | "category" | "country" | "project" | "milestone" | "task" | "reportCategory" | "report" | "user" | "role" | "organization" | "permission" | "userPermission" | "profile" | "session"
+      modelProps: "budget" | "budgetItem" | "fund" | "fundItem" | "expense" | "costType" | "payment" | "pipeline" | "lead" | "opportunity" | "quote" | "contract" | "event" | "note" | "stage" | "stageType" | "file" | "client" | "vendor" | "product" | "category" | "country" | "project" | "milestone" | "task" | "user" | "role" | "session"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2987,154 +2891,6 @@ export namespace Prisma {
           }
         }
       }
-      ReportCategory: {
-        payload: Prisma.$ReportCategoryPayload<ExtArgs>
-        fields: Prisma.ReportCategoryFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ReportCategoryFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ReportCategoryFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          findFirst: {
-            args: Prisma.ReportCategoryFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ReportCategoryFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          findMany: {
-            args: Prisma.ReportCategoryFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>[]
-          }
-          create: {
-            args: Prisma.ReportCategoryCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          createMany: {
-            args: Prisma.ReportCategoryCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.ReportCategoryCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>[]
-          }
-          delete: {
-            args: Prisma.ReportCategoryDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          update: {
-            args: Prisma.ReportCategoryUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          deleteMany: {
-            args: Prisma.ReportCategoryDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ReportCategoryUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.ReportCategoryUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>[]
-          }
-          upsert: {
-            args: Prisma.ReportCategoryUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportCategoryPayload>
-          }
-          aggregate: {
-            args: Prisma.ReportCategoryAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateReportCategory>
-          }
-          groupBy: {
-            args: Prisma.ReportCategoryGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ReportCategoryGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ReportCategoryCountArgs<ExtArgs>
-            result: $Utils.Optional<ReportCategoryCountAggregateOutputType> | number
-          }
-        }
-      }
-      Report: {
-        payload: Prisma.$ReportPayload<ExtArgs>
-        fields: Prisma.ReportFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ReportFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ReportFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          findFirst: {
-            args: Prisma.ReportFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ReportFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          findMany: {
-            args: Prisma.ReportFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
-          }
-          create: {
-            args: Prisma.ReportCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          createMany: {
-            args: Prisma.ReportCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.ReportCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
-          }
-          delete: {
-            args: Prisma.ReportDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          update: {
-            args: Prisma.ReportUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          deleteMany: {
-            args: Prisma.ReportDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ReportUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.ReportUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
-          }
-          upsert: {
-            args: Prisma.ReportUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
-          }
-          aggregate: {
-            args: Prisma.ReportAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateReport>
-          }
-          groupBy: {
-            args: Prisma.ReportGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ReportGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ReportCountArgs<ExtArgs>
-            result: $Utils.Optional<ReportCountAggregateOutputType> | number
-          }
-        }
-      }
       User: {
         payload: Prisma.$UserPayload<ExtArgs>
         fields: Prisma.UserFieldRefs
@@ -3280,302 +3036,6 @@ export namespace Prisma {
           count: {
             args: Prisma.RoleCountArgs<ExtArgs>
             result: $Utils.Optional<RoleCountAggregateOutputType> | number
-          }
-        }
-      }
-      Organization: {
-        payload: Prisma.$OrganizationPayload<ExtArgs>
-        fields: Prisma.OrganizationFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.OrganizationFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.OrganizationFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          findFirst: {
-            args: Prisma.OrganizationFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.OrganizationFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          findMany: {
-            args: Prisma.OrganizationFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>[]
-          }
-          create: {
-            args: Prisma.OrganizationCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          createMany: {
-            args: Prisma.OrganizationCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.OrganizationCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>[]
-          }
-          delete: {
-            args: Prisma.OrganizationDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          update: {
-            args: Prisma.OrganizationUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          deleteMany: {
-            args: Prisma.OrganizationDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.OrganizationUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.OrganizationUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>[]
-          }
-          upsert: {
-            args: Prisma.OrganizationUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$OrganizationPayload>
-          }
-          aggregate: {
-            args: Prisma.OrganizationAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateOrganization>
-          }
-          groupBy: {
-            args: Prisma.OrganizationGroupByArgs<ExtArgs>
-            result: $Utils.Optional<OrganizationGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.OrganizationCountArgs<ExtArgs>
-            result: $Utils.Optional<OrganizationCountAggregateOutputType> | number
-          }
-        }
-      }
-      Permission: {
-        payload: Prisma.$PermissionPayload<ExtArgs>
-        fields: Prisma.PermissionFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.PermissionFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.PermissionFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          findFirst: {
-            args: Prisma.PermissionFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.PermissionFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          findMany: {
-            args: Prisma.PermissionFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>[]
-          }
-          create: {
-            args: Prisma.PermissionCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          createMany: {
-            args: Prisma.PermissionCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.PermissionCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>[]
-          }
-          delete: {
-            args: Prisma.PermissionDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          update: {
-            args: Prisma.PermissionUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          deleteMany: {
-            args: Prisma.PermissionDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.PermissionUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.PermissionUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>[]
-          }
-          upsert: {
-            args: Prisma.PermissionUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PermissionPayload>
-          }
-          aggregate: {
-            args: Prisma.PermissionAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePermission>
-          }
-          groupBy: {
-            args: Prisma.PermissionGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PermissionGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.PermissionCountArgs<ExtArgs>
-            result: $Utils.Optional<PermissionCountAggregateOutputType> | number
-          }
-        }
-      }
-      UserPermission: {
-        payload: Prisma.$UserPermissionPayload<ExtArgs>
-        fields: Prisma.UserPermissionFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.UserPermissionFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.UserPermissionFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          findFirst: {
-            args: Prisma.UserPermissionFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.UserPermissionFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          findMany: {
-            args: Prisma.UserPermissionFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>[]
-          }
-          create: {
-            args: Prisma.UserPermissionCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          createMany: {
-            args: Prisma.UserPermissionCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.UserPermissionCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>[]
-          }
-          delete: {
-            args: Prisma.UserPermissionDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          update: {
-            args: Prisma.UserPermissionUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          deleteMany: {
-            args: Prisma.UserPermissionDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.UserPermissionUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.UserPermissionUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>[]
-          }
-          upsert: {
-            args: Prisma.UserPermissionUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPermissionPayload>
-          }
-          aggregate: {
-            args: Prisma.UserPermissionAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateUserPermission>
-          }
-          groupBy: {
-            args: Prisma.UserPermissionGroupByArgs<ExtArgs>
-            result: $Utils.Optional<UserPermissionGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.UserPermissionCountArgs<ExtArgs>
-            result: $Utils.Optional<UserPermissionCountAggregateOutputType> | number
-          }
-        }
-      }
-      Profile: {
-        payload: Prisma.$ProfilePayload<ExtArgs>
-        fields: Prisma.ProfileFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ProfileFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ProfileFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          findFirst: {
-            args: Prisma.ProfileFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ProfileFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          findMany: {
-            args: Prisma.ProfileFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>[]
-          }
-          create: {
-            args: Prisma.ProfileCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          createMany: {
-            args: Prisma.ProfileCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.ProfileCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>[]
-          }
-          delete: {
-            args: Prisma.ProfileDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          update: {
-            args: Prisma.ProfileUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          deleteMany: {
-            args: Prisma.ProfileDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ProfileUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.ProfileUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>[]
-          }
-          upsert: {
-            args: Prisma.ProfileUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProfilePayload>
-          }
-          aggregate: {
-            args: Prisma.ProfileAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateProfile>
-          }
-          groupBy: {
-            args: Prisma.ProfileGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ProfileGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ProfileCountArgs<ExtArgs>
-            result: $Utils.Optional<ProfileCountAggregateOutputType> | number
           }
         }
       }
@@ -3774,14 +3234,8 @@ export namespace Prisma {
     project?: ProjectOmit
     milestone?: MilestoneOmit
     task?: TaskOmit
-    reportCategory?: ReportCategoryOmit
-    report?: ReportOmit
     user?: UserOmit
     role?: RoleOmit
-    organization?: OrganizationOmit
-    permission?: PermissionOmit
-    userPermission?: UserPermissionOmit
-    profile?: ProfileOmit
     session?: SessionOmit
   }
 
@@ -4706,84 +4160,10 @@ export namespace Prisma {
 
 
   /**
-   * Count Type ReportCategoryCountOutputType
-   */
-
-  export type ReportCategoryCountOutputType = {
-    children: number
-    reports: number
-  }
-
-  export type ReportCategoryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    children?: boolean | ReportCategoryCountOutputTypeCountChildrenArgs
-    reports?: boolean | ReportCategoryCountOutputTypeCountReportsArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ReportCategoryCountOutputType without action
-   */
-  export type ReportCategoryCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategoryCountOutputType
-     */
-    select?: ReportCategoryCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ReportCategoryCountOutputType without action
-   */
-  export type ReportCategoryCountOutputTypeCountChildrenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportCategoryWhereInput
-  }
-
-  /**
-   * ReportCategoryCountOutputType without action
-   */
-  export type ReportCategoryCountOutputTypeCountReportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportWhereInput
-  }
-
-
-  /**
-   * Count Type ReportCountOutputType
-   */
-
-  export type ReportCountOutputType = {
-    files: number
-  }
-
-  export type ReportCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    files?: boolean | ReportCountOutputTypeCountFilesArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ReportCountOutputType without action
-   */
-  export type ReportCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCountOutputType
-     */
-    select?: ReportCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ReportCountOutputType without action
-   */
-  export type ReportCountOutputTypeCountFilesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FileWhereInput
-  }
-
-
-  /**
    * Count Type UserCountOutputType
    */
 
   export type UserCountOutputType = {
-    permissions: number
-    CreatorProfile: number
-    UpdaterProfile: number
     BudgetAssignee: number
     CreatorBudget: number
     UpdaterBudget: number
@@ -4819,14 +4199,9 @@ export namespace Prisma {
     UpdaterEvent: number
     CreatorStage: number
     UpdaterStage: number
-    CreatorReport: number
-    UpdaterReport: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    permissions?: boolean | UserCountOutputTypeCountPermissionsArgs
-    CreatorProfile?: boolean | UserCountOutputTypeCountCreatorProfileArgs
-    UpdaterProfile?: boolean | UserCountOutputTypeCountUpdaterProfileArgs
     BudgetAssignee?: boolean | UserCountOutputTypeCountBudgetAssigneeArgs
     CreatorBudget?: boolean | UserCountOutputTypeCountCreatorBudgetArgs
     UpdaterBudget?: boolean | UserCountOutputTypeCountUpdaterBudgetArgs
@@ -4862,8 +4237,6 @@ export namespace Prisma {
     UpdaterEvent?: boolean | UserCountOutputTypeCountUpdaterEventArgs
     CreatorStage?: boolean | UserCountOutputTypeCountCreatorStageArgs
     UpdaterStage?: boolean | UserCountOutputTypeCountUpdaterStageArgs
-    CreatorReport?: boolean | UserCountOutputTypeCountCreatorReportArgs
-    UpdaterReport?: boolean | UserCountOutputTypeCountUpdaterReportArgs
   }
 
   // Custom InputTypes
@@ -4875,27 +4248,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the UserCountOutputType
      */
     select?: UserCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountPermissionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserPermissionWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountCreatorProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProfileWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountUpdaterProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProfileWhereInput
   }
 
   /**
@@ -5143,20 +4495,6 @@ export namespace Prisma {
     where?: StageWhereInput
   }
 
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountCreatorReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountUpdaterReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportWhereInput
-  }
-
 
   /**
    * Count Type RoleCountOutputType
@@ -5186,77 +4524,6 @@ export namespace Prisma {
    */
   export type RoleCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: UserWhereInput
-  }
-
-
-  /**
-   * Count Type OrganizationCountOutputType
-   */
-
-  export type OrganizationCountOutputType = {
-    users: number
-    Report: number
-  }
-
-  export type OrganizationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | OrganizationCountOutputTypeCountUsersArgs
-    Report?: boolean | OrganizationCountOutputTypeCountReportArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * OrganizationCountOutputType without action
-   */
-  export type OrganizationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the OrganizationCountOutputType
-     */
-    select?: OrganizationCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * OrganizationCountOutputType without action
-   */
-  export type OrganizationCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-  }
-
-  /**
-   * OrganizationCountOutputType without action
-   */
-  export type OrganizationCountOutputTypeCountReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportWhereInput
-  }
-
-
-  /**
-   * Count Type PermissionCountOutputType
-   */
-
-  export type PermissionCountOutputType = {
-    users: number
-  }
-
-  export type PermissionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | PermissionCountOutputTypeCountUsersArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * PermissionCountOutputType without action
-   */
-  export type PermissionCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the PermissionCountOutputType
-     */
-    select?: PermissionCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * PermissionCountOutputType without action
-   */
-  export type PermissionCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserPermissionWhereInput
   }
 
 
@@ -26346,7 +25613,6 @@ export namespace Prisma {
     key: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    reportId: string | null
   }
 
   export type FileMaxAggregateOutputType = {
@@ -26355,7 +25621,6 @@ export namespace Prisma {
     key: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    reportId: string | null
   }
 
   export type FileCountAggregateOutputType = {
@@ -26364,7 +25629,6 @@ export namespace Prisma {
     key: number
     createdAt: number
     updatedAt: number
-    reportId: number
     _all: number
   }
 
@@ -26375,7 +25639,6 @@ export namespace Prisma {
     key?: true
     createdAt?: true
     updatedAt?: true
-    reportId?: true
   }
 
   export type FileMaxAggregateInputType = {
@@ -26384,7 +25647,6 @@ export namespace Prisma {
     key?: true
     createdAt?: true
     updatedAt?: true
-    reportId?: true
   }
 
   export type FileCountAggregateInputType = {
@@ -26393,7 +25655,6 @@ export namespace Prisma {
     key?: true
     createdAt?: true
     updatedAt?: true
-    reportId?: true
     _all?: true
   }
 
@@ -26475,7 +25736,6 @@ export namespace Prisma {
     key: string
     createdAt: Date
     updatedAt: Date
-    reportId: string | null
     _count: FileCountAggregateOutputType | null
     _min: FileMinAggregateOutputType | null
     _max: FileMaxAggregateOutputType | null
@@ -26501,8 +25761,6 @@ export namespace Prisma {
     key?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    reportId?: boolean
-    report?: boolean | File$reportArgs<ExtArgs>
   }, ExtArgs["result"]["file"]>
 
   export type FileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -26511,8 +25769,6 @@ export namespace Prisma {
     key?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    reportId?: boolean
-    report?: boolean | File$reportArgs<ExtArgs>
   }, ExtArgs["result"]["file"]>
 
   export type FileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -26521,8 +25777,6 @@ export namespace Prisma {
     key?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    reportId?: boolean
-    report?: boolean | File$reportArgs<ExtArgs>
   }, ExtArgs["result"]["file"]>
 
   export type FileSelectScalar = {
@@ -26531,32 +25785,19 @@ export namespace Prisma {
     key?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    reportId?: boolean
   }
 
-  export type FileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "key" | "createdAt" | "updatedAt" | "reportId", ExtArgs["result"]["file"]>
-  export type FileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    report?: boolean | File$reportArgs<ExtArgs>
-  }
-  export type FileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    report?: boolean | File$reportArgs<ExtArgs>
-  }
-  export type FileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    report?: boolean | File$reportArgs<ExtArgs>
-  }
+  export type FileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "key" | "createdAt" | "updatedAt", ExtArgs["result"]["file"]>
 
   export type $FilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "File"
-    objects: {
-      report: Prisma.$ReportPayload<ExtArgs> | null
-    }
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       url: string
       key: string
       createdAt: Date
       updatedAt: Date
-      reportId: string | null
     }, ExtArgs["result"]["file"]>
     composites: {}
   }
@@ -26951,7 +26192,6 @@ export namespace Prisma {
    */
   export interface Prisma__FileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    report<T extends File$reportArgs<ExtArgs> = {}>(args?: Subset<T, File$reportArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -26986,7 +26226,6 @@ export namespace Prisma {
     readonly key: FieldRef<"File", 'String'>
     readonly createdAt: FieldRef<"File", 'DateTime'>
     readonly updatedAt: FieldRef<"File", 'DateTime'>
-    readonly reportId: FieldRef<"File", 'String'>
   }
     
 
@@ -27003,10 +26242,6 @@ export namespace Prisma {
      * Omit specific fields from the File
      */
     omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
     /**
      * Filter, which File to fetch.
      */
@@ -27026,10 +26261,6 @@ export namespace Prisma {
      */
     omit?: FileOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    /**
      * Filter, which File to fetch.
      */
     where: FileWhereUniqueInput
@@ -27047,10 +26278,6 @@ export namespace Prisma {
      * Omit specific fields from the File
      */
     omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
     /**
      * Filter, which File to fetch.
      */
@@ -27100,10 +26327,6 @@ export namespace Prisma {
      */
     omit?: FileOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    /**
      * Filter, which File to fetch.
      */
     where?: FileWhereInput
@@ -27152,10 +26375,6 @@ export namespace Prisma {
      */
     omit?: FileOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    /**
      * Filter, which Files to fetch.
      */
     where?: FileWhereInput
@@ -27199,10 +26418,6 @@ export namespace Prisma {
      */
     omit?: FileOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    /**
      * The data needed to create a File.
      */
     data: XOR<FileCreateInput, FileUncheckedCreateInput>
@@ -27236,10 +26451,6 @@ export namespace Prisma {
      */
     data: FileCreateManyInput | FileCreateManyInput[]
     skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -27254,10 +26465,6 @@ export namespace Prisma {
      * Omit specific fields from the File
      */
     omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
     /**
      * The data needed to update a File.
      */
@@ -27310,10 +26517,6 @@ export namespace Prisma {
      * Limit how many Files to update.
      */
     limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -27328,10 +26531,6 @@ export namespace Prisma {
      * Omit specific fields from the File
      */
     omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
     /**
      * The filter to search for the File to update in case it exists.
      */
@@ -27359,10 +26558,6 @@ export namespace Prisma {
      */
     omit?: FileOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    /**
      * Filter which File to delete.
      */
     where: FileWhereUniqueInput
@@ -27383,25 +26578,6 @@ export namespace Prisma {
   }
 
   /**
-   * File.report
-   */
-  export type File$reportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    where?: ReportWhereInput
-  }
-
-  /**
    * File without action
    */
   export type FileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -27413,10 +26589,6 @@ export namespace Prisma {
      * Omit specific fields from the File
      */
     omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
   }
 
 
@@ -38102,2469 +37274,6 @@ export namespace Prisma {
 
 
   /**
-   * Model ReportCategory
-   */
-
-  export type AggregateReportCategory = {
-    _count: ReportCategoryCountAggregateOutputType | null
-    _avg: ReportCategoryAvgAggregateOutputType | null
-    _sum: ReportCategorySumAggregateOutputType | null
-    _min: ReportCategoryMinAggregateOutputType | null
-    _max: ReportCategoryMaxAggregateOutputType | null
-  }
-
-  export type ReportCategoryAvgAggregateOutputType = {
-    order: number | null
-  }
-
-  export type ReportCategorySumAggregateOutputType = {
-    order: number | null
-  }
-
-  export type ReportCategoryMinAggregateOutputType = {
-    id: string | null
-    order: number | null
-    name: string | null
-    interval: string | null
-    parentId: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ReportCategoryMaxAggregateOutputType = {
-    id: string | null
-    order: number | null
-    name: string | null
-    interval: string | null
-    parentId: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ReportCategoryCountAggregateOutputType = {
-    id: number
-    order: number
-    name: number
-    interval: number
-    parentId: number
-    createdAt: number
-    updatedAt: number
-    _all: number
-  }
-
-
-  export type ReportCategoryAvgAggregateInputType = {
-    order?: true
-  }
-
-  export type ReportCategorySumAggregateInputType = {
-    order?: true
-  }
-
-  export type ReportCategoryMinAggregateInputType = {
-    id?: true
-    order?: true
-    name?: true
-    interval?: true
-    parentId?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ReportCategoryMaxAggregateInputType = {
-    id?: true
-    order?: true
-    name?: true
-    interval?: true
-    parentId?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ReportCategoryCountAggregateInputType = {
-    id?: true
-    order?: true
-    name?: true
-    interval?: true
-    parentId?: true
-    createdAt?: true
-    updatedAt?: true
-    _all?: true
-  }
-
-  export type ReportCategoryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ReportCategory to aggregate.
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ReportCategories to fetch.
-     */
-    orderBy?: ReportCategoryOrderByWithRelationInput | ReportCategoryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ReportCategoryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ReportCategories from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ReportCategories.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned ReportCategories
-    **/
-    _count?: true | ReportCategoryCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ReportCategoryAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ReportCategorySumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ReportCategoryMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ReportCategoryMaxAggregateInputType
-  }
-
-  export type GetReportCategoryAggregateType<T extends ReportCategoryAggregateArgs> = {
-        [P in keyof T & keyof AggregateReportCategory]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateReportCategory[P]>
-      : GetScalarType<T[P], AggregateReportCategory[P]>
-  }
-
-
-
-
-  export type ReportCategoryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportCategoryWhereInput
-    orderBy?: ReportCategoryOrderByWithAggregationInput | ReportCategoryOrderByWithAggregationInput[]
-    by: ReportCategoryScalarFieldEnum[] | ReportCategoryScalarFieldEnum
-    having?: ReportCategoryScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ReportCategoryCountAggregateInputType | true
-    _avg?: ReportCategoryAvgAggregateInputType
-    _sum?: ReportCategorySumAggregateInputType
-    _min?: ReportCategoryMinAggregateInputType
-    _max?: ReportCategoryMaxAggregateInputType
-  }
-
-  export type ReportCategoryGroupByOutputType = {
-    id: string
-    order: number
-    name: string
-    interval: string | null
-    parentId: string | null
-    createdAt: Date
-    updatedAt: Date
-    _count: ReportCategoryCountAggregateOutputType | null
-    _avg: ReportCategoryAvgAggregateOutputType | null
-    _sum: ReportCategorySumAggregateOutputType | null
-    _min: ReportCategoryMinAggregateOutputType | null
-    _max: ReportCategoryMaxAggregateOutputType | null
-  }
-
-  type GetReportCategoryGroupByPayload<T extends ReportCategoryGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ReportCategoryGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ReportCategoryGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ReportCategoryGroupByOutputType[P]>
-            : GetScalarType<T[P], ReportCategoryGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ReportCategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    order?: boolean
-    name?: boolean
-    interval?: boolean
-    parentId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-    children?: boolean | ReportCategory$childrenArgs<ExtArgs>
-    reports?: boolean | ReportCategory$reportsArgs<ExtArgs>
-    _count?: boolean | ReportCategoryCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["reportCategory"]>
-
-  export type ReportCategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    order?: boolean
-    name?: boolean
-    interval?: boolean
-    parentId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-  }, ExtArgs["result"]["reportCategory"]>
-
-  export type ReportCategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    order?: boolean
-    name?: boolean
-    interval?: boolean
-    parentId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-  }, ExtArgs["result"]["reportCategory"]>
-
-  export type ReportCategorySelectScalar = {
-    id?: boolean
-    order?: boolean
-    name?: boolean
-    interval?: boolean
-    parentId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }
-
-  export type ReportCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "order" | "name" | "interval" | "parentId" | "createdAt" | "updatedAt", ExtArgs["result"]["reportCategory"]>
-  export type ReportCategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-    children?: boolean | ReportCategory$childrenArgs<ExtArgs>
-    reports?: boolean | ReportCategory$reportsArgs<ExtArgs>
-    _count?: boolean | ReportCategoryCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type ReportCategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-  }
-  export type ReportCategoryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    parent?: boolean | ReportCategory$parentArgs<ExtArgs>
-  }
-
-  export type $ReportCategoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ReportCategory"
-    objects: {
-      parent: Prisma.$ReportCategoryPayload<ExtArgs> | null
-      children: Prisma.$ReportCategoryPayload<ExtArgs>[]
-      reports: Prisma.$ReportPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      order: number
-      name: string
-      interval: string | null
-      parentId: string | null
-      createdAt: Date
-      updatedAt: Date
-    }, ExtArgs["result"]["reportCategory"]>
-    composites: {}
-  }
-
-  type ReportCategoryGetPayload<S extends boolean | null | undefined | ReportCategoryDefaultArgs> = $Result.GetResult<Prisma.$ReportCategoryPayload, S>
-
-  type ReportCategoryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ReportCategoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ReportCategoryCountAggregateInputType | true
-    }
-
-  export interface ReportCategoryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ReportCategory'], meta: { name: 'ReportCategory' } }
-    /**
-     * Find zero or one ReportCategory that matches the filter.
-     * @param {ReportCategoryFindUniqueArgs} args - Arguments to find a ReportCategory
-     * @example
-     * // Get one ReportCategory
-     * const reportCategory = await prisma.reportCategory.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends ReportCategoryFindUniqueArgs>(args: SelectSubset<T, ReportCategoryFindUniqueArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one ReportCategory that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {ReportCategoryFindUniqueOrThrowArgs} args - Arguments to find a ReportCategory
-     * @example
-     * // Get one ReportCategory
-     * const reportCategory = await prisma.reportCategory.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends ReportCategoryFindUniqueOrThrowArgs>(args: SelectSubset<T, ReportCategoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first ReportCategory that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryFindFirstArgs} args - Arguments to find a ReportCategory
-     * @example
-     * // Get one ReportCategory
-     * const reportCategory = await prisma.reportCategory.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends ReportCategoryFindFirstArgs>(args?: SelectSubset<T, ReportCategoryFindFirstArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first ReportCategory that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryFindFirstOrThrowArgs} args - Arguments to find a ReportCategory
-     * @example
-     * // Get one ReportCategory
-     * const reportCategory = await prisma.reportCategory.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends ReportCategoryFindFirstOrThrowArgs>(args?: SelectSubset<T, ReportCategoryFindFirstOrThrowArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more ReportCategories that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all ReportCategories
-     * const reportCategories = await prisma.reportCategory.findMany()
-     * 
-     * // Get first 10 ReportCategories
-     * const reportCategories = await prisma.reportCategory.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const reportCategoryWithIdOnly = await prisma.reportCategory.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends ReportCategoryFindManyArgs>(args?: SelectSubset<T, ReportCategoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a ReportCategory.
-     * @param {ReportCategoryCreateArgs} args - Arguments to create a ReportCategory.
-     * @example
-     * // Create one ReportCategory
-     * const ReportCategory = await prisma.reportCategory.create({
-     *   data: {
-     *     // ... data to create a ReportCategory
-     *   }
-     * })
-     * 
-     */
-    create<T extends ReportCategoryCreateArgs>(args: SelectSubset<T, ReportCategoryCreateArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many ReportCategories.
-     * @param {ReportCategoryCreateManyArgs} args - Arguments to create many ReportCategories.
-     * @example
-     * // Create many ReportCategories
-     * const reportCategory = await prisma.reportCategory.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends ReportCategoryCreateManyArgs>(args?: SelectSubset<T, ReportCategoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many ReportCategories and returns the data saved in the database.
-     * @param {ReportCategoryCreateManyAndReturnArgs} args - Arguments to create many ReportCategories.
-     * @example
-     * // Create many ReportCategories
-     * const reportCategory = await prisma.reportCategory.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many ReportCategories and only return the `id`
-     * const reportCategoryWithIdOnly = await prisma.reportCategory.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends ReportCategoryCreateManyAndReturnArgs>(args?: SelectSubset<T, ReportCategoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a ReportCategory.
-     * @param {ReportCategoryDeleteArgs} args - Arguments to delete one ReportCategory.
-     * @example
-     * // Delete one ReportCategory
-     * const ReportCategory = await prisma.reportCategory.delete({
-     *   where: {
-     *     // ... filter to delete one ReportCategory
-     *   }
-     * })
-     * 
-     */
-    delete<T extends ReportCategoryDeleteArgs>(args: SelectSubset<T, ReportCategoryDeleteArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one ReportCategory.
-     * @param {ReportCategoryUpdateArgs} args - Arguments to update one ReportCategory.
-     * @example
-     * // Update one ReportCategory
-     * const reportCategory = await prisma.reportCategory.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends ReportCategoryUpdateArgs>(args: SelectSubset<T, ReportCategoryUpdateArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more ReportCategories.
-     * @param {ReportCategoryDeleteManyArgs} args - Arguments to filter ReportCategories to delete.
-     * @example
-     * // Delete a few ReportCategories
-     * const { count } = await prisma.reportCategory.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends ReportCategoryDeleteManyArgs>(args?: SelectSubset<T, ReportCategoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ReportCategories.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many ReportCategories
-     * const reportCategory = await prisma.reportCategory.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends ReportCategoryUpdateManyArgs>(args: SelectSubset<T, ReportCategoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ReportCategories and returns the data updated in the database.
-     * @param {ReportCategoryUpdateManyAndReturnArgs} args - Arguments to update many ReportCategories.
-     * @example
-     * // Update many ReportCategories
-     * const reportCategory = await prisma.reportCategory.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more ReportCategories and only return the `id`
-     * const reportCategoryWithIdOnly = await prisma.reportCategory.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends ReportCategoryUpdateManyAndReturnArgs>(args: SelectSubset<T, ReportCategoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one ReportCategory.
-     * @param {ReportCategoryUpsertArgs} args - Arguments to update or create a ReportCategory.
-     * @example
-     * // Update or create a ReportCategory
-     * const reportCategory = await prisma.reportCategory.upsert({
-     *   create: {
-     *     // ... data to create a ReportCategory
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the ReportCategory we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ReportCategoryUpsertArgs>(args: SelectSubset<T, ReportCategoryUpsertArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of ReportCategories.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryCountArgs} args - Arguments to filter ReportCategories to count.
-     * @example
-     * // Count the number of ReportCategories
-     * const count = await prisma.reportCategory.count({
-     *   where: {
-     *     // ... the filter for the ReportCategories we want to count
-     *   }
-     * })
-    **/
-    count<T extends ReportCategoryCountArgs>(
-      args?: Subset<T, ReportCategoryCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ReportCategoryCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a ReportCategory.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ReportCategoryAggregateArgs>(args: Subset<T, ReportCategoryAggregateArgs>): Prisma.PrismaPromise<GetReportCategoryAggregateType<T>>
-
-    /**
-     * Group by ReportCategory.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCategoryGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ReportCategoryGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ReportCategoryGroupByArgs['orderBy'] }
-        : { orderBy?: ReportCategoryGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ReportCategoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReportCategoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the ReportCategory model
-   */
-  readonly fields: ReportCategoryFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for ReportCategory.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ReportCategoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    parent<T extends ReportCategory$parentArgs<ExtArgs> = {}>(args?: Subset<T, ReportCategory$parentArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    children<T extends ReportCategory$childrenArgs<ExtArgs> = {}>(args?: Subset<T, ReportCategory$childrenArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    reports<T extends ReportCategory$reportsArgs<ExtArgs> = {}>(args?: Subset<T, ReportCategory$reportsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the ReportCategory model
-   */
-  interface ReportCategoryFieldRefs {
-    readonly id: FieldRef<"ReportCategory", 'String'>
-    readonly order: FieldRef<"ReportCategory", 'Int'>
-    readonly name: FieldRef<"ReportCategory", 'String'>
-    readonly interval: FieldRef<"ReportCategory", 'String'>
-    readonly parentId: FieldRef<"ReportCategory", 'String'>
-    readonly createdAt: FieldRef<"ReportCategory", 'DateTime'>
-    readonly updatedAt: FieldRef<"ReportCategory", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * ReportCategory findUnique
-   */
-  export type ReportCategoryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter, which ReportCategory to fetch.
-     */
-    where: ReportCategoryWhereUniqueInput
-  }
-
-  /**
-   * ReportCategory findUniqueOrThrow
-   */
-  export type ReportCategoryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter, which ReportCategory to fetch.
-     */
-    where: ReportCategoryWhereUniqueInput
-  }
-
-  /**
-   * ReportCategory findFirst
-   */
-  export type ReportCategoryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter, which ReportCategory to fetch.
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ReportCategories to fetch.
-     */
-    orderBy?: ReportCategoryOrderByWithRelationInput | ReportCategoryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ReportCategories.
-     */
-    cursor?: ReportCategoryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ReportCategories from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ReportCategories.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ReportCategories.
-     */
-    distinct?: ReportCategoryScalarFieldEnum | ReportCategoryScalarFieldEnum[]
-  }
-
-  /**
-   * ReportCategory findFirstOrThrow
-   */
-  export type ReportCategoryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter, which ReportCategory to fetch.
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ReportCategories to fetch.
-     */
-    orderBy?: ReportCategoryOrderByWithRelationInput | ReportCategoryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ReportCategories.
-     */
-    cursor?: ReportCategoryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ReportCategories from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ReportCategories.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ReportCategories.
-     */
-    distinct?: ReportCategoryScalarFieldEnum | ReportCategoryScalarFieldEnum[]
-  }
-
-  /**
-   * ReportCategory findMany
-   */
-  export type ReportCategoryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter, which ReportCategories to fetch.
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ReportCategories to fetch.
-     */
-    orderBy?: ReportCategoryOrderByWithRelationInput | ReportCategoryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing ReportCategories.
-     */
-    cursor?: ReportCategoryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ReportCategories from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ReportCategories.
-     */
-    skip?: number
-    distinct?: ReportCategoryScalarFieldEnum | ReportCategoryScalarFieldEnum[]
-  }
-
-  /**
-   * ReportCategory create
-   */
-  export type ReportCategoryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * The data needed to create a ReportCategory.
-     */
-    data: XOR<ReportCategoryCreateInput, ReportCategoryUncheckedCreateInput>
-  }
-
-  /**
-   * ReportCategory createMany
-   */
-  export type ReportCategoryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many ReportCategories.
-     */
-    data: ReportCategoryCreateManyInput | ReportCategoryCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * ReportCategory createManyAndReturn
-   */
-  export type ReportCategoryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * The data used to create many ReportCategories.
-     */
-    data: ReportCategoryCreateManyInput | ReportCategoryCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * ReportCategory update
-   */
-  export type ReportCategoryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * The data needed to update a ReportCategory.
-     */
-    data: XOR<ReportCategoryUpdateInput, ReportCategoryUncheckedUpdateInput>
-    /**
-     * Choose, which ReportCategory to update.
-     */
-    where: ReportCategoryWhereUniqueInput
-  }
-
-  /**
-   * ReportCategory updateMany
-   */
-  export type ReportCategoryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update ReportCategories.
-     */
-    data: XOR<ReportCategoryUpdateManyMutationInput, ReportCategoryUncheckedUpdateManyInput>
-    /**
-     * Filter which ReportCategories to update
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * Limit how many ReportCategories to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * ReportCategory updateManyAndReturn
-   */
-  export type ReportCategoryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * The data used to update ReportCategories.
-     */
-    data: XOR<ReportCategoryUpdateManyMutationInput, ReportCategoryUncheckedUpdateManyInput>
-    /**
-     * Filter which ReportCategories to update
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * Limit how many ReportCategories to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * ReportCategory upsert
-   */
-  export type ReportCategoryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * The filter to search for the ReportCategory to update in case it exists.
-     */
-    where: ReportCategoryWhereUniqueInput
-    /**
-     * In case the ReportCategory found by the `where` argument doesn't exist, create a new ReportCategory with this data.
-     */
-    create: XOR<ReportCategoryCreateInput, ReportCategoryUncheckedCreateInput>
-    /**
-     * In case the ReportCategory was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ReportCategoryUpdateInput, ReportCategoryUncheckedUpdateInput>
-  }
-
-  /**
-   * ReportCategory delete
-   */
-  export type ReportCategoryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    /**
-     * Filter which ReportCategory to delete.
-     */
-    where: ReportCategoryWhereUniqueInput
-  }
-
-  /**
-   * ReportCategory deleteMany
-   */
-  export type ReportCategoryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ReportCategories to delete
-     */
-    where?: ReportCategoryWhereInput
-    /**
-     * Limit how many ReportCategories to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * ReportCategory.parent
-   */
-  export type ReportCategory$parentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    where?: ReportCategoryWhereInput
-  }
-
-  /**
-   * ReportCategory.children
-   */
-  export type ReportCategory$childrenArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-    where?: ReportCategoryWhereInput
-    orderBy?: ReportCategoryOrderByWithRelationInput | ReportCategoryOrderByWithRelationInput[]
-    cursor?: ReportCategoryWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ReportCategoryScalarFieldEnum | ReportCategoryScalarFieldEnum[]
-  }
-
-  /**
-   * ReportCategory.reports
-   */
-  export type ReportCategory$reportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    where?: ReportWhereInput
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    cursor?: ReportWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * ReportCategory without action
-   */
-  export type ReportCategoryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ReportCategory
-     */
-    select?: ReportCategorySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ReportCategory
-     */
-    omit?: ReportCategoryOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportCategoryInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Report
-   */
-
-  export type AggregateReport = {
-    _count: ReportCountAggregateOutputType | null
-    _avg: ReportAvgAggregateOutputType | null
-    _sum: ReportSumAggregateOutputType | null
-    _min: ReportMinAggregateOutputType | null
-    _max: ReportMaxAggregateOutputType | null
-  }
-
-  export type ReportAvgAggregateOutputType = {
-    version: number | null
-  }
-
-  export type ReportSumAggregateOutputType = {
-    version: number | null
-  }
-
-  export type ReportMinAggregateOutputType = {
-    id: string | null
-    categoryId: string | null
-    periodYear: string | null
-    periodMonth: string | null
-    version: number | null
-    organizationId: string | null
-    createdById: string | null
-    updatedById: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ReportMaxAggregateOutputType = {
-    id: string | null
-    categoryId: string | null
-    periodYear: string | null
-    periodMonth: string | null
-    version: number | null
-    organizationId: string | null
-    createdById: string | null
-    updatedById: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ReportCountAggregateOutputType = {
-    id: number
-    categoryId: number
-    periodYear: number
-    periodMonth: number
-    version: number
-    organizationId: number
-    createdById: number
-    updatedById: number
-    createdAt: number
-    updatedAt: number
-    _all: number
-  }
-
-
-  export type ReportAvgAggregateInputType = {
-    version?: true
-  }
-
-  export type ReportSumAggregateInputType = {
-    version?: true
-  }
-
-  export type ReportMinAggregateInputType = {
-    id?: true
-    categoryId?: true
-    periodYear?: true
-    periodMonth?: true
-    version?: true
-    organizationId?: true
-    createdById?: true
-    updatedById?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ReportMaxAggregateInputType = {
-    id?: true
-    categoryId?: true
-    periodYear?: true
-    periodMonth?: true
-    version?: true
-    organizationId?: true
-    createdById?: true
-    updatedById?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ReportCountAggregateInputType = {
-    id?: true
-    categoryId?: true
-    periodYear?: true
-    periodMonth?: true
-    version?: true
-    organizationId?: true
-    createdById?: true
-    updatedById?: true
-    createdAt?: true
-    updatedAt?: true
-    _all?: true
-  }
-
-  export type ReportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Report to aggregate.
-     */
-    where?: ReportWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Reports to fetch.
-     */
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ReportWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Reports from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Reports.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Reports
-    **/
-    _count?: true | ReportCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ReportAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ReportSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ReportMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ReportMaxAggregateInputType
-  }
-
-  export type GetReportAggregateType<T extends ReportAggregateArgs> = {
-        [P in keyof T & keyof AggregateReport]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateReport[P]>
-      : GetScalarType<T[P], AggregateReport[P]>
-  }
-
-
-
-
-  export type ReportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReportWhereInput
-    orderBy?: ReportOrderByWithAggregationInput | ReportOrderByWithAggregationInput[]
-    by: ReportScalarFieldEnum[] | ReportScalarFieldEnum
-    having?: ReportScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ReportCountAggregateInputType | true
-    _avg?: ReportAvgAggregateInputType
-    _sum?: ReportSumAggregateInputType
-    _min?: ReportMinAggregateInputType
-    _max?: ReportMaxAggregateInputType
-  }
-
-  export type ReportGroupByOutputType = {
-    id: string
-    categoryId: string
-    periodYear: string
-    periodMonth: string | null
-    version: number
-    organizationId: string | null
-    createdById: string | null
-    updatedById: string | null
-    createdAt: Date
-    updatedAt: Date
-    _count: ReportCountAggregateOutputType | null
-    _avg: ReportAvgAggregateOutputType | null
-    _sum: ReportSumAggregateOutputType | null
-    _min: ReportMinAggregateOutputType | null
-    _max: ReportMaxAggregateOutputType | null
-  }
-
-  type GetReportGroupByPayload<T extends ReportGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ReportGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ReportGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ReportGroupByOutputType[P]>
-            : GetScalarType<T[P], ReportGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ReportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    categoryId?: boolean
-    periodYear?: boolean
-    periodMonth?: boolean
-    version?: boolean
-    organizationId?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-    files?: boolean | Report$filesArgs<ExtArgs>
-    _count?: boolean | ReportCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["report"]>
-
-  export type ReportSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    categoryId?: boolean
-    periodYear?: boolean
-    periodMonth?: boolean
-    version?: boolean
-    organizationId?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-  }, ExtArgs["result"]["report"]>
-
-  export type ReportSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    categoryId?: boolean
-    periodYear?: boolean
-    periodMonth?: boolean
-    version?: boolean
-    organizationId?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-  }, ExtArgs["result"]["report"]>
-
-  export type ReportSelectScalar = {
-    id?: boolean
-    categoryId?: boolean
-    periodYear?: boolean
-    periodMonth?: boolean
-    version?: boolean
-    organizationId?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }
-
-  export type ReportOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "categoryId" | "periodYear" | "periodMonth" | "version" | "organizationId" | "createdById" | "updatedById" | "createdAt" | "updatedAt", ExtArgs["result"]["report"]>
-  export type ReportInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-    files?: boolean | Report$filesArgs<ExtArgs>
-    _count?: boolean | ReportCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type ReportIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-  }
-  export type ReportIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    category?: boolean | ReportCategoryDefaultArgs<ExtArgs>
-    organization?: boolean | Report$organizationArgs<ExtArgs>
-    createdBy?: boolean | Report$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Report$updatedByArgs<ExtArgs>
-  }
-
-  export type $ReportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Report"
-    objects: {
-      category: Prisma.$ReportCategoryPayload<ExtArgs>
-      organization: Prisma.$OrganizationPayload<ExtArgs> | null
-      createdBy: Prisma.$UserPayload<ExtArgs> | null
-      updatedBy: Prisma.$UserPayload<ExtArgs> | null
-      files: Prisma.$FilePayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      categoryId: string
-      periodYear: string
-      periodMonth: string | null
-      version: number
-      organizationId: string | null
-      createdById: string | null
-      updatedById: string | null
-      createdAt: Date
-      updatedAt: Date
-    }, ExtArgs["result"]["report"]>
-    composites: {}
-  }
-
-  type ReportGetPayload<S extends boolean | null | undefined | ReportDefaultArgs> = $Result.GetResult<Prisma.$ReportPayload, S>
-
-  type ReportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ReportFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ReportCountAggregateInputType | true
-    }
-
-  export interface ReportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Report'], meta: { name: 'Report' } }
-    /**
-     * Find zero or one Report that matches the filter.
-     * @param {ReportFindUniqueArgs} args - Arguments to find a Report
-     * @example
-     * // Get one Report
-     * const report = await prisma.report.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends ReportFindUniqueArgs>(args: SelectSubset<T, ReportFindUniqueArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Report that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {ReportFindUniqueOrThrowArgs} args - Arguments to find a Report
-     * @example
-     * // Get one Report
-     * const report = await prisma.report.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends ReportFindUniqueOrThrowArgs>(args: SelectSubset<T, ReportFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Report that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportFindFirstArgs} args - Arguments to find a Report
-     * @example
-     * // Get one Report
-     * const report = await prisma.report.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends ReportFindFirstArgs>(args?: SelectSubset<T, ReportFindFirstArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Report that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportFindFirstOrThrowArgs} args - Arguments to find a Report
-     * @example
-     * // Get one Report
-     * const report = await prisma.report.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends ReportFindFirstOrThrowArgs>(args?: SelectSubset<T, ReportFindFirstOrThrowArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Reports that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Reports
-     * const reports = await prisma.report.findMany()
-     * 
-     * // Get first 10 Reports
-     * const reports = await prisma.report.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const reportWithIdOnly = await prisma.report.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends ReportFindManyArgs>(args?: SelectSubset<T, ReportFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Report.
-     * @param {ReportCreateArgs} args - Arguments to create a Report.
-     * @example
-     * // Create one Report
-     * const Report = await prisma.report.create({
-     *   data: {
-     *     // ... data to create a Report
-     *   }
-     * })
-     * 
-     */
-    create<T extends ReportCreateArgs>(args: SelectSubset<T, ReportCreateArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Reports.
-     * @param {ReportCreateManyArgs} args - Arguments to create many Reports.
-     * @example
-     * // Create many Reports
-     * const report = await prisma.report.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends ReportCreateManyArgs>(args?: SelectSubset<T, ReportCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Reports and returns the data saved in the database.
-     * @param {ReportCreateManyAndReturnArgs} args - Arguments to create many Reports.
-     * @example
-     * // Create many Reports
-     * const report = await prisma.report.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Reports and only return the `id`
-     * const reportWithIdOnly = await prisma.report.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends ReportCreateManyAndReturnArgs>(args?: SelectSubset<T, ReportCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Report.
-     * @param {ReportDeleteArgs} args - Arguments to delete one Report.
-     * @example
-     * // Delete one Report
-     * const Report = await prisma.report.delete({
-     *   where: {
-     *     // ... filter to delete one Report
-     *   }
-     * })
-     * 
-     */
-    delete<T extends ReportDeleteArgs>(args: SelectSubset<T, ReportDeleteArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Report.
-     * @param {ReportUpdateArgs} args - Arguments to update one Report.
-     * @example
-     * // Update one Report
-     * const report = await prisma.report.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends ReportUpdateArgs>(args: SelectSubset<T, ReportUpdateArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Reports.
-     * @param {ReportDeleteManyArgs} args - Arguments to filter Reports to delete.
-     * @example
-     * // Delete a few Reports
-     * const { count } = await prisma.report.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends ReportDeleteManyArgs>(args?: SelectSubset<T, ReportDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Reports.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Reports
-     * const report = await prisma.report.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends ReportUpdateManyArgs>(args: SelectSubset<T, ReportUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Reports and returns the data updated in the database.
-     * @param {ReportUpdateManyAndReturnArgs} args - Arguments to update many Reports.
-     * @example
-     * // Update many Reports
-     * const report = await prisma.report.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Reports and only return the `id`
-     * const reportWithIdOnly = await prisma.report.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends ReportUpdateManyAndReturnArgs>(args: SelectSubset<T, ReportUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Report.
-     * @param {ReportUpsertArgs} args - Arguments to update or create a Report.
-     * @example
-     * // Update or create a Report
-     * const report = await prisma.report.upsert({
-     *   create: {
-     *     // ... data to create a Report
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Report we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ReportUpsertArgs>(args: SelectSubset<T, ReportUpsertArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Reports.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportCountArgs} args - Arguments to filter Reports to count.
-     * @example
-     * // Count the number of Reports
-     * const count = await prisma.report.count({
-     *   where: {
-     *     // ... the filter for the Reports we want to count
-     *   }
-     * })
-    **/
-    count<T extends ReportCountArgs>(
-      args?: Subset<T, ReportCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ReportCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Report.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ReportAggregateArgs>(args: Subset<T, ReportAggregateArgs>): Prisma.PrismaPromise<GetReportAggregateType<T>>
-
-    /**
-     * Group by Report.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ReportGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ReportGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ReportGroupByArgs['orderBy'] }
-        : { orderBy?: ReportGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ReportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Report model
-   */
-  readonly fields: ReportFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Report.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ReportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    category<T extends ReportCategoryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ReportCategoryDefaultArgs<ExtArgs>>): Prisma__ReportCategoryClient<$Result.GetResult<Prisma.$ReportCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    organization<T extends Report$organizationArgs<ExtArgs> = {}>(args?: Subset<T, Report$organizationArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    createdBy<T extends Report$createdByArgs<ExtArgs> = {}>(args?: Subset<T, Report$createdByArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    updatedBy<T extends Report$updatedByArgs<ExtArgs> = {}>(args?: Subset<T, Report$updatedByArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    files<T extends Report$filesArgs<ExtArgs> = {}>(args?: Subset<T, Report$filesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Report model
-   */
-  interface ReportFieldRefs {
-    readonly id: FieldRef<"Report", 'String'>
-    readonly categoryId: FieldRef<"Report", 'String'>
-    readonly periodYear: FieldRef<"Report", 'String'>
-    readonly periodMonth: FieldRef<"Report", 'String'>
-    readonly version: FieldRef<"Report", 'Int'>
-    readonly organizationId: FieldRef<"Report", 'String'>
-    readonly createdById: FieldRef<"Report", 'String'>
-    readonly updatedById: FieldRef<"Report", 'String'>
-    readonly createdAt: FieldRef<"Report", 'DateTime'>
-    readonly updatedAt: FieldRef<"Report", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Report findUnique
-   */
-  export type ReportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter, which Report to fetch.
-     */
-    where: ReportWhereUniqueInput
-  }
-
-  /**
-   * Report findUniqueOrThrow
-   */
-  export type ReportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter, which Report to fetch.
-     */
-    where: ReportWhereUniqueInput
-  }
-
-  /**
-   * Report findFirst
-   */
-  export type ReportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter, which Report to fetch.
-     */
-    where?: ReportWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Reports to fetch.
-     */
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Reports.
-     */
-    cursor?: ReportWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Reports from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Reports.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Reports.
-     */
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * Report findFirstOrThrow
-   */
-  export type ReportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter, which Report to fetch.
-     */
-    where?: ReportWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Reports to fetch.
-     */
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Reports.
-     */
-    cursor?: ReportWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Reports from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Reports.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Reports.
-     */
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * Report findMany
-   */
-  export type ReportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter, which Reports to fetch.
-     */
-    where?: ReportWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Reports to fetch.
-     */
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Reports.
-     */
-    cursor?: ReportWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Reports from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Reports.
-     */
-    skip?: number
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * Report create
-   */
-  export type ReportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Report.
-     */
-    data: XOR<ReportCreateInput, ReportUncheckedCreateInput>
-  }
-
-  /**
-   * Report createMany
-   */
-  export type ReportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Reports.
-     */
-    data: ReportCreateManyInput | ReportCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Report createManyAndReturn
-   */
-  export type ReportCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * The data used to create many Reports.
-     */
-    data: ReportCreateManyInput | ReportCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Report update
-   */
-  export type ReportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Report.
-     */
-    data: XOR<ReportUpdateInput, ReportUncheckedUpdateInput>
-    /**
-     * Choose, which Report to update.
-     */
-    where: ReportWhereUniqueInput
-  }
-
-  /**
-   * Report updateMany
-   */
-  export type ReportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Reports.
-     */
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyInput>
-    /**
-     * Filter which Reports to update
-     */
-    where?: ReportWhereInput
-    /**
-     * Limit how many Reports to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Report updateManyAndReturn
-   */
-  export type ReportUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * The data used to update Reports.
-     */
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyInput>
-    /**
-     * Filter which Reports to update
-     */
-    where?: ReportWhereInput
-    /**
-     * Limit how many Reports to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Report upsert
-   */
-  export type ReportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Report to update in case it exists.
-     */
-    where: ReportWhereUniqueInput
-    /**
-     * In case the Report found by the `where` argument doesn't exist, create a new Report with this data.
-     */
-    create: XOR<ReportCreateInput, ReportUncheckedCreateInput>
-    /**
-     * In case the Report was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ReportUpdateInput, ReportUncheckedUpdateInput>
-  }
-
-  /**
-   * Report delete
-   */
-  export type ReportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    /**
-     * Filter which Report to delete.
-     */
-    where: ReportWhereUniqueInput
-  }
-
-  /**
-   * Report deleteMany
-   */
-  export type ReportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Reports to delete
-     */
-    where?: ReportWhereInput
-    /**
-     * Limit how many Reports to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Report.organization
-   */
-  export type Report$organizationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    where?: OrganizationWhereInput
-  }
-
-  /**
-   * Report.createdBy
-   */
-  export type Report$createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-  }
-
-  /**
-   * Report.updatedBy
-   */
-  export type Report$updatedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-  }
-
-  /**
-   * Report.files
-   */
-  export type Report$filesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the File
-     */
-    select?: FileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the File
-     */
-    omit?: FileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FileInclude<ExtArgs> | null
-    where?: FileWhereInput
-    orderBy?: FileOrderByWithRelationInput | FileOrderByWithRelationInput[]
-    cursor?: FileWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FileScalarFieldEnum | FileScalarFieldEnum[]
-  }
-
-  /**
-   * Report without action
-   */
-  export type ReportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-  }
-
-
-  /**
    * Model User
    */
 
@@ -40578,33 +37287,33 @@ export namespace Prisma {
     id: string | null
     username: string | null
     password: string | null
+    displayName: string | null
     createdAt: Date | null
     updatedAt: Date | null
     status: string | null
     roleId: string | null
-    organizationId: string | null
   }
 
   export type UserMaxAggregateOutputType = {
     id: string | null
     username: string | null
     password: string | null
+    displayName: string | null
     createdAt: Date | null
     updatedAt: Date | null
     status: string | null
     roleId: string | null
-    organizationId: string | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
     username: number
     password: number
+    displayName: number
     createdAt: number
     updatedAt: number
     status: number
     roleId: number
-    organizationId: number
     _all: number
   }
 
@@ -40613,33 +37322,33 @@ export namespace Prisma {
     id?: true
     username?: true
     password?: true
+    displayName?: true
     createdAt?: true
     updatedAt?: true
     status?: true
     roleId?: true
-    organizationId?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
     username?: true
     password?: true
+    displayName?: true
     createdAt?: true
     updatedAt?: true
     status?: true
     roleId?: true
-    organizationId?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
     username?: true
     password?: true
+    displayName?: true
     createdAt?: true
     updatedAt?: true
     status?: true
     roleId?: true
-    organizationId?: true
     _all?: true
   }
 
@@ -40719,11 +37428,11 @@ export namespace Prisma {
     id: string
     username: string
     password: string
+    displayName: string | null
     createdAt: Date | null
     updatedAt: Date | null
     status: string
     roleId: string | null
-    organizationId: string | null
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -40747,17 +37456,12 @@ export namespace Prisma {
     id?: boolean
     username?: boolean
     password?: boolean
+    displayName?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     status?: boolean
     roleId?: boolean
-    organizationId?: boolean
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
-    profile?: boolean | User$profileArgs<ExtArgs>
-    permissions?: boolean | User$permissionsArgs<ExtArgs>
-    CreatorProfile?: boolean | User$CreatorProfileArgs<ExtArgs>
-    UpdaterProfile?: boolean | User$UpdaterProfileArgs<ExtArgs>
     BudgetAssignee?: boolean | User$BudgetAssigneeArgs<ExtArgs>
     CreatorBudget?: boolean | User$CreatorBudgetArgs<ExtArgs>
     UpdaterBudget?: boolean | User$UpdaterBudgetArgs<ExtArgs>
@@ -40793,8 +37497,6 @@ export namespace Prisma {
     UpdaterEvent?: boolean | User$UpdaterEventArgs<ExtArgs>
     CreatorStage?: boolean | User$CreatorStageArgs<ExtArgs>
     UpdaterStage?: boolean | User$UpdaterStageArgs<ExtArgs>
-    CreatorReport?: boolean | User$CreatorReportArgs<ExtArgs>
-    UpdaterReport?: boolean | User$UpdaterReportArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -40802,47 +37504,40 @@ export namespace Prisma {
     id?: boolean
     username?: boolean
     password?: boolean
+    displayName?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     status?: boolean
     roleId?: boolean
-    organizationId?: boolean
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     username?: boolean
     password?: boolean
+    displayName?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     status?: boolean
     roleId?: boolean
-    organizationId?: boolean
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
     username?: boolean
     password?: boolean
+    displayName?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     status?: boolean
     roleId?: boolean
-    organizationId?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "password" | "createdAt" | "updatedAt" | "status" | "roleId" | "organizationId", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "password" | "displayName" | "createdAt" | "updatedAt" | "status" | "roleId", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
-    profile?: boolean | User$profileArgs<ExtArgs>
-    permissions?: boolean | User$permissionsArgs<ExtArgs>
-    CreatorProfile?: boolean | User$CreatorProfileArgs<ExtArgs>
-    UpdaterProfile?: boolean | User$UpdaterProfileArgs<ExtArgs>
     BudgetAssignee?: boolean | User$BudgetAssigneeArgs<ExtArgs>
     CreatorBudget?: boolean | User$CreatorBudgetArgs<ExtArgs>
     UpdaterBudget?: boolean | User$UpdaterBudgetArgs<ExtArgs>
@@ -40878,28 +37573,19 @@ export namespace Prisma {
     UpdaterEvent?: boolean | User$UpdaterEventArgs<ExtArgs>
     CreatorStage?: boolean | User$CreatorStageArgs<ExtArgs>
     UpdaterStage?: boolean | User$UpdaterStageArgs<ExtArgs>
-    CreatorReport?: boolean | User$CreatorReportArgs<ExtArgs>
-    UpdaterReport?: boolean | User$UpdaterReportArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
   }
   export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     role?: boolean | User$roleArgs<ExtArgs>
-    organization?: boolean | User$organizationArgs<ExtArgs>
   }
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
       role: Prisma.$RolePayload<ExtArgs> | null
-      organization: Prisma.$OrganizationPayload<ExtArgs> | null
-      profile: Prisma.$ProfilePayload<ExtArgs> | null
-      permissions: Prisma.$UserPermissionPayload<ExtArgs>[]
-      CreatorProfile: Prisma.$ProfilePayload<ExtArgs>[]
-      UpdaterProfile: Prisma.$ProfilePayload<ExtArgs>[]
       BudgetAssignee: Prisma.$BudgetPayload<ExtArgs>[]
       CreatorBudget: Prisma.$BudgetPayload<ExtArgs>[]
       UpdaterBudget: Prisma.$BudgetPayload<ExtArgs>[]
@@ -40935,18 +37621,16 @@ export namespace Prisma {
       UpdaterEvent: Prisma.$EventPayload<ExtArgs>[]
       CreatorStage: Prisma.$StagePayload<ExtArgs>[]
       UpdaterStage: Prisma.$StagePayload<ExtArgs>[]
-      CreatorReport: Prisma.$ReportPayload<ExtArgs>[]
-      UpdaterReport: Prisma.$ReportPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       username: string
       password: string
+      displayName: string | null
       createdAt: Date | null
       updatedAt: Date | null
       status: string
       roleId: string | null
-      organizationId: string | null
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -41342,11 +38026,6 @@ export namespace Prisma {
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     role<T extends User$roleArgs<ExtArgs> = {}>(args?: Subset<T, User$roleArgs<ExtArgs>>): Prisma__RoleClient<$Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    organization<T extends User$organizationArgs<ExtArgs> = {}>(args?: Subset<T, User$organizationArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    profile<T extends User$profileArgs<ExtArgs> = {}>(args?: Subset<T, User$profileArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    permissions<T extends User$permissionsArgs<ExtArgs> = {}>(args?: Subset<T, User$permissionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    CreatorProfile<T extends User$CreatorProfileArgs<ExtArgs> = {}>(args?: Subset<T, User$CreatorProfileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    UpdaterProfile<T extends User$UpdaterProfileArgs<ExtArgs> = {}>(args?: Subset<T, User$UpdaterProfileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     BudgetAssignee<T extends User$BudgetAssigneeArgs<ExtArgs> = {}>(args?: Subset<T, User$BudgetAssigneeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BudgetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     CreatorBudget<T extends User$CreatorBudgetArgs<ExtArgs> = {}>(args?: Subset<T, User$CreatorBudgetArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BudgetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     UpdaterBudget<T extends User$UpdaterBudgetArgs<ExtArgs> = {}>(args?: Subset<T, User$UpdaterBudgetArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BudgetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -41382,8 +38061,6 @@ export namespace Prisma {
     UpdaterEvent<T extends User$UpdaterEventArgs<ExtArgs> = {}>(args?: Subset<T, User$UpdaterEventArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     CreatorStage<T extends User$CreatorStageArgs<ExtArgs> = {}>(args?: Subset<T, User$CreatorStageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     UpdaterStage<T extends User$UpdaterStageArgs<ExtArgs> = {}>(args?: Subset<T, User$UpdaterStageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    CreatorReport<T extends User$CreatorReportArgs<ExtArgs> = {}>(args?: Subset<T, User$CreatorReportArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    UpdaterReport<T extends User$UpdaterReportArgs<ExtArgs> = {}>(args?: Subset<T, User$UpdaterReportArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -41416,11 +38093,11 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly username: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
+    readonly displayName: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
     readonly status: FieldRef<"User", 'String'>
     readonly roleId: FieldRef<"User", 'String'>
-    readonly organizationId: FieldRef<"User", 'String'>
   }
     
 
@@ -41833,116 +38510,6 @@ export namespace Prisma {
      */
     include?: RoleInclude<ExtArgs> | null
     where?: RoleWhereInput
-  }
-
-  /**
-   * User.organization
-   */
-  export type User$organizationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    where?: OrganizationWhereInput
-  }
-
-  /**
-   * User.profile
-   */
-  export type User$profileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    where?: ProfileWhereInput
-  }
-
-  /**
-   * User.permissions
-   */
-  export type User$permissionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    where?: UserPermissionWhereInput
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    cursor?: UserPermissionWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: UserPermissionScalarFieldEnum | UserPermissionScalarFieldEnum[]
-  }
-
-  /**
-   * User.CreatorProfile
-   */
-  export type User$CreatorProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    where?: ProfileWhereInput
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    cursor?: ProfileWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
-  }
-
-  /**
-   * User.UpdaterProfile
-   */
-  export type User$UpdaterProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    where?: ProfileWhereInput
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    cursor?: ProfileWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
   }
 
   /**
@@ -42783,54 +39350,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: StageScalarFieldEnum | StageScalarFieldEnum[]
-  }
-
-  /**
-   * User.CreatorReport
-   */
-  export type User$CreatorReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    where?: ReportWhereInput
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    cursor?: ReportWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * User.UpdaterReport
-   */
-  export type User$UpdaterReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    where?: ReportWhereInput
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    cursor?: ReportWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
   }
 
   /**
@@ -43927,4378 +40446,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: RoleInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Organization
-   */
-
-  export type AggregateOrganization = {
-    _count: OrganizationCountAggregateOutputType | null
-    _min: OrganizationMinAggregateOutputType | null
-    _max: OrganizationMaxAggregateOutputType | null
-  }
-
-  export type OrganizationMinAggregateOutputType = {
-    id: string | null
-    name: string | null
-    code: string | null
-  }
-
-  export type OrganizationMaxAggregateOutputType = {
-    id: string | null
-    name: string | null
-    code: string | null
-  }
-
-  export type OrganizationCountAggregateOutputType = {
-    id: number
-    name: number
-    code: number
-    _all: number
-  }
-
-
-  export type OrganizationMinAggregateInputType = {
-    id?: true
-    name?: true
-    code?: true
-  }
-
-  export type OrganizationMaxAggregateInputType = {
-    id?: true
-    name?: true
-    code?: true
-  }
-
-  export type OrganizationCountAggregateInputType = {
-    id?: true
-    name?: true
-    code?: true
-    _all?: true
-  }
-
-  export type OrganizationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Organization to aggregate.
-     */
-    where?: OrganizationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Organizations to fetch.
-     */
-    orderBy?: OrganizationOrderByWithRelationInput | OrganizationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: OrganizationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Organizations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Organizations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Organizations
-    **/
-    _count?: true | OrganizationCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: OrganizationMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: OrganizationMaxAggregateInputType
-  }
-
-  export type GetOrganizationAggregateType<T extends OrganizationAggregateArgs> = {
-        [P in keyof T & keyof AggregateOrganization]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateOrganization[P]>
-      : GetScalarType<T[P], AggregateOrganization[P]>
-  }
-
-
-
-
-  export type OrganizationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: OrganizationWhereInput
-    orderBy?: OrganizationOrderByWithAggregationInput | OrganizationOrderByWithAggregationInput[]
-    by: OrganizationScalarFieldEnum[] | OrganizationScalarFieldEnum
-    having?: OrganizationScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: OrganizationCountAggregateInputType | true
-    _min?: OrganizationMinAggregateInputType
-    _max?: OrganizationMaxAggregateInputType
-  }
-
-  export type OrganizationGroupByOutputType = {
-    id: string
-    name: string
-    code: string | null
-    _count: OrganizationCountAggregateOutputType | null
-    _min: OrganizationMinAggregateOutputType | null
-    _max: OrganizationMaxAggregateOutputType | null
-  }
-
-  type GetOrganizationGroupByPayload<T extends OrganizationGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<OrganizationGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof OrganizationGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], OrganizationGroupByOutputType[P]>
-            : GetScalarType<T[P], OrganizationGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type OrganizationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    code?: boolean
-    users?: boolean | Organization$usersArgs<ExtArgs>
-    Report?: boolean | Organization$ReportArgs<ExtArgs>
-    _count?: boolean | OrganizationCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["organization"]>
-
-  export type OrganizationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    code?: boolean
-  }, ExtArgs["result"]["organization"]>
-
-  export type OrganizationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    code?: boolean
-  }, ExtArgs["result"]["organization"]>
-
-  export type OrganizationSelectScalar = {
-    id?: boolean
-    name?: boolean
-    code?: boolean
-  }
-
-  export type OrganizationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "code", ExtArgs["result"]["organization"]>
-  export type OrganizationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | Organization$usersArgs<ExtArgs>
-    Report?: boolean | Organization$ReportArgs<ExtArgs>
-    _count?: boolean | OrganizationCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type OrganizationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type OrganizationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-
-  export type $OrganizationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Organization"
-    objects: {
-      users: Prisma.$UserPayload<ExtArgs>[]
-      Report: Prisma.$ReportPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      name: string
-      code: string | null
-    }, ExtArgs["result"]["organization"]>
-    composites: {}
-  }
-
-  type OrganizationGetPayload<S extends boolean | null | undefined | OrganizationDefaultArgs> = $Result.GetResult<Prisma.$OrganizationPayload, S>
-
-  type OrganizationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<OrganizationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: OrganizationCountAggregateInputType | true
-    }
-
-  export interface OrganizationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Organization'], meta: { name: 'Organization' } }
-    /**
-     * Find zero or one Organization that matches the filter.
-     * @param {OrganizationFindUniqueArgs} args - Arguments to find a Organization
-     * @example
-     * // Get one Organization
-     * const organization = await prisma.organization.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends OrganizationFindUniqueArgs>(args: SelectSubset<T, OrganizationFindUniqueArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Organization that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {OrganizationFindUniqueOrThrowArgs} args - Arguments to find a Organization
-     * @example
-     * // Get one Organization
-     * const organization = await prisma.organization.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends OrganizationFindUniqueOrThrowArgs>(args: SelectSubset<T, OrganizationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Organization that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationFindFirstArgs} args - Arguments to find a Organization
-     * @example
-     * // Get one Organization
-     * const organization = await prisma.organization.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends OrganizationFindFirstArgs>(args?: SelectSubset<T, OrganizationFindFirstArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Organization that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationFindFirstOrThrowArgs} args - Arguments to find a Organization
-     * @example
-     * // Get one Organization
-     * const organization = await prisma.organization.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends OrganizationFindFirstOrThrowArgs>(args?: SelectSubset<T, OrganizationFindFirstOrThrowArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Organizations that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Organizations
-     * const organizations = await prisma.organization.findMany()
-     * 
-     * // Get first 10 Organizations
-     * const organizations = await prisma.organization.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const organizationWithIdOnly = await prisma.organization.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends OrganizationFindManyArgs>(args?: SelectSubset<T, OrganizationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Organization.
-     * @param {OrganizationCreateArgs} args - Arguments to create a Organization.
-     * @example
-     * // Create one Organization
-     * const Organization = await prisma.organization.create({
-     *   data: {
-     *     // ... data to create a Organization
-     *   }
-     * })
-     * 
-     */
-    create<T extends OrganizationCreateArgs>(args: SelectSubset<T, OrganizationCreateArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Organizations.
-     * @param {OrganizationCreateManyArgs} args - Arguments to create many Organizations.
-     * @example
-     * // Create many Organizations
-     * const organization = await prisma.organization.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends OrganizationCreateManyArgs>(args?: SelectSubset<T, OrganizationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Organizations and returns the data saved in the database.
-     * @param {OrganizationCreateManyAndReturnArgs} args - Arguments to create many Organizations.
-     * @example
-     * // Create many Organizations
-     * const organization = await prisma.organization.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Organizations and only return the `id`
-     * const organizationWithIdOnly = await prisma.organization.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends OrganizationCreateManyAndReturnArgs>(args?: SelectSubset<T, OrganizationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Organization.
-     * @param {OrganizationDeleteArgs} args - Arguments to delete one Organization.
-     * @example
-     * // Delete one Organization
-     * const Organization = await prisma.organization.delete({
-     *   where: {
-     *     // ... filter to delete one Organization
-     *   }
-     * })
-     * 
-     */
-    delete<T extends OrganizationDeleteArgs>(args: SelectSubset<T, OrganizationDeleteArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Organization.
-     * @param {OrganizationUpdateArgs} args - Arguments to update one Organization.
-     * @example
-     * // Update one Organization
-     * const organization = await prisma.organization.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends OrganizationUpdateArgs>(args: SelectSubset<T, OrganizationUpdateArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Organizations.
-     * @param {OrganizationDeleteManyArgs} args - Arguments to filter Organizations to delete.
-     * @example
-     * // Delete a few Organizations
-     * const { count } = await prisma.organization.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends OrganizationDeleteManyArgs>(args?: SelectSubset<T, OrganizationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Organizations.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Organizations
-     * const organization = await prisma.organization.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends OrganizationUpdateManyArgs>(args: SelectSubset<T, OrganizationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Organizations and returns the data updated in the database.
-     * @param {OrganizationUpdateManyAndReturnArgs} args - Arguments to update many Organizations.
-     * @example
-     * // Update many Organizations
-     * const organization = await prisma.organization.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Organizations and only return the `id`
-     * const organizationWithIdOnly = await prisma.organization.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends OrganizationUpdateManyAndReturnArgs>(args: SelectSubset<T, OrganizationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Organization.
-     * @param {OrganizationUpsertArgs} args - Arguments to update or create a Organization.
-     * @example
-     * // Update or create a Organization
-     * const organization = await prisma.organization.upsert({
-     *   create: {
-     *     // ... data to create a Organization
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Organization we want to update
-     *   }
-     * })
-     */
-    upsert<T extends OrganizationUpsertArgs>(args: SelectSubset<T, OrganizationUpsertArgs<ExtArgs>>): Prisma__OrganizationClient<$Result.GetResult<Prisma.$OrganizationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Organizations.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationCountArgs} args - Arguments to filter Organizations to count.
-     * @example
-     * // Count the number of Organizations
-     * const count = await prisma.organization.count({
-     *   where: {
-     *     // ... the filter for the Organizations we want to count
-     *   }
-     * })
-    **/
-    count<T extends OrganizationCountArgs>(
-      args?: Subset<T, OrganizationCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], OrganizationCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Organization.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends OrganizationAggregateArgs>(args: Subset<T, OrganizationAggregateArgs>): Prisma.PrismaPromise<GetOrganizationAggregateType<T>>
-
-    /**
-     * Group by Organization.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrganizationGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends OrganizationGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: OrganizationGroupByArgs['orderBy'] }
-        : { orderBy?: OrganizationGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, OrganizationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrganizationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Organization model
-   */
-  readonly fields: OrganizationFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Organization.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__OrganizationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    users<T extends Organization$usersArgs<ExtArgs> = {}>(args?: Subset<T, Organization$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Report<T extends Organization$ReportArgs<ExtArgs> = {}>(args?: Subset<T, Organization$ReportArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Organization model
-   */
-  interface OrganizationFieldRefs {
-    readonly id: FieldRef<"Organization", 'String'>
-    readonly name: FieldRef<"Organization", 'String'>
-    readonly code: FieldRef<"Organization", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Organization findUnique
-   */
-  export type OrganizationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter, which Organization to fetch.
-     */
-    where: OrganizationWhereUniqueInput
-  }
-
-  /**
-   * Organization findUniqueOrThrow
-   */
-  export type OrganizationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter, which Organization to fetch.
-     */
-    where: OrganizationWhereUniqueInput
-  }
-
-  /**
-   * Organization findFirst
-   */
-  export type OrganizationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter, which Organization to fetch.
-     */
-    where?: OrganizationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Organizations to fetch.
-     */
-    orderBy?: OrganizationOrderByWithRelationInput | OrganizationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Organizations.
-     */
-    cursor?: OrganizationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Organizations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Organizations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Organizations.
-     */
-    distinct?: OrganizationScalarFieldEnum | OrganizationScalarFieldEnum[]
-  }
-
-  /**
-   * Organization findFirstOrThrow
-   */
-  export type OrganizationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter, which Organization to fetch.
-     */
-    where?: OrganizationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Organizations to fetch.
-     */
-    orderBy?: OrganizationOrderByWithRelationInput | OrganizationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Organizations.
-     */
-    cursor?: OrganizationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Organizations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Organizations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Organizations.
-     */
-    distinct?: OrganizationScalarFieldEnum | OrganizationScalarFieldEnum[]
-  }
-
-  /**
-   * Organization findMany
-   */
-  export type OrganizationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter, which Organizations to fetch.
-     */
-    where?: OrganizationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Organizations to fetch.
-     */
-    orderBy?: OrganizationOrderByWithRelationInput | OrganizationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Organizations.
-     */
-    cursor?: OrganizationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Organizations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Organizations.
-     */
-    skip?: number
-    distinct?: OrganizationScalarFieldEnum | OrganizationScalarFieldEnum[]
-  }
-
-  /**
-   * Organization create
-   */
-  export type OrganizationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Organization.
-     */
-    data: XOR<OrganizationCreateInput, OrganizationUncheckedCreateInput>
-  }
-
-  /**
-   * Organization createMany
-   */
-  export type OrganizationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Organizations.
-     */
-    data: OrganizationCreateManyInput | OrganizationCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Organization createManyAndReturn
-   */
-  export type OrganizationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * The data used to create many Organizations.
-     */
-    data: OrganizationCreateManyInput | OrganizationCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Organization update
-   */
-  export type OrganizationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Organization.
-     */
-    data: XOR<OrganizationUpdateInput, OrganizationUncheckedUpdateInput>
-    /**
-     * Choose, which Organization to update.
-     */
-    where: OrganizationWhereUniqueInput
-  }
-
-  /**
-   * Organization updateMany
-   */
-  export type OrganizationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Organizations.
-     */
-    data: XOR<OrganizationUpdateManyMutationInput, OrganizationUncheckedUpdateManyInput>
-    /**
-     * Filter which Organizations to update
-     */
-    where?: OrganizationWhereInput
-    /**
-     * Limit how many Organizations to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Organization updateManyAndReturn
-   */
-  export type OrganizationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * The data used to update Organizations.
-     */
-    data: XOR<OrganizationUpdateManyMutationInput, OrganizationUncheckedUpdateManyInput>
-    /**
-     * Filter which Organizations to update
-     */
-    where?: OrganizationWhereInput
-    /**
-     * Limit how many Organizations to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Organization upsert
-   */
-  export type OrganizationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Organization to update in case it exists.
-     */
-    where: OrganizationWhereUniqueInput
-    /**
-     * In case the Organization found by the `where` argument doesn't exist, create a new Organization with this data.
-     */
-    create: XOR<OrganizationCreateInput, OrganizationUncheckedCreateInput>
-    /**
-     * In case the Organization was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<OrganizationUpdateInput, OrganizationUncheckedUpdateInput>
-  }
-
-  /**
-   * Organization delete
-   */
-  export type OrganizationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-    /**
-     * Filter which Organization to delete.
-     */
-    where: OrganizationWhereUniqueInput
-  }
-
-  /**
-   * Organization deleteMany
-   */
-  export type OrganizationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Organizations to delete
-     */
-    where?: OrganizationWhereInput
-    /**
-     * Limit how many Organizations to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Organization.users
-   */
-  export type Organization$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    cursor?: UserWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * Organization.Report
-   */
-  export type Organization$ReportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Report
-     */
-    select?: ReportSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Report
-     */
-    omit?: ReportOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReportInclude<ExtArgs> | null
-    where?: ReportWhereInput
-    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
-    cursor?: ReportWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
-  }
-
-  /**
-   * Organization without action
-   */
-  export type OrganizationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Organization
-     */
-    select?: OrganizationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Organization
-     */
-    omit?: OrganizationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OrganizationInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Permission
-   */
-
-  export type AggregatePermission = {
-    _count: PermissionCountAggregateOutputType | null
-    _min: PermissionMinAggregateOutputType | null
-    _max: PermissionMaxAggregateOutputType | null
-  }
-
-  export type PermissionMinAggregateOutputType = {
-    id: string | null
-    name: string | null
-    resource: string | null
-    action: string | null
-    description: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type PermissionMaxAggregateOutputType = {
-    id: string | null
-    name: string | null
-    resource: string | null
-    action: string | null
-    description: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type PermissionCountAggregateOutputType = {
-    id: number
-    name: number
-    resource: number
-    action: number
-    description: number
-    createdAt: number
-    updatedAt: number
-    _all: number
-  }
-
-
-  export type PermissionMinAggregateInputType = {
-    id?: true
-    name?: true
-    resource?: true
-    action?: true
-    description?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type PermissionMaxAggregateInputType = {
-    id?: true
-    name?: true
-    resource?: true
-    action?: true
-    description?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type PermissionCountAggregateInputType = {
-    id?: true
-    name?: true
-    resource?: true
-    action?: true
-    description?: true
-    createdAt?: true
-    updatedAt?: true
-    _all?: true
-  }
-
-  export type PermissionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Permission to aggregate.
-     */
-    where?: PermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Permissions to fetch.
-     */
-    orderBy?: PermissionOrderByWithRelationInput | PermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: PermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Permissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Permissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Permissions
-    **/
-    _count?: true | PermissionCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: PermissionMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: PermissionMaxAggregateInputType
-  }
-
-  export type GetPermissionAggregateType<T extends PermissionAggregateArgs> = {
-        [P in keyof T & keyof AggregatePermission]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregatePermission[P]>
-      : GetScalarType<T[P], AggregatePermission[P]>
-  }
-
-
-
-
-  export type PermissionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PermissionWhereInput
-    orderBy?: PermissionOrderByWithAggregationInput | PermissionOrderByWithAggregationInput[]
-    by: PermissionScalarFieldEnum[] | PermissionScalarFieldEnum
-    having?: PermissionScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: PermissionCountAggregateInputType | true
-    _min?: PermissionMinAggregateInputType
-    _max?: PermissionMaxAggregateInputType
-  }
-
-  export type PermissionGroupByOutputType = {
-    id: string
-    name: string
-    resource: string
-    action: string
-    description: string | null
-    createdAt: Date
-    updatedAt: Date
-    _count: PermissionCountAggregateOutputType | null
-    _min: PermissionMinAggregateOutputType | null
-    _max: PermissionMaxAggregateOutputType | null
-  }
-
-  type GetPermissionGroupByPayload<T extends PermissionGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<PermissionGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof PermissionGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], PermissionGroupByOutputType[P]>
-            : GetScalarType<T[P], PermissionGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type PermissionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    resource?: boolean
-    action?: boolean
-    description?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    users?: boolean | Permission$usersArgs<ExtArgs>
-    _count?: boolean | PermissionCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["permission"]>
-
-  export type PermissionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    resource?: boolean
-    action?: boolean
-    description?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }, ExtArgs["result"]["permission"]>
-
-  export type PermissionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    resource?: boolean
-    action?: boolean
-    description?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }, ExtArgs["result"]["permission"]>
-
-  export type PermissionSelectScalar = {
-    id?: boolean
-    name?: boolean
-    resource?: boolean
-    action?: boolean
-    description?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }
-
-  export type PermissionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "resource" | "action" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["permission"]>
-  export type PermissionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | Permission$usersArgs<ExtArgs>
-    _count?: boolean | PermissionCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type PermissionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type PermissionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-
-  export type $PermissionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Permission"
-    objects: {
-      users: Prisma.$UserPermissionPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      name: string
-      resource: string
-      action: string
-      description: string | null
-      createdAt: Date
-      updatedAt: Date
-    }, ExtArgs["result"]["permission"]>
-    composites: {}
-  }
-
-  type PermissionGetPayload<S extends boolean | null | undefined | PermissionDefaultArgs> = $Result.GetResult<Prisma.$PermissionPayload, S>
-
-  type PermissionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PermissionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PermissionCountAggregateInputType | true
-    }
-
-  export interface PermissionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Permission'], meta: { name: 'Permission' } }
-    /**
-     * Find zero or one Permission that matches the filter.
-     * @param {PermissionFindUniqueArgs} args - Arguments to find a Permission
-     * @example
-     * // Get one Permission
-     * const permission = await prisma.permission.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends PermissionFindUniqueArgs>(args: SelectSubset<T, PermissionFindUniqueArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Permission that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {PermissionFindUniqueOrThrowArgs} args - Arguments to find a Permission
-     * @example
-     * // Get one Permission
-     * const permission = await prisma.permission.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends PermissionFindUniqueOrThrowArgs>(args: SelectSubset<T, PermissionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Permission that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionFindFirstArgs} args - Arguments to find a Permission
-     * @example
-     * // Get one Permission
-     * const permission = await prisma.permission.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends PermissionFindFirstArgs>(args?: SelectSubset<T, PermissionFindFirstArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Permission that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionFindFirstOrThrowArgs} args - Arguments to find a Permission
-     * @example
-     * // Get one Permission
-     * const permission = await prisma.permission.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends PermissionFindFirstOrThrowArgs>(args?: SelectSubset<T, PermissionFindFirstOrThrowArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Permissions that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Permissions
-     * const permissions = await prisma.permission.findMany()
-     * 
-     * // Get first 10 Permissions
-     * const permissions = await prisma.permission.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const permissionWithIdOnly = await prisma.permission.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends PermissionFindManyArgs>(args?: SelectSubset<T, PermissionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Permission.
-     * @param {PermissionCreateArgs} args - Arguments to create a Permission.
-     * @example
-     * // Create one Permission
-     * const Permission = await prisma.permission.create({
-     *   data: {
-     *     // ... data to create a Permission
-     *   }
-     * })
-     * 
-     */
-    create<T extends PermissionCreateArgs>(args: SelectSubset<T, PermissionCreateArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Permissions.
-     * @param {PermissionCreateManyArgs} args - Arguments to create many Permissions.
-     * @example
-     * // Create many Permissions
-     * const permission = await prisma.permission.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends PermissionCreateManyArgs>(args?: SelectSubset<T, PermissionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Permissions and returns the data saved in the database.
-     * @param {PermissionCreateManyAndReturnArgs} args - Arguments to create many Permissions.
-     * @example
-     * // Create many Permissions
-     * const permission = await prisma.permission.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Permissions and only return the `id`
-     * const permissionWithIdOnly = await prisma.permission.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends PermissionCreateManyAndReturnArgs>(args?: SelectSubset<T, PermissionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Permission.
-     * @param {PermissionDeleteArgs} args - Arguments to delete one Permission.
-     * @example
-     * // Delete one Permission
-     * const Permission = await prisma.permission.delete({
-     *   where: {
-     *     // ... filter to delete one Permission
-     *   }
-     * })
-     * 
-     */
-    delete<T extends PermissionDeleteArgs>(args: SelectSubset<T, PermissionDeleteArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Permission.
-     * @param {PermissionUpdateArgs} args - Arguments to update one Permission.
-     * @example
-     * // Update one Permission
-     * const permission = await prisma.permission.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends PermissionUpdateArgs>(args: SelectSubset<T, PermissionUpdateArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Permissions.
-     * @param {PermissionDeleteManyArgs} args - Arguments to filter Permissions to delete.
-     * @example
-     * // Delete a few Permissions
-     * const { count } = await prisma.permission.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends PermissionDeleteManyArgs>(args?: SelectSubset<T, PermissionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Permissions.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Permissions
-     * const permission = await prisma.permission.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends PermissionUpdateManyArgs>(args: SelectSubset<T, PermissionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Permissions and returns the data updated in the database.
-     * @param {PermissionUpdateManyAndReturnArgs} args - Arguments to update many Permissions.
-     * @example
-     * // Update many Permissions
-     * const permission = await prisma.permission.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Permissions and only return the `id`
-     * const permissionWithIdOnly = await prisma.permission.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends PermissionUpdateManyAndReturnArgs>(args: SelectSubset<T, PermissionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Permission.
-     * @param {PermissionUpsertArgs} args - Arguments to update or create a Permission.
-     * @example
-     * // Update or create a Permission
-     * const permission = await prisma.permission.upsert({
-     *   create: {
-     *     // ... data to create a Permission
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Permission we want to update
-     *   }
-     * })
-     */
-    upsert<T extends PermissionUpsertArgs>(args: SelectSubset<T, PermissionUpsertArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Permissions.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionCountArgs} args - Arguments to filter Permissions to count.
-     * @example
-     * // Count the number of Permissions
-     * const count = await prisma.permission.count({
-     *   where: {
-     *     // ... the filter for the Permissions we want to count
-     *   }
-     * })
-    **/
-    count<T extends PermissionCountArgs>(
-      args?: Subset<T, PermissionCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], PermissionCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Permission.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends PermissionAggregateArgs>(args: Subset<T, PermissionAggregateArgs>): Prisma.PrismaPromise<GetPermissionAggregateType<T>>
-
-    /**
-     * Group by Permission.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PermissionGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends PermissionGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PermissionGroupByArgs['orderBy'] }
-        : { orderBy?: PermissionGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, PermissionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPermissionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Permission model
-   */
-  readonly fields: PermissionFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Permission.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__PermissionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    users<T extends Permission$usersArgs<ExtArgs> = {}>(args?: Subset<T, Permission$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Permission model
-   */
-  interface PermissionFieldRefs {
-    readonly id: FieldRef<"Permission", 'String'>
-    readonly name: FieldRef<"Permission", 'String'>
-    readonly resource: FieldRef<"Permission", 'String'>
-    readonly action: FieldRef<"Permission", 'String'>
-    readonly description: FieldRef<"Permission", 'String'>
-    readonly createdAt: FieldRef<"Permission", 'DateTime'>
-    readonly updatedAt: FieldRef<"Permission", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Permission findUnique
-   */
-  export type PermissionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which Permission to fetch.
-     */
-    where: PermissionWhereUniqueInput
-  }
-
-  /**
-   * Permission findUniqueOrThrow
-   */
-  export type PermissionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which Permission to fetch.
-     */
-    where: PermissionWhereUniqueInput
-  }
-
-  /**
-   * Permission findFirst
-   */
-  export type PermissionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which Permission to fetch.
-     */
-    where?: PermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Permissions to fetch.
-     */
-    orderBy?: PermissionOrderByWithRelationInput | PermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Permissions.
-     */
-    cursor?: PermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Permissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Permissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Permissions.
-     */
-    distinct?: PermissionScalarFieldEnum | PermissionScalarFieldEnum[]
-  }
-
-  /**
-   * Permission findFirstOrThrow
-   */
-  export type PermissionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which Permission to fetch.
-     */
-    where?: PermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Permissions to fetch.
-     */
-    orderBy?: PermissionOrderByWithRelationInput | PermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Permissions.
-     */
-    cursor?: PermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Permissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Permissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Permissions.
-     */
-    distinct?: PermissionScalarFieldEnum | PermissionScalarFieldEnum[]
-  }
-
-  /**
-   * Permission findMany
-   */
-  export type PermissionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which Permissions to fetch.
-     */
-    where?: PermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Permissions to fetch.
-     */
-    orderBy?: PermissionOrderByWithRelationInput | PermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Permissions.
-     */
-    cursor?: PermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Permissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Permissions.
-     */
-    skip?: number
-    distinct?: PermissionScalarFieldEnum | PermissionScalarFieldEnum[]
-  }
-
-  /**
-   * Permission create
-   */
-  export type PermissionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Permission.
-     */
-    data: XOR<PermissionCreateInput, PermissionUncheckedCreateInput>
-  }
-
-  /**
-   * Permission createMany
-   */
-  export type PermissionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Permissions.
-     */
-    data: PermissionCreateManyInput | PermissionCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Permission createManyAndReturn
-   */
-  export type PermissionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * The data used to create many Permissions.
-     */
-    data: PermissionCreateManyInput | PermissionCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Permission update
-   */
-  export type PermissionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Permission.
-     */
-    data: XOR<PermissionUpdateInput, PermissionUncheckedUpdateInput>
-    /**
-     * Choose, which Permission to update.
-     */
-    where: PermissionWhereUniqueInput
-  }
-
-  /**
-   * Permission updateMany
-   */
-  export type PermissionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Permissions.
-     */
-    data: XOR<PermissionUpdateManyMutationInput, PermissionUncheckedUpdateManyInput>
-    /**
-     * Filter which Permissions to update
-     */
-    where?: PermissionWhereInput
-    /**
-     * Limit how many Permissions to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Permission updateManyAndReturn
-   */
-  export type PermissionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * The data used to update Permissions.
-     */
-    data: XOR<PermissionUpdateManyMutationInput, PermissionUncheckedUpdateManyInput>
-    /**
-     * Filter which Permissions to update
-     */
-    where?: PermissionWhereInput
-    /**
-     * Limit how many Permissions to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Permission upsert
-   */
-  export type PermissionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Permission to update in case it exists.
-     */
-    where: PermissionWhereUniqueInput
-    /**
-     * In case the Permission found by the `where` argument doesn't exist, create a new Permission with this data.
-     */
-    create: XOR<PermissionCreateInput, PermissionUncheckedCreateInput>
-    /**
-     * In case the Permission was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<PermissionUpdateInput, PermissionUncheckedUpdateInput>
-  }
-
-  /**
-   * Permission delete
-   */
-  export type PermissionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-    /**
-     * Filter which Permission to delete.
-     */
-    where: PermissionWhereUniqueInput
-  }
-
-  /**
-   * Permission deleteMany
-   */
-  export type PermissionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Permissions to delete
-     */
-    where?: PermissionWhereInput
-    /**
-     * Limit how many Permissions to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Permission.users
-   */
-  export type Permission$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    where?: UserPermissionWhereInput
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    cursor?: UserPermissionWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: UserPermissionScalarFieldEnum | UserPermissionScalarFieldEnum[]
-  }
-
-  /**
-   * Permission without action
-   */
-  export type PermissionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Permission
-     */
-    select?: PermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Permission
-     */
-    omit?: PermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PermissionInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model UserPermission
-   */
-
-  export type AggregateUserPermission = {
-    _count: UserPermissionCountAggregateOutputType | null
-    _min: UserPermissionMinAggregateOutputType | null
-    _max: UserPermissionMaxAggregateOutputType | null
-  }
-
-  export type UserPermissionMinAggregateOutputType = {
-    id: string | null
-    userId: string | null
-    permissionId: string | null
-    createdAt: Date | null
-  }
-
-  export type UserPermissionMaxAggregateOutputType = {
-    id: string | null
-    userId: string | null
-    permissionId: string | null
-    createdAt: Date | null
-  }
-
-  export type UserPermissionCountAggregateOutputType = {
-    id: number
-    userId: number
-    permissionId: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type UserPermissionMinAggregateInputType = {
-    id?: true
-    userId?: true
-    permissionId?: true
-    createdAt?: true
-  }
-
-  export type UserPermissionMaxAggregateInputType = {
-    id?: true
-    userId?: true
-    permissionId?: true
-    createdAt?: true
-  }
-
-  export type UserPermissionCountAggregateInputType = {
-    id?: true
-    userId?: true
-    permissionId?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type UserPermissionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which UserPermission to aggregate.
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of UserPermissions to fetch.
-     */
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: UserPermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` UserPermissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` UserPermissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned UserPermissions
-    **/
-    _count?: true | UserPermissionCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: UserPermissionMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: UserPermissionMaxAggregateInputType
-  }
-
-  export type GetUserPermissionAggregateType<T extends UserPermissionAggregateArgs> = {
-        [P in keyof T & keyof AggregateUserPermission]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateUserPermission[P]>
-      : GetScalarType<T[P], AggregateUserPermission[P]>
-  }
-
-
-
-
-  export type UserPermissionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserPermissionWhereInput
-    orderBy?: UserPermissionOrderByWithAggregationInput | UserPermissionOrderByWithAggregationInput[]
-    by: UserPermissionScalarFieldEnum[] | UserPermissionScalarFieldEnum
-    having?: UserPermissionScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: UserPermissionCountAggregateInputType | true
-    _min?: UserPermissionMinAggregateInputType
-    _max?: UserPermissionMaxAggregateInputType
-  }
-
-  export type UserPermissionGroupByOutputType = {
-    id: string
-    userId: string
-    permissionId: string
-    createdAt: Date
-    _count: UserPermissionCountAggregateOutputType | null
-    _min: UserPermissionMinAggregateOutputType | null
-    _max: UserPermissionMaxAggregateOutputType | null
-  }
-
-  type GetUserPermissionGroupByPayload<T extends UserPermissionGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<UserPermissionGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof UserPermissionGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], UserPermissionGroupByOutputType[P]>
-            : GetScalarType<T[P], UserPermissionGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type UserPermissionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    userId?: boolean
-    permissionId?: boolean
-    createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userPermission"]>
-
-  export type UserPermissionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    userId?: boolean
-    permissionId?: boolean
-    createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userPermission"]>
-
-  export type UserPermissionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    userId?: boolean
-    permissionId?: boolean
-    createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userPermission"]>
-
-  export type UserPermissionSelectScalar = {
-    id?: boolean
-    userId?: boolean
-    permissionId?: boolean
-    createdAt?: boolean
-  }
-
-  export type UserPermissionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "permissionId" | "createdAt", ExtArgs["result"]["userPermission"]>
-  export type UserPermissionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }
-  export type UserPermissionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }
-  export type UserPermissionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    permission?: boolean | PermissionDefaultArgs<ExtArgs>
-  }
-
-  export type $UserPermissionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "UserPermission"
-    objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      permission: Prisma.$PermissionPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      userId: string
-      permissionId: string
-      createdAt: Date
-    }, ExtArgs["result"]["userPermission"]>
-    composites: {}
-  }
-
-  type UserPermissionGetPayload<S extends boolean | null | undefined | UserPermissionDefaultArgs> = $Result.GetResult<Prisma.$UserPermissionPayload, S>
-
-  type UserPermissionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UserPermissionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: UserPermissionCountAggregateInputType | true
-    }
-
-  export interface UserPermissionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UserPermission'], meta: { name: 'UserPermission' } }
-    /**
-     * Find zero or one UserPermission that matches the filter.
-     * @param {UserPermissionFindUniqueArgs} args - Arguments to find a UserPermission
-     * @example
-     * // Get one UserPermission
-     * const userPermission = await prisma.userPermission.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends UserPermissionFindUniqueArgs>(args: SelectSubset<T, UserPermissionFindUniqueArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one UserPermission that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {UserPermissionFindUniqueOrThrowArgs} args - Arguments to find a UserPermission
-     * @example
-     * // Get one UserPermission
-     * const userPermission = await prisma.userPermission.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends UserPermissionFindUniqueOrThrowArgs>(args: SelectSubset<T, UserPermissionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first UserPermission that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionFindFirstArgs} args - Arguments to find a UserPermission
-     * @example
-     * // Get one UserPermission
-     * const userPermission = await prisma.userPermission.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends UserPermissionFindFirstArgs>(args?: SelectSubset<T, UserPermissionFindFirstArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first UserPermission that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionFindFirstOrThrowArgs} args - Arguments to find a UserPermission
-     * @example
-     * // Get one UserPermission
-     * const userPermission = await prisma.userPermission.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends UserPermissionFindFirstOrThrowArgs>(args?: SelectSubset<T, UserPermissionFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more UserPermissions that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all UserPermissions
-     * const userPermissions = await prisma.userPermission.findMany()
-     * 
-     * // Get first 10 UserPermissions
-     * const userPermissions = await prisma.userPermission.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const userPermissionWithIdOnly = await prisma.userPermission.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends UserPermissionFindManyArgs>(args?: SelectSubset<T, UserPermissionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a UserPermission.
-     * @param {UserPermissionCreateArgs} args - Arguments to create a UserPermission.
-     * @example
-     * // Create one UserPermission
-     * const UserPermission = await prisma.userPermission.create({
-     *   data: {
-     *     // ... data to create a UserPermission
-     *   }
-     * })
-     * 
-     */
-    create<T extends UserPermissionCreateArgs>(args: SelectSubset<T, UserPermissionCreateArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many UserPermissions.
-     * @param {UserPermissionCreateManyArgs} args - Arguments to create many UserPermissions.
-     * @example
-     * // Create many UserPermissions
-     * const userPermission = await prisma.userPermission.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends UserPermissionCreateManyArgs>(args?: SelectSubset<T, UserPermissionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many UserPermissions and returns the data saved in the database.
-     * @param {UserPermissionCreateManyAndReturnArgs} args - Arguments to create many UserPermissions.
-     * @example
-     * // Create many UserPermissions
-     * const userPermission = await prisma.userPermission.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many UserPermissions and only return the `id`
-     * const userPermissionWithIdOnly = await prisma.userPermission.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends UserPermissionCreateManyAndReturnArgs>(args?: SelectSubset<T, UserPermissionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a UserPermission.
-     * @param {UserPermissionDeleteArgs} args - Arguments to delete one UserPermission.
-     * @example
-     * // Delete one UserPermission
-     * const UserPermission = await prisma.userPermission.delete({
-     *   where: {
-     *     // ... filter to delete one UserPermission
-     *   }
-     * })
-     * 
-     */
-    delete<T extends UserPermissionDeleteArgs>(args: SelectSubset<T, UserPermissionDeleteArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one UserPermission.
-     * @param {UserPermissionUpdateArgs} args - Arguments to update one UserPermission.
-     * @example
-     * // Update one UserPermission
-     * const userPermission = await prisma.userPermission.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends UserPermissionUpdateArgs>(args: SelectSubset<T, UserPermissionUpdateArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more UserPermissions.
-     * @param {UserPermissionDeleteManyArgs} args - Arguments to filter UserPermissions to delete.
-     * @example
-     * // Delete a few UserPermissions
-     * const { count } = await prisma.userPermission.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends UserPermissionDeleteManyArgs>(args?: SelectSubset<T, UserPermissionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more UserPermissions.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many UserPermissions
-     * const userPermission = await prisma.userPermission.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends UserPermissionUpdateManyArgs>(args: SelectSubset<T, UserPermissionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more UserPermissions and returns the data updated in the database.
-     * @param {UserPermissionUpdateManyAndReturnArgs} args - Arguments to update many UserPermissions.
-     * @example
-     * // Update many UserPermissions
-     * const userPermission = await prisma.userPermission.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more UserPermissions and only return the `id`
-     * const userPermissionWithIdOnly = await prisma.userPermission.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends UserPermissionUpdateManyAndReturnArgs>(args: SelectSubset<T, UserPermissionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one UserPermission.
-     * @param {UserPermissionUpsertArgs} args - Arguments to update or create a UserPermission.
-     * @example
-     * // Update or create a UserPermission
-     * const userPermission = await prisma.userPermission.upsert({
-     *   create: {
-     *     // ... data to create a UserPermission
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the UserPermission we want to update
-     *   }
-     * })
-     */
-    upsert<T extends UserPermissionUpsertArgs>(args: SelectSubset<T, UserPermissionUpsertArgs<ExtArgs>>): Prisma__UserPermissionClient<$Result.GetResult<Prisma.$UserPermissionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of UserPermissions.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionCountArgs} args - Arguments to filter UserPermissions to count.
-     * @example
-     * // Count the number of UserPermissions
-     * const count = await prisma.userPermission.count({
-     *   where: {
-     *     // ... the filter for the UserPermissions we want to count
-     *   }
-     * })
-    **/
-    count<T extends UserPermissionCountArgs>(
-      args?: Subset<T, UserPermissionCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], UserPermissionCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a UserPermission.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends UserPermissionAggregateArgs>(args: Subset<T, UserPermissionAggregateArgs>): Prisma.PrismaPromise<GetUserPermissionAggregateType<T>>
-
-    /**
-     * Group by UserPermission.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserPermissionGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends UserPermissionGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserPermissionGroupByArgs['orderBy'] }
-        : { orderBy?: UserPermissionGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, UserPermissionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserPermissionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the UserPermission model
-   */
-  readonly fields: UserPermissionFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for UserPermission.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__UserPermissionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    permission<T extends PermissionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PermissionDefaultArgs<ExtArgs>>): Prisma__PermissionClient<$Result.GetResult<Prisma.$PermissionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the UserPermission model
-   */
-  interface UserPermissionFieldRefs {
-    readonly id: FieldRef<"UserPermission", 'String'>
-    readonly userId: FieldRef<"UserPermission", 'String'>
-    readonly permissionId: FieldRef<"UserPermission", 'String'>
-    readonly createdAt: FieldRef<"UserPermission", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * UserPermission findUnique
-   */
-  export type UserPermissionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which UserPermission to fetch.
-     */
-    where: UserPermissionWhereUniqueInput
-  }
-
-  /**
-   * UserPermission findUniqueOrThrow
-   */
-  export type UserPermissionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which UserPermission to fetch.
-     */
-    where: UserPermissionWhereUniqueInput
-  }
-
-  /**
-   * UserPermission findFirst
-   */
-  export type UserPermissionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which UserPermission to fetch.
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of UserPermissions to fetch.
-     */
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for UserPermissions.
-     */
-    cursor?: UserPermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` UserPermissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` UserPermissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of UserPermissions.
-     */
-    distinct?: UserPermissionScalarFieldEnum | UserPermissionScalarFieldEnum[]
-  }
-
-  /**
-   * UserPermission findFirstOrThrow
-   */
-  export type UserPermissionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which UserPermission to fetch.
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of UserPermissions to fetch.
-     */
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for UserPermissions.
-     */
-    cursor?: UserPermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` UserPermissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` UserPermissions.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of UserPermissions.
-     */
-    distinct?: UserPermissionScalarFieldEnum | UserPermissionScalarFieldEnum[]
-  }
-
-  /**
-   * UserPermission findMany
-   */
-  export type UserPermissionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter, which UserPermissions to fetch.
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of UserPermissions to fetch.
-     */
-    orderBy?: UserPermissionOrderByWithRelationInput | UserPermissionOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing UserPermissions.
-     */
-    cursor?: UserPermissionWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` UserPermissions from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` UserPermissions.
-     */
-    skip?: number
-    distinct?: UserPermissionScalarFieldEnum | UserPermissionScalarFieldEnum[]
-  }
-
-  /**
-   * UserPermission create
-   */
-  export type UserPermissionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * The data needed to create a UserPermission.
-     */
-    data: XOR<UserPermissionCreateInput, UserPermissionUncheckedCreateInput>
-  }
-
-  /**
-   * UserPermission createMany
-   */
-  export type UserPermissionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many UserPermissions.
-     */
-    data: UserPermissionCreateManyInput | UserPermissionCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * UserPermission createManyAndReturn
-   */
-  export type UserPermissionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * The data used to create many UserPermissions.
-     */
-    data: UserPermissionCreateManyInput | UserPermissionCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * UserPermission update
-   */
-  export type UserPermissionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * The data needed to update a UserPermission.
-     */
-    data: XOR<UserPermissionUpdateInput, UserPermissionUncheckedUpdateInput>
-    /**
-     * Choose, which UserPermission to update.
-     */
-    where: UserPermissionWhereUniqueInput
-  }
-
-  /**
-   * UserPermission updateMany
-   */
-  export type UserPermissionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update UserPermissions.
-     */
-    data: XOR<UserPermissionUpdateManyMutationInput, UserPermissionUncheckedUpdateManyInput>
-    /**
-     * Filter which UserPermissions to update
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * Limit how many UserPermissions to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * UserPermission updateManyAndReturn
-   */
-  export type UserPermissionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * The data used to update UserPermissions.
-     */
-    data: XOR<UserPermissionUpdateManyMutationInput, UserPermissionUncheckedUpdateManyInput>
-    /**
-     * Filter which UserPermissions to update
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * Limit how many UserPermissions to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * UserPermission upsert
-   */
-  export type UserPermissionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * The filter to search for the UserPermission to update in case it exists.
-     */
-    where: UserPermissionWhereUniqueInput
-    /**
-     * In case the UserPermission found by the `where` argument doesn't exist, create a new UserPermission with this data.
-     */
-    create: XOR<UserPermissionCreateInput, UserPermissionUncheckedCreateInput>
-    /**
-     * In case the UserPermission was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<UserPermissionUpdateInput, UserPermissionUncheckedUpdateInput>
-  }
-
-  /**
-   * UserPermission delete
-   */
-  export type UserPermissionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-    /**
-     * Filter which UserPermission to delete.
-     */
-    where: UserPermissionWhereUniqueInput
-  }
-
-  /**
-   * UserPermission deleteMany
-   */
-  export type UserPermissionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which UserPermissions to delete
-     */
-    where?: UserPermissionWhereInput
-    /**
-     * Limit how many UserPermissions to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * UserPermission without action
-   */
-  export type UserPermissionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserPermission
-     */
-    select?: UserPermissionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the UserPermission
-     */
-    omit?: UserPermissionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserPermissionInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Profile
-   */
-
-  export type AggregateProfile = {
-    _count: ProfileCountAggregateOutputType | null
-    _min: ProfileMinAggregateOutputType | null
-    _max: ProfileMaxAggregateOutputType | null
-  }
-
-  export type ProfileMinAggregateOutputType = {
-    id: string | null
-    name: string | null
-    joinDate: Date | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    createdById: string | null
-    updatedById: string | null
-    userId: string | null
-  }
-
-  export type ProfileMaxAggregateOutputType = {
-    id: string | null
-    name: string | null
-    joinDate: Date | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    createdById: string | null
-    updatedById: string | null
-    userId: string | null
-  }
-
-  export type ProfileCountAggregateOutputType = {
-    id: number
-    name: number
-    joinDate: number
-    createdAt: number
-    updatedAt: number
-    createdById: number
-    updatedById: number
-    userId: number
-    _all: number
-  }
-
-
-  export type ProfileMinAggregateInputType = {
-    id?: true
-    name?: true
-    joinDate?: true
-    createdAt?: true
-    updatedAt?: true
-    createdById?: true
-    updatedById?: true
-    userId?: true
-  }
-
-  export type ProfileMaxAggregateInputType = {
-    id?: true
-    name?: true
-    joinDate?: true
-    createdAt?: true
-    updatedAt?: true
-    createdById?: true
-    updatedById?: true
-    userId?: true
-  }
-
-  export type ProfileCountAggregateInputType = {
-    id?: true
-    name?: true
-    joinDate?: true
-    createdAt?: true
-    updatedAt?: true
-    createdById?: true
-    updatedById?: true
-    userId?: true
-    _all?: true
-  }
-
-  export type ProfileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Profile to aggregate.
-     */
-    where?: ProfileWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Profiles to fetch.
-     */
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ProfileWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Profiles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Profiles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Profiles
-    **/
-    _count?: true | ProfileCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ProfileMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ProfileMaxAggregateInputType
-  }
-
-  export type GetProfileAggregateType<T extends ProfileAggregateArgs> = {
-        [P in keyof T & keyof AggregateProfile]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateProfile[P]>
-      : GetScalarType<T[P], AggregateProfile[P]>
-  }
-
-
-
-
-  export type ProfileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProfileWhereInput
-    orderBy?: ProfileOrderByWithAggregationInput | ProfileOrderByWithAggregationInput[]
-    by: ProfileScalarFieldEnum[] | ProfileScalarFieldEnum
-    having?: ProfileScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ProfileCountAggregateInputType | true
-    _min?: ProfileMinAggregateInputType
-    _max?: ProfileMaxAggregateInputType
-  }
-
-  export type ProfileGroupByOutputType = {
-    id: string
-    name: string | null
-    joinDate: Date | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    createdById: string | null
-    updatedById: string | null
-    userId: string
-    _count: ProfileCountAggregateOutputType | null
-    _min: ProfileMinAggregateOutputType | null
-    _max: ProfileMaxAggregateOutputType | null
-  }
-
-  type GetProfileGroupByPayload<T extends ProfileGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ProfileGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ProfileGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ProfileGroupByOutputType[P]>
-            : GetScalarType<T[P], ProfileGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ProfileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    joinDate?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    userId?: boolean
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["profile"]>
-
-  export type ProfileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    joinDate?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    userId?: boolean
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["profile"]>
-
-  export type ProfileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    joinDate?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    userId?: boolean
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["profile"]>
-
-  export type ProfileSelectScalar = {
-    id?: boolean
-    name?: boolean
-    joinDate?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    createdById?: boolean
-    updatedById?: boolean
-    userId?: boolean
-  }
-
-  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "joinDate" | "createdAt" | "updatedAt" | "createdById" | "updatedById" | "userId", ExtArgs["result"]["profile"]>
-  export type ProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type ProfileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type ProfileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    createdBy?: boolean | Profile$createdByArgs<ExtArgs>
-    updatedBy?: boolean | Profile$updatedByArgs<ExtArgs>
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-
-  export type $ProfilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Profile"
-    objects: {
-      createdBy: Prisma.$UserPayload<ExtArgs> | null
-      updatedBy: Prisma.$UserPayload<ExtArgs> | null
-      user: Prisma.$UserPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      name: string | null
-      joinDate: Date | null
-      createdAt: Date | null
-      updatedAt: Date | null
-      createdById: string | null
-      updatedById: string | null
-      userId: string
-    }, ExtArgs["result"]["profile"]>
-    composites: {}
-  }
-
-  type ProfileGetPayload<S extends boolean | null | undefined | ProfileDefaultArgs> = $Result.GetResult<Prisma.$ProfilePayload, S>
-
-  type ProfileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ProfileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ProfileCountAggregateInputType | true
-    }
-
-  export interface ProfileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Profile'], meta: { name: 'Profile' } }
-    /**
-     * Find zero or one Profile that matches the filter.
-     * @param {ProfileFindUniqueArgs} args - Arguments to find a Profile
-     * @example
-     * // Get one Profile
-     * const profile = await prisma.profile.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends ProfileFindUniqueArgs>(args: SelectSubset<T, ProfileFindUniqueArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Profile that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {ProfileFindUniqueOrThrowArgs} args - Arguments to find a Profile
-     * @example
-     * // Get one Profile
-     * const profile = await prisma.profile.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends ProfileFindUniqueOrThrowArgs>(args: SelectSubset<T, ProfileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Profile that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileFindFirstArgs} args - Arguments to find a Profile
-     * @example
-     * // Get one Profile
-     * const profile = await prisma.profile.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends ProfileFindFirstArgs>(args?: SelectSubset<T, ProfileFindFirstArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Profile that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileFindFirstOrThrowArgs} args - Arguments to find a Profile
-     * @example
-     * // Get one Profile
-     * const profile = await prisma.profile.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends ProfileFindFirstOrThrowArgs>(args?: SelectSubset<T, ProfileFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Profiles that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Profiles
-     * const profiles = await prisma.profile.findMany()
-     * 
-     * // Get first 10 Profiles
-     * const profiles = await prisma.profile.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const profileWithIdOnly = await prisma.profile.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends ProfileFindManyArgs>(args?: SelectSubset<T, ProfileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Profile.
-     * @param {ProfileCreateArgs} args - Arguments to create a Profile.
-     * @example
-     * // Create one Profile
-     * const Profile = await prisma.profile.create({
-     *   data: {
-     *     // ... data to create a Profile
-     *   }
-     * })
-     * 
-     */
-    create<T extends ProfileCreateArgs>(args: SelectSubset<T, ProfileCreateArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Profiles.
-     * @param {ProfileCreateManyArgs} args - Arguments to create many Profiles.
-     * @example
-     * // Create many Profiles
-     * const profile = await prisma.profile.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends ProfileCreateManyArgs>(args?: SelectSubset<T, ProfileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Profiles and returns the data saved in the database.
-     * @param {ProfileCreateManyAndReturnArgs} args - Arguments to create many Profiles.
-     * @example
-     * // Create many Profiles
-     * const profile = await prisma.profile.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Profiles and only return the `id`
-     * const profileWithIdOnly = await prisma.profile.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends ProfileCreateManyAndReturnArgs>(args?: SelectSubset<T, ProfileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Profile.
-     * @param {ProfileDeleteArgs} args - Arguments to delete one Profile.
-     * @example
-     * // Delete one Profile
-     * const Profile = await prisma.profile.delete({
-     *   where: {
-     *     // ... filter to delete one Profile
-     *   }
-     * })
-     * 
-     */
-    delete<T extends ProfileDeleteArgs>(args: SelectSubset<T, ProfileDeleteArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Profile.
-     * @param {ProfileUpdateArgs} args - Arguments to update one Profile.
-     * @example
-     * // Update one Profile
-     * const profile = await prisma.profile.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends ProfileUpdateArgs>(args: SelectSubset<T, ProfileUpdateArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Profiles.
-     * @param {ProfileDeleteManyArgs} args - Arguments to filter Profiles to delete.
-     * @example
-     * // Delete a few Profiles
-     * const { count } = await prisma.profile.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends ProfileDeleteManyArgs>(args?: SelectSubset<T, ProfileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Profiles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Profiles
-     * const profile = await prisma.profile.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends ProfileUpdateManyArgs>(args: SelectSubset<T, ProfileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Profiles and returns the data updated in the database.
-     * @param {ProfileUpdateManyAndReturnArgs} args - Arguments to update many Profiles.
-     * @example
-     * // Update many Profiles
-     * const profile = await prisma.profile.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Profiles and only return the `id`
-     * const profileWithIdOnly = await prisma.profile.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends ProfileUpdateManyAndReturnArgs>(args: SelectSubset<T, ProfileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Profile.
-     * @param {ProfileUpsertArgs} args - Arguments to update or create a Profile.
-     * @example
-     * // Update or create a Profile
-     * const profile = await prisma.profile.upsert({
-     *   create: {
-     *     // ... data to create a Profile
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Profile we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ProfileUpsertArgs>(args: SelectSubset<T, ProfileUpsertArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Profiles.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileCountArgs} args - Arguments to filter Profiles to count.
-     * @example
-     * // Count the number of Profiles
-     * const count = await prisma.profile.count({
-     *   where: {
-     *     // ... the filter for the Profiles we want to count
-     *   }
-     * })
-    **/
-    count<T extends ProfileCountArgs>(
-      args?: Subset<T, ProfileCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ProfileCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Profile.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ProfileAggregateArgs>(args: Subset<T, ProfileAggregateArgs>): Prisma.PrismaPromise<GetProfileAggregateType<T>>
-
-    /**
-     * Group by Profile.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProfileGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ProfileGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ProfileGroupByArgs['orderBy'] }
-        : { orderBy?: ProfileGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ProfileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProfileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Profile model
-   */
-  readonly fields: ProfileFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Profile.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    createdBy<T extends Profile$createdByArgs<ExtArgs> = {}>(args?: Subset<T, Profile$createdByArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    updatedBy<T extends Profile$updatedByArgs<ExtArgs> = {}>(args?: Subset<T, Profile$updatedByArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Profile model
-   */
-  interface ProfileFieldRefs {
-    readonly id: FieldRef<"Profile", 'String'>
-    readonly name: FieldRef<"Profile", 'String'>
-    readonly joinDate: FieldRef<"Profile", 'DateTime'>
-    readonly createdAt: FieldRef<"Profile", 'DateTime'>
-    readonly updatedAt: FieldRef<"Profile", 'DateTime'>
-    readonly createdById: FieldRef<"Profile", 'String'>
-    readonly updatedById: FieldRef<"Profile", 'String'>
-    readonly userId: FieldRef<"Profile", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Profile findUnique
-   */
-  export type ProfileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter, which Profile to fetch.
-     */
-    where: ProfileWhereUniqueInput
-  }
-
-  /**
-   * Profile findUniqueOrThrow
-   */
-  export type ProfileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter, which Profile to fetch.
-     */
-    where: ProfileWhereUniqueInput
-  }
-
-  /**
-   * Profile findFirst
-   */
-  export type ProfileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter, which Profile to fetch.
-     */
-    where?: ProfileWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Profiles to fetch.
-     */
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Profiles.
-     */
-    cursor?: ProfileWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Profiles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Profiles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Profiles.
-     */
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
-  }
-
-  /**
-   * Profile findFirstOrThrow
-   */
-  export type ProfileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter, which Profile to fetch.
-     */
-    where?: ProfileWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Profiles to fetch.
-     */
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Profiles.
-     */
-    cursor?: ProfileWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Profiles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Profiles.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Profiles.
-     */
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
-  }
-
-  /**
-   * Profile findMany
-   */
-  export type ProfileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter, which Profiles to fetch.
-     */
-    where?: ProfileWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Profiles to fetch.
-     */
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Profiles.
-     */
-    cursor?: ProfileWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Profiles from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Profiles.
-     */
-    skip?: number
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
-  }
-
-  /**
-   * Profile create
-   */
-  export type ProfileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Profile.
-     */
-    data: XOR<ProfileCreateInput, ProfileUncheckedCreateInput>
-  }
-
-  /**
-   * Profile createMany
-   */
-  export type ProfileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Profiles.
-     */
-    data: ProfileCreateManyInput | ProfileCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Profile createManyAndReturn
-   */
-  export type ProfileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * The data used to create many Profiles.
-     */
-    data: ProfileCreateManyInput | ProfileCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Profile update
-   */
-  export type ProfileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Profile.
-     */
-    data: XOR<ProfileUpdateInput, ProfileUncheckedUpdateInput>
-    /**
-     * Choose, which Profile to update.
-     */
-    where: ProfileWhereUniqueInput
-  }
-
-  /**
-   * Profile updateMany
-   */
-  export type ProfileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Profiles.
-     */
-    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyInput>
-    /**
-     * Filter which Profiles to update
-     */
-    where?: ProfileWhereInput
-    /**
-     * Limit how many Profiles to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Profile updateManyAndReturn
-   */
-  export type ProfileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * The data used to update Profiles.
-     */
-    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyInput>
-    /**
-     * Filter which Profiles to update
-     */
-    where?: ProfileWhereInput
-    /**
-     * Limit how many Profiles to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Profile upsert
-   */
-  export type ProfileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Profile to update in case it exists.
-     */
-    where: ProfileWhereUniqueInput
-    /**
-     * In case the Profile found by the `where` argument doesn't exist, create a new Profile with this data.
-     */
-    create: XOR<ProfileCreateInput, ProfileUncheckedCreateInput>
-    /**
-     * In case the Profile was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ProfileUpdateInput, ProfileUncheckedUpdateInput>
-  }
-
-  /**
-   * Profile delete
-   */
-  export type ProfileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
-    /**
-     * Filter which Profile to delete.
-     */
-    where: ProfileWhereUniqueInput
-  }
-
-  /**
-   * Profile deleteMany
-   */
-  export type ProfileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Profiles to delete
-     */
-    where?: ProfileWhereInput
-    /**
-     * Limit how many Profiles to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Profile.createdBy
-   */
-  export type Profile$createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-  }
-
-  /**
-   * Profile.updatedBy
-   */
-  export type Profile$updatedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-  }
-
-  /**
-   * Profile without action
-   */
-  export type ProfileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Profile
-     */
-    select?: ProfileSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Profile
-     */
-    omit?: ProfileOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProfileInclude<ExtArgs> | null
   }
 
 
@@ -49576,8 +41723,7 @@ export namespace Prisma {
     url: 'url',
     key: 'key',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    reportId: 'reportId'
+    updatedAt: 'updatedAt'
   };
 
   export type FileScalarFieldEnum = (typeof FileScalarFieldEnum)[keyof typeof FileScalarFieldEnum]
@@ -49753,44 +41899,15 @@ export namespace Prisma {
   export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
 
 
-  export const ReportCategoryScalarFieldEnum: {
-    id: 'id',
-    order: 'order',
-    name: 'name',
-    interval: 'interval',
-    parentId: 'parentId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  };
-
-  export type ReportCategoryScalarFieldEnum = (typeof ReportCategoryScalarFieldEnum)[keyof typeof ReportCategoryScalarFieldEnum]
-
-
-  export const ReportScalarFieldEnum: {
-    id: 'id',
-    categoryId: 'categoryId',
-    periodYear: 'periodYear',
-    periodMonth: 'periodMonth',
-    version: 'version',
-    organizationId: 'organizationId',
-    createdById: 'createdById',
-    updatedById: 'updatedById',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  };
-
-  export type ReportScalarFieldEnum = (typeof ReportScalarFieldEnum)[keyof typeof ReportScalarFieldEnum]
-
-
   export const UserScalarFieldEnum: {
     id: 'id',
     username: 'username',
     password: 'password',
+    displayName: 'displayName',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     status: 'status',
-    roleId: 'roleId',
-    organizationId: 'organizationId'
+    roleId: 'roleId'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -49803,52 +41920,6 @@ export namespace Prisma {
   };
 
   export type RoleScalarFieldEnum = (typeof RoleScalarFieldEnum)[keyof typeof RoleScalarFieldEnum]
-
-
-  export const OrganizationScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    code: 'code'
-  };
-
-  export type OrganizationScalarFieldEnum = (typeof OrganizationScalarFieldEnum)[keyof typeof OrganizationScalarFieldEnum]
-
-
-  export const PermissionScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    resource: 'resource',
-    action: 'action',
-    description: 'description',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  };
-
-  export type PermissionScalarFieldEnum = (typeof PermissionScalarFieldEnum)[keyof typeof PermissionScalarFieldEnum]
-
-
-  export const UserPermissionScalarFieldEnum: {
-    id: 'id',
-    userId: 'userId',
-    permissionId: 'permissionId',
-    createdAt: 'createdAt'
-  };
-
-  export type UserPermissionScalarFieldEnum = (typeof UserPermissionScalarFieldEnum)[keyof typeof UserPermissionScalarFieldEnum]
-
-
-  export const ProfileScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    joinDate: 'joinDate',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    createdById: 'createdById',
-    updatedById: 'updatedById',
-    userId: 'userId'
-  };
-
-  export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]
 
 
   export const SessionScalarFieldEnum: {
@@ -51699,8 +43770,6 @@ export namespace Prisma {
     key?: StringFilter<"File"> | string
     createdAt?: DateTimeFilter<"File"> | Date | string
     updatedAt?: DateTimeFilter<"File"> | Date | string
-    reportId?: StringNullableFilter<"File"> | string | null
-    report?: XOR<ReportNullableScalarRelationFilter, ReportWhereInput> | null
   }
 
   export type FileOrderByWithRelationInput = {
@@ -51709,8 +43778,6 @@ export namespace Prisma {
     key?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    reportId?: SortOrderInput | SortOrder
-    report?: ReportOrderByWithRelationInput
   }
 
   export type FileWhereUniqueInput = Prisma.AtLeast<{
@@ -51722,8 +43789,6 @@ export namespace Prisma {
     key?: StringFilter<"File"> | string
     createdAt?: DateTimeFilter<"File"> | Date | string
     updatedAt?: DateTimeFilter<"File"> | Date | string
-    reportId?: StringNullableFilter<"File"> | string | null
-    report?: XOR<ReportNullableScalarRelationFilter, ReportWhereInput> | null
   }, "id">
 
   export type FileOrderByWithAggregationInput = {
@@ -51732,7 +43797,6 @@ export namespace Prisma {
     key?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    reportId?: SortOrderInput | SortOrder
     _count?: FileCountOrderByAggregateInput
     _max?: FileMaxOrderByAggregateInput
     _min?: FileMinOrderByAggregateInput
@@ -51747,7 +43811,6 @@ export namespace Prisma {
     key?: StringWithAggregatesFilter<"File"> | string
     createdAt?: DateTimeWithAggregatesFilter<"File"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"File"> | Date | string
-    reportId?: StringNullableWithAggregatesFilter<"File"> | string | null
   }
 
   export type ClientWhereInput = {
@@ -52714,173 +44777,6 @@ export namespace Prisma {
     updatedAt?: DateTimeNullableWithAggregatesFilter<"Task"> | Date | string | null
   }
 
-  export type ReportCategoryWhereInput = {
-    AND?: ReportCategoryWhereInput | ReportCategoryWhereInput[]
-    OR?: ReportCategoryWhereInput[]
-    NOT?: ReportCategoryWhereInput | ReportCategoryWhereInput[]
-    id?: StringFilter<"ReportCategory"> | string
-    order?: IntFilter<"ReportCategory"> | number
-    name?: StringFilter<"ReportCategory"> | string
-    interval?: StringNullableFilter<"ReportCategory"> | string | null
-    parentId?: StringNullableFilter<"ReportCategory"> | string | null
-    createdAt?: DateTimeFilter<"ReportCategory"> | Date | string
-    updatedAt?: DateTimeFilter<"ReportCategory"> | Date | string
-    parent?: XOR<ReportCategoryNullableScalarRelationFilter, ReportCategoryWhereInput> | null
-    children?: ReportCategoryListRelationFilter
-    reports?: ReportListRelationFilter
-  }
-
-  export type ReportCategoryOrderByWithRelationInput = {
-    id?: SortOrder
-    order?: SortOrder
-    name?: SortOrder
-    interval?: SortOrderInput | SortOrder
-    parentId?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    parent?: ReportCategoryOrderByWithRelationInput
-    children?: ReportCategoryOrderByRelationAggregateInput
-    reports?: ReportOrderByRelationAggregateInput
-  }
-
-  export type ReportCategoryWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    name?: string
-    AND?: ReportCategoryWhereInput | ReportCategoryWhereInput[]
-    OR?: ReportCategoryWhereInput[]
-    NOT?: ReportCategoryWhereInput | ReportCategoryWhereInput[]
-    order?: IntFilter<"ReportCategory"> | number
-    interval?: StringNullableFilter<"ReportCategory"> | string | null
-    parentId?: StringNullableFilter<"ReportCategory"> | string | null
-    createdAt?: DateTimeFilter<"ReportCategory"> | Date | string
-    updatedAt?: DateTimeFilter<"ReportCategory"> | Date | string
-    parent?: XOR<ReportCategoryNullableScalarRelationFilter, ReportCategoryWhereInput> | null
-    children?: ReportCategoryListRelationFilter
-    reports?: ReportListRelationFilter
-  }, "id" | "name">
-
-  export type ReportCategoryOrderByWithAggregationInput = {
-    id?: SortOrder
-    order?: SortOrder
-    name?: SortOrder
-    interval?: SortOrderInput | SortOrder
-    parentId?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    _count?: ReportCategoryCountOrderByAggregateInput
-    _avg?: ReportCategoryAvgOrderByAggregateInput
-    _max?: ReportCategoryMaxOrderByAggregateInput
-    _min?: ReportCategoryMinOrderByAggregateInput
-    _sum?: ReportCategorySumOrderByAggregateInput
-  }
-
-  export type ReportCategoryScalarWhereWithAggregatesInput = {
-    AND?: ReportCategoryScalarWhereWithAggregatesInput | ReportCategoryScalarWhereWithAggregatesInput[]
-    OR?: ReportCategoryScalarWhereWithAggregatesInput[]
-    NOT?: ReportCategoryScalarWhereWithAggregatesInput | ReportCategoryScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"ReportCategory"> | string
-    order?: IntWithAggregatesFilter<"ReportCategory"> | number
-    name?: StringWithAggregatesFilter<"ReportCategory"> | string
-    interval?: StringNullableWithAggregatesFilter<"ReportCategory"> | string | null
-    parentId?: StringNullableWithAggregatesFilter<"ReportCategory"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"ReportCategory"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"ReportCategory"> | Date | string
-  }
-
-  export type ReportWhereInput = {
-    AND?: ReportWhereInput | ReportWhereInput[]
-    OR?: ReportWhereInput[]
-    NOT?: ReportWhereInput | ReportWhereInput[]
-    id?: StringFilter<"Report"> | string
-    categoryId?: StringFilter<"Report"> | string
-    periodYear?: StringFilter<"Report"> | string
-    periodMonth?: StringNullableFilter<"Report"> | string | null
-    version?: IntFilter<"Report"> | number
-    organizationId?: StringNullableFilter<"Report"> | string | null
-    createdById?: StringNullableFilter<"Report"> | string | null
-    updatedById?: StringNullableFilter<"Report"> | string | null
-    createdAt?: DateTimeFilter<"Report"> | Date | string
-    updatedAt?: DateTimeFilter<"Report"> | Date | string
-    category?: XOR<ReportCategoryScalarRelationFilter, ReportCategoryWhereInput>
-    organization?: XOR<OrganizationNullableScalarRelationFilter, OrganizationWhereInput> | null
-    createdBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    updatedBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    files?: FileListRelationFilter
-  }
-
-  export type ReportOrderByWithRelationInput = {
-    id?: SortOrder
-    categoryId?: SortOrder
-    periodYear?: SortOrder
-    periodMonth?: SortOrderInput | SortOrder
-    version?: SortOrder
-    organizationId?: SortOrderInput | SortOrder
-    createdById?: SortOrderInput | SortOrder
-    updatedById?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    category?: ReportCategoryOrderByWithRelationInput
-    organization?: OrganizationOrderByWithRelationInput
-    createdBy?: UserOrderByWithRelationInput
-    updatedBy?: UserOrderByWithRelationInput
-    files?: FileOrderByRelationAggregateInput
-  }
-
-  export type ReportWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: ReportWhereInput | ReportWhereInput[]
-    OR?: ReportWhereInput[]
-    NOT?: ReportWhereInput | ReportWhereInput[]
-    categoryId?: StringFilter<"Report"> | string
-    periodYear?: StringFilter<"Report"> | string
-    periodMonth?: StringNullableFilter<"Report"> | string | null
-    version?: IntFilter<"Report"> | number
-    organizationId?: StringNullableFilter<"Report"> | string | null
-    createdById?: StringNullableFilter<"Report"> | string | null
-    updatedById?: StringNullableFilter<"Report"> | string | null
-    createdAt?: DateTimeFilter<"Report"> | Date | string
-    updatedAt?: DateTimeFilter<"Report"> | Date | string
-    category?: XOR<ReportCategoryScalarRelationFilter, ReportCategoryWhereInput>
-    organization?: XOR<OrganizationNullableScalarRelationFilter, OrganizationWhereInput> | null
-    createdBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    updatedBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    files?: FileListRelationFilter
-  }, "id">
-
-  export type ReportOrderByWithAggregationInput = {
-    id?: SortOrder
-    categoryId?: SortOrder
-    periodYear?: SortOrder
-    periodMonth?: SortOrderInput | SortOrder
-    version?: SortOrder
-    organizationId?: SortOrderInput | SortOrder
-    createdById?: SortOrderInput | SortOrder
-    updatedById?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    _count?: ReportCountOrderByAggregateInput
-    _avg?: ReportAvgOrderByAggregateInput
-    _max?: ReportMaxOrderByAggregateInput
-    _min?: ReportMinOrderByAggregateInput
-    _sum?: ReportSumOrderByAggregateInput
-  }
-
-  export type ReportScalarWhereWithAggregatesInput = {
-    AND?: ReportScalarWhereWithAggregatesInput | ReportScalarWhereWithAggregatesInput[]
-    OR?: ReportScalarWhereWithAggregatesInput[]
-    NOT?: ReportScalarWhereWithAggregatesInput | ReportScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Report"> | string
-    categoryId?: StringWithAggregatesFilter<"Report"> | string
-    periodYear?: StringWithAggregatesFilter<"Report"> | string
-    periodMonth?: StringNullableWithAggregatesFilter<"Report"> | string | null
-    version?: IntWithAggregatesFilter<"Report"> | number
-    organizationId?: StringNullableWithAggregatesFilter<"Report"> | string | null
-    createdById?: StringNullableWithAggregatesFilter<"Report"> | string | null
-    updatedById?: StringNullableWithAggregatesFilter<"Report"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"Report"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Report"> | Date | string
-  }
-
   export type UserWhereInput = {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
@@ -52888,17 +44784,12 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     username?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    displayName?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeNullableFilter<"User"> | Date | string | null
     updatedAt?: DateTimeNullableFilter<"User"> | Date | string | null
     status?: StringFilter<"User"> | string
     roleId?: StringNullableFilter<"User"> | string | null
-    organizationId?: StringNullableFilter<"User"> | string | null
     role?: XOR<RoleNullableScalarRelationFilter, RoleWhereInput> | null
-    organization?: XOR<OrganizationNullableScalarRelationFilter, OrganizationWhereInput> | null
-    profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
-    permissions?: UserPermissionListRelationFilter
-    CreatorProfile?: ProfileListRelationFilter
-    UpdaterProfile?: ProfileListRelationFilter
     BudgetAssignee?: BudgetListRelationFilter
     CreatorBudget?: BudgetListRelationFilter
     UpdaterBudget?: BudgetListRelationFilter
@@ -52934,25 +44825,18 @@ export namespace Prisma {
     UpdaterEvent?: EventListRelationFilter
     CreatorStage?: StageListRelationFilter
     UpdaterStage?: StageListRelationFilter
-    CreatorReport?: ReportListRelationFilter
-    UpdaterReport?: ReportListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
     username?: SortOrder
     password?: SortOrder
+    displayName?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrderInput | SortOrder
     status?: SortOrder
     roleId?: SortOrderInput | SortOrder
-    organizationId?: SortOrderInput | SortOrder
     role?: RoleOrderByWithRelationInput
-    organization?: OrganizationOrderByWithRelationInput
-    profile?: ProfileOrderByWithRelationInput
-    permissions?: UserPermissionOrderByRelationAggregateInput
-    CreatorProfile?: ProfileOrderByRelationAggregateInput
-    UpdaterProfile?: ProfileOrderByRelationAggregateInput
     BudgetAssignee?: BudgetOrderByRelationAggregateInput
     CreatorBudget?: BudgetOrderByRelationAggregateInput
     UpdaterBudget?: BudgetOrderByRelationAggregateInput
@@ -52988,8 +44872,6 @@ export namespace Prisma {
     UpdaterEvent?: EventOrderByRelationAggregateInput
     CreatorStage?: StageOrderByRelationAggregateInput
     UpdaterStage?: StageOrderByRelationAggregateInput
-    CreatorReport?: ReportOrderByRelationAggregateInput
-    UpdaterReport?: ReportOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -52999,17 +44881,12 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     password?: StringFilter<"User"> | string
+    displayName?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeNullableFilter<"User"> | Date | string | null
     updatedAt?: DateTimeNullableFilter<"User"> | Date | string | null
     status?: StringFilter<"User"> | string
     roleId?: StringNullableFilter<"User"> | string | null
-    organizationId?: StringNullableFilter<"User"> | string | null
     role?: XOR<RoleNullableScalarRelationFilter, RoleWhereInput> | null
-    organization?: XOR<OrganizationNullableScalarRelationFilter, OrganizationWhereInput> | null
-    profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
-    permissions?: UserPermissionListRelationFilter
-    CreatorProfile?: ProfileListRelationFilter
-    UpdaterProfile?: ProfileListRelationFilter
     BudgetAssignee?: BudgetListRelationFilter
     CreatorBudget?: BudgetListRelationFilter
     UpdaterBudget?: BudgetListRelationFilter
@@ -53045,19 +44922,17 @@ export namespace Prisma {
     UpdaterEvent?: EventListRelationFilter
     CreatorStage?: StageListRelationFilter
     UpdaterStage?: StageListRelationFilter
-    CreatorReport?: ReportListRelationFilter
-    UpdaterReport?: ReportListRelationFilter
   }, "id" | "username">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
     username?: SortOrder
     password?: SortOrder
+    displayName?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrderInput | SortOrder
     status?: SortOrder
     roleId?: SortOrderInput | SortOrder
-    organizationId?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -53070,11 +44945,11 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     username?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
+    displayName?: StringNullableWithAggregatesFilter<"User"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     updatedAt?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     status?: StringWithAggregatesFilter<"User"> | string
     roleId?: StringNullableWithAggregatesFilter<"User"> | string | null
-    organizationId?: StringNullableWithAggregatesFilter<"User"> | string | null
   }
 
   export type RoleWhereInput = {
@@ -53122,249 +44997,6 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Role"> | string
     name?: StringWithAggregatesFilter<"Role"> | string
     level?: IntWithAggregatesFilter<"Role"> | number
-  }
-
-  export type OrganizationWhereInput = {
-    AND?: OrganizationWhereInput | OrganizationWhereInput[]
-    OR?: OrganizationWhereInput[]
-    NOT?: OrganizationWhereInput | OrganizationWhereInput[]
-    id?: StringFilter<"Organization"> | string
-    name?: StringFilter<"Organization"> | string
-    code?: StringNullableFilter<"Organization"> | string | null
-    users?: UserListRelationFilter
-    Report?: ReportListRelationFilter
-  }
-
-  export type OrganizationOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    code?: SortOrderInput | SortOrder
-    users?: UserOrderByRelationAggregateInput
-    Report?: ReportOrderByRelationAggregateInput
-  }
-
-  export type OrganizationWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    name?: string
-    code?: string
-    AND?: OrganizationWhereInput | OrganizationWhereInput[]
-    OR?: OrganizationWhereInput[]
-    NOT?: OrganizationWhereInput | OrganizationWhereInput[]
-    users?: UserListRelationFilter
-    Report?: ReportListRelationFilter
-  }, "id" | "name" | "code">
-
-  export type OrganizationOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    code?: SortOrderInput | SortOrder
-    _count?: OrganizationCountOrderByAggregateInput
-    _max?: OrganizationMaxOrderByAggregateInput
-    _min?: OrganizationMinOrderByAggregateInput
-  }
-
-  export type OrganizationScalarWhereWithAggregatesInput = {
-    AND?: OrganizationScalarWhereWithAggregatesInput | OrganizationScalarWhereWithAggregatesInput[]
-    OR?: OrganizationScalarWhereWithAggregatesInput[]
-    NOT?: OrganizationScalarWhereWithAggregatesInput | OrganizationScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Organization"> | string
-    name?: StringWithAggregatesFilter<"Organization"> | string
-    code?: StringNullableWithAggregatesFilter<"Organization"> | string | null
-  }
-
-  export type PermissionWhereInput = {
-    AND?: PermissionWhereInput | PermissionWhereInput[]
-    OR?: PermissionWhereInput[]
-    NOT?: PermissionWhereInput | PermissionWhereInput[]
-    id?: StringFilter<"Permission"> | string
-    name?: StringFilter<"Permission"> | string
-    resource?: StringFilter<"Permission"> | string
-    action?: StringFilter<"Permission"> | string
-    description?: StringNullableFilter<"Permission"> | string | null
-    createdAt?: DateTimeFilter<"Permission"> | Date | string
-    updatedAt?: DateTimeFilter<"Permission"> | Date | string
-    users?: UserPermissionListRelationFilter
-  }
-
-  export type PermissionOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    resource?: SortOrder
-    action?: SortOrder
-    description?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    users?: UserPermissionOrderByRelationAggregateInput
-  }
-
-  export type PermissionWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    name?: string
-    resource_action?: PermissionResourceActionCompoundUniqueInput
-    AND?: PermissionWhereInput | PermissionWhereInput[]
-    OR?: PermissionWhereInput[]
-    NOT?: PermissionWhereInput | PermissionWhereInput[]
-    resource?: StringFilter<"Permission"> | string
-    action?: StringFilter<"Permission"> | string
-    description?: StringNullableFilter<"Permission"> | string | null
-    createdAt?: DateTimeFilter<"Permission"> | Date | string
-    updatedAt?: DateTimeFilter<"Permission"> | Date | string
-    users?: UserPermissionListRelationFilter
-  }, "id" | "name" | "resource_action">
-
-  export type PermissionOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    resource?: SortOrder
-    action?: SortOrder
-    description?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    _count?: PermissionCountOrderByAggregateInput
-    _max?: PermissionMaxOrderByAggregateInput
-    _min?: PermissionMinOrderByAggregateInput
-  }
-
-  export type PermissionScalarWhereWithAggregatesInput = {
-    AND?: PermissionScalarWhereWithAggregatesInput | PermissionScalarWhereWithAggregatesInput[]
-    OR?: PermissionScalarWhereWithAggregatesInput[]
-    NOT?: PermissionScalarWhereWithAggregatesInput | PermissionScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Permission"> | string
-    name?: StringWithAggregatesFilter<"Permission"> | string
-    resource?: StringWithAggregatesFilter<"Permission"> | string
-    action?: StringWithAggregatesFilter<"Permission"> | string
-    description?: StringNullableWithAggregatesFilter<"Permission"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"Permission"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Permission"> | Date | string
-  }
-
-  export type UserPermissionWhereInput = {
-    AND?: UserPermissionWhereInput | UserPermissionWhereInput[]
-    OR?: UserPermissionWhereInput[]
-    NOT?: UserPermissionWhereInput | UserPermissionWhereInput[]
-    id?: StringFilter<"UserPermission"> | string
-    userId?: StringFilter<"UserPermission"> | string
-    permissionId?: StringFilter<"UserPermission"> | string
-    createdAt?: DateTimeFilter<"UserPermission"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    permission?: XOR<PermissionScalarRelationFilter, PermissionWhereInput>
-  }
-
-  export type UserPermissionOrderByWithRelationInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    permissionId?: SortOrder
-    createdAt?: SortOrder
-    user?: UserOrderByWithRelationInput
-    permission?: PermissionOrderByWithRelationInput
-  }
-
-  export type UserPermissionWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: UserPermissionWhereInput | UserPermissionWhereInput[]
-    OR?: UserPermissionWhereInput[]
-    NOT?: UserPermissionWhereInput | UserPermissionWhereInput[]
-    userId?: StringFilter<"UserPermission"> | string
-    permissionId?: StringFilter<"UserPermission"> | string
-    createdAt?: DateTimeFilter<"UserPermission"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    permission?: XOR<PermissionScalarRelationFilter, PermissionWhereInput>
-  }, "id">
-
-  export type UserPermissionOrderByWithAggregationInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    permissionId?: SortOrder
-    createdAt?: SortOrder
-    _count?: UserPermissionCountOrderByAggregateInput
-    _max?: UserPermissionMaxOrderByAggregateInput
-    _min?: UserPermissionMinOrderByAggregateInput
-  }
-
-  export type UserPermissionScalarWhereWithAggregatesInput = {
-    AND?: UserPermissionScalarWhereWithAggregatesInput | UserPermissionScalarWhereWithAggregatesInput[]
-    OR?: UserPermissionScalarWhereWithAggregatesInput[]
-    NOT?: UserPermissionScalarWhereWithAggregatesInput | UserPermissionScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"UserPermission"> | string
-    userId?: StringWithAggregatesFilter<"UserPermission"> | string
-    permissionId?: StringWithAggregatesFilter<"UserPermission"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"UserPermission"> | Date | string
-  }
-
-  export type ProfileWhereInput = {
-    AND?: ProfileWhereInput | ProfileWhereInput[]
-    OR?: ProfileWhereInput[]
-    NOT?: ProfileWhereInput | ProfileWhereInput[]
-    id?: StringFilter<"Profile"> | string
-    name?: StringNullableFilter<"Profile"> | string | null
-    joinDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdById?: StringNullableFilter<"Profile"> | string | null
-    updatedById?: StringNullableFilter<"Profile"> | string | null
-    userId?: StringFilter<"Profile"> | string
-    createdBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    updatedBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }
-
-  export type ProfileOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrderInput | SortOrder
-    joinDate?: SortOrderInput | SortOrder
-    createdAt?: SortOrderInput | SortOrder
-    updatedAt?: SortOrderInput | SortOrder
-    createdById?: SortOrderInput | SortOrder
-    updatedById?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    createdBy?: UserOrderByWithRelationInput
-    updatedBy?: UserOrderByWithRelationInput
-    user?: UserOrderByWithRelationInput
-  }
-
-  export type ProfileWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    userId?: string
-    AND?: ProfileWhereInput | ProfileWhereInput[]
-    OR?: ProfileWhereInput[]
-    NOT?: ProfileWhereInput | ProfileWhereInput[]
-    name?: StringNullableFilter<"Profile"> | string | null
-    joinDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdById?: StringNullableFilter<"Profile"> | string | null
-    updatedById?: StringNullableFilter<"Profile"> | string | null
-    createdBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    updatedBy?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id" | "userId">
-
-  export type ProfileOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrderInput | SortOrder
-    joinDate?: SortOrderInput | SortOrder
-    createdAt?: SortOrderInput | SortOrder
-    updatedAt?: SortOrderInput | SortOrder
-    createdById?: SortOrderInput | SortOrder
-    updatedById?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    _count?: ProfileCountOrderByAggregateInput
-    _max?: ProfileMaxOrderByAggregateInput
-    _min?: ProfileMinOrderByAggregateInput
-  }
-
-  export type ProfileScalarWhereWithAggregatesInput = {
-    AND?: ProfileScalarWhereWithAggregatesInput | ProfileScalarWhereWithAggregatesInput[]
-    OR?: ProfileScalarWhereWithAggregatesInput[]
-    NOT?: ProfileScalarWhereWithAggregatesInput | ProfileScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Profile"> | string
-    name?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    joinDate?: DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
-    createdAt?: DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
-    updatedAt?: DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
-    createdById?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    updatedById?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    userId?: StringWithAggregatesFilter<"Profile"> | string
   }
 
   export type SessionWhereInput = {
@@ -55170,7 +46802,6 @@ export namespace Prisma {
     key: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    report?: ReportCreateNestedOneWithoutFilesInput
   }
 
   export type FileUncheckedCreateInput = {
@@ -55179,7 +46810,6 @@ export namespace Prisma {
     key: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    reportId?: string | null
   }
 
   export type FileUpdateInput = {
@@ -55188,7 +46818,6 @@ export namespace Prisma {
     key?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    report?: ReportUpdateOneWithoutFilesNestedInput
   }
 
   export type FileUncheckedUpdateInput = {
@@ -55197,7 +46826,6 @@ export namespace Prisma {
     key?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    reportId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type FileCreateManyInput = {
@@ -55206,7 +46834,6 @@ export namespace Prisma {
     key: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    reportId?: string | null
   }
 
   export type FileUpdateManyMutationInput = {
@@ -55223,7 +46850,6 @@ export namespace Prisma {
     key?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    reportId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ClientCreateInput = {
@@ -56334,187 +47960,15 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type ReportCategoryCreateInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    parent?: ReportCategoryCreateNestedOneWithoutChildrenInput
-    children?: ReportCategoryCreateNestedManyWithoutParentInput
-    reports?: ReportCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryUncheckedCreateInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    parentId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    children?: ReportCategoryUncheckedCreateNestedManyWithoutParentInput
-    reports?: ReportUncheckedCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    parent?: ReportCategoryUpdateOneWithoutChildrenNestedInput
-    children?: ReportCategoryUpdateManyWithoutParentNestedInput
-    reports?: ReportUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    parentId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    children?: ReportCategoryUncheckedUpdateManyWithoutParentNestedInput
-    reports?: ReportUncheckedUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryCreateManyInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    parentId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportCategoryUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ReportCategoryUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    parentId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ReportCreateInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    category: ReportCategoryCreateNestedOneWithoutReportsInput
-    organization?: OrganizationCreateNestedOneWithoutReportInput
-    createdBy?: UserCreateNestedOneWithoutCreatorReportInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterReportInput
-    files?: FileCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUncheckedCreateInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    files?: FileUncheckedCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: ReportCategoryUpdateOneRequiredWithoutReportsNestedInput
-    organization?: OrganizationUpdateOneWithoutReportNestedInput
-    createdBy?: UserUpdateOneWithoutCreatorReportNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterReportNestedInput
-    files?: FileUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    files?: FileUncheckedUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportCreateManyInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ReportUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type UserCreateInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -56550,23 +48004,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -56602,23 +48050,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -56654,23 +48096,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -56706,25 +48142,24 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserCreateManyInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
   }
 
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
@@ -56734,11 +48169,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RoleCreateInput = {
@@ -56785,251 +48220,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     level?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type OrganizationCreateInput = {
-    id?: string
-    name: string
-    code?: string | null
-    users?: UserCreateNestedManyWithoutOrganizationInput
-    Report?: ReportCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationUncheckedCreateInput = {
-    id?: string
-    name: string
-    code?: string | null
-    users?: UserUncheckedCreateNestedManyWithoutOrganizationInput
-    Report?: ReportUncheckedCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: UserUpdateManyWithoutOrganizationNestedInput
-    Report?: ReportUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type OrganizationUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: UserUncheckedUpdateManyWithoutOrganizationNestedInput
-    Report?: ReportUncheckedUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type OrganizationCreateManyInput = {
-    id?: string
-    name: string
-    code?: string | null
-  }
-
-  export type OrganizationUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type OrganizationUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type PermissionCreateInput = {
-    id?: string
-    name: string
-    resource: string
-    action: string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    users?: UserPermissionCreateNestedManyWithoutPermissionInput
-  }
-
-  export type PermissionUncheckedCreateInput = {
-    id?: string
-    name: string
-    resource: string
-    action: string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    users?: UserPermissionUncheckedCreateNestedManyWithoutPermissionInput
-  }
-
-  export type PermissionUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserPermissionUpdateManyWithoutPermissionNestedInput
-  }
-
-  export type PermissionUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserPermissionUncheckedUpdateManyWithoutPermissionNestedInput
-  }
-
-  export type PermissionCreateManyInput = {
-    id?: string
-    name: string
-    resource: string
-    action: string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type PermissionUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PermissionUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionCreateInput = {
-    id?: string
-    createdAt?: Date | string
-    user: UserCreateNestedOneWithoutPermissionsInput
-    permission: PermissionCreateNestedOneWithoutUsersInput
-  }
-
-  export type UserPermissionUncheckedCreateInput = {
-    id?: string
-    userId: string
-    permissionId: string
-    createdAt?: Date | string
-  }
-
-  export type UserPermissionUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutPermissionsNestedInput
-    permission?: PermissionUpdateOneRequiredWithoutUsersNestedInput
-  }
-
-  export type UserPermissionUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    permissionId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionCreateManyInput = {
-    id?: string
-    userId: string
-    permissionId: string
-    createdAt?: Date | string
-  }
-
-  export type UserPermissionUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    permissionId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProfileCreateInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdBy?: UserCreateNestedOneWithoutCreatorProfileInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterProfileInput
-    user: UserCreateNestedOneWithoutProfileInput
-  }
-
-  export type ProfileUncheckedCreateInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdById?: string | null
-    updatedById?: string | null
-    userId: string
-  }
-
-  export type ProfileUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdBy?: UserUpdateOneWithoutCreatorProfileNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterProfileNestedInput
-    user?: UserUpdateOneRequiredWithoutProfileNestedInput
-  }
-
-  export type ProfileUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ProfileCreateManyInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdById?: string | null
-    updatedById?: string | null
-    userId: string
-  }
-
-  export type ProfileUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type ProfileUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type SessionCreateInput = {
@@ -58362,18 +49552,12 @@ export namespace Prisma {
     order?: SortOrder
   }
 
-  export type ReportNullableScalarRelationFilter = {
-    is?: ReportWhereInput | null
-    isNot?: ReportWhereInput | null
-  }
-
   export type FileCountOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
     key?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    reportId?: SortOrder
   }
 
   export type FileMaxOrderByAggregateInput = {
@@ -58382,7 +49566,6 @@ export namespace Prisma {
     key?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    reportId?: SortOrder
   }
 
   export type FileMinOrderByAggregateInput = {
@@ -58391,7 +49574,6 @@ export namespace Prisma {
     key?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    reportId?: SortOrder
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -58932,183 +50114,9 @@ export namespace Prisma {
     progress?: SortOrder
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type ReportCategoryNullableScalarRelationFilter = {
-    is?: ReportCategoryWhereInput | null
-    isNot?: ReportCategoryWhereInput | null
-  }
-
-  export type ReportCategoryListRelationFilter = {
-    every?: ReportCategoryWhereInput
-    some?: ReportCategoryWhereInput
-    none?: ReportCategoryWhereInput
-  }
-
-  export type ReportListRelationFilter = {
-    every?: ReportWhereInput
-    some?: ReportWhereInput
-    none?: ReportWhereInput
-  }
-
-  export type ReportCategoryOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ReportOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ReportCategoryCountOrderByAggregateInput = {
-    id?: SortOrder
-    order?: SortOrder
-    name?: SortOrder
-    interval?: SortOrder
-    parentId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportCategoryAvgOrderByAggregateInput = {
-    order?: SortOrder
-  }
-
-  export type ReportCategoryMaxOrderByAggregateInput = {
-    id?: SortOrder
-    order?: SortOrder
-    name?: SortOrder
-    interval?: SortOrder
-    parentId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportCategoryMinOrderByAggregateInput = {
-    id?: SortOrder
-    order?: SortOrder
-    name?: SortOrder
-    interval?: SortOrder
-    parentId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportCategorySumOrderByAggregateInput = {
-    order?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type ReportCategoryScalarRelationFilter = {
-    is?: ReportCategoryWhereInput
-    isNot?: ReportCategoryWhereInput
-  }
-
-  export type OrganizationNullableScalarRelationFilter = {
-    is?: OrganizationWhereInput | null
-    isNot?: OrganizationWhereInput | null
-  }
-
-  export type FileListRelationFilter = {
-    every?: FileWhereInput
-    some?: FileWhereInput
-    none?: FileWhereInput
-  }
-
-  export type FileOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ReportCountOrderByAggregateInput = {
-    id?: SortOrder
-    categoryId?: SortOrder
-    periodYear?: SortOrder
-    periodMonth?: SortOrder
-    version?: SortOrder
-    organizationId?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportAvgOrderByAggregateInput = {
-    version?: SortOrder
-  }
-
-  export type ReportMaxOrderByAggregateInput = {
-    id?: SortOrder
-    categoryId?: SortOrder
-    periodYear?: SortOrder
-    periodMonth?: SortOrder
-    version?: SortOrder
-    organizationId?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportMinOrderByAggregateInput = {
-    id?: SortOrder
-    categoryId?: SortOrder
-    periodYear?: SortOrder
-    periodMonth?: SortOrder
-    version?: SortOrder
-    organizationId?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ReportSumOrderByAggregateInput = {
-    version?: SortOrder
-  }
-
   export type RoleNullableScalarRelationFilter = {
     is?: RoleWhereInput | null
     isNot?: RoleWhereInput | null
-  }
-
-  export type ProfileNullableScalarRelationFilter = {
-    is?: ProfileWhereInput | null
-    isNot?: ProfileWhereInput | null
-  }
-
-  export type UserPermissionListRelationFilter = {
-    every?: UserPermissionWhereInput
-    some?: UserPermissionWhereInput
-    none?: UserPermissionWhereInput
-  }
-
-  export type ProfileListRelationFilter = {
-    every?: ProfileWhereInput
-    some?: ProfileWhereInput
-    none?: ProfileWhereInput
   }
 
   export type ProjectListRelationFilter = {
@@ -59129,14 +50137,6 @@ export namespace Prisma {
     none?: VendorWhereInput
   }
 
-  export type UserPermissionOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ProfileOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type ProjectOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -59153,33 +50153,44 @@ export namespace Prisma {
     id?: SortOrder
     username?: SortOrder
     password?: SortOrder
+    displayName?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     status?: SortOrder
     roleId?: SortOrder
-    organizationId?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     username?: SortOrder
     password?: SortOrder
+    displayName?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     status?: SortOrder
     roleId?: SortOrder
-    organizationId?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     username?: SortOrder
     password?: SortOrder
+    displayName?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     status?: SortOrder
     roleId?: SortOrder
-    organizationId?: SortOrder
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type RoleCountOrderByAggregateInput = {
@@ -59208,121 +50219,20 @@ export namespace Prisma {
     level?: SortOrder
   }
 
-  export type OrganizationCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    code?: SortOrder
-  }
-
-  export type OrganizationMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    code?: SortOrder
-  }
-
-  export type OrganizationMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    code?: SortOrder
-  }
-
-  export type PermissionResourceActionCompoundUniqueInput = {
-    resource: string
-    action: string
-  }
-
-  export type PermissionCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    resource?: SortOrder
-    action?: SortOrder
-    description?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type PermissionMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    resource?: SortOrder
-    action?: SortOrder
-    description?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type PermissionMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    resource?: SortOrder
-    action?: SortOrder
-    description?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type UserScalarRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
-  }
-
-  export type PermissionScalarRelationFilter = {
-    is?: PermissionWhereInput
-    isNot?: PermissionWhereInput
-  }
-
-  export type UserPermissionCountOrderByAggregateInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    permissionId?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type UserPermissionMaxOrderByAggregateInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    permissionId?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type UserPermissionMinOrderByAggregateInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    permissionId?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type ProfileCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    joinDate?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type ProfileMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    joinDate?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type ProfileMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    joinDate?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    createdById?: SortOrder
-    updatedById?: SortOrder
-    userId?: SortOrder
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
   export type JsonFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -61600,22 +52510,6 @@ export namespace Prisma {
     deleteMany?: StageScalarWhereInput | StageScalarWhereInput[]
   }
 
-  export type ReportCreateNestedOneWithoutFilesInput = {
-    create?: XOR<ReportCreateWithoutFilesInput, ReportUncheckedCreateWithoutFilesInput>
-    connectOrCreate?: ReportCreateOrConnectWithoutFilesInput
-    connect?: ReportWhereUniqueInput
-  }
-
-  export type ReportUpdateOneWithoutFilesNestedInput = {
-    create?: XOR<ReportCreateWithoutFilesInput, ReportUncheckedCreateWithoutFilesInput>
-    connectOrCreate?: ReportCreateOrConnectWithoutFilesInput
-    upsert?: ReportUpsertWithoutFilesInput
-    disconnect?: ReportWhereInput | boolean
-    delete?: ReportWhereInput | boolean
-    connect?: ReportWhereUniqueInput
-    update?: XOR<XOR<ReportUpdateToOneWithWhereWithoutFilesInput, ReportUpdateWithoutFilesInput>, ReportUncheckedUpdateWithoutFilesInput>
-  }
-
   export type UserCreateNestedOneWithoutCreatorClientInput = {
     create?: XOR<UserCreateWithoutCreatorClientInput, UserUncheckedCreateWithoutCreatorClientInput>
     connectOrCreate?: UserCreateOrConnectWithoutCreatorClientInput
@@ -62974,255 +53868,10 @@ export namespace Prisma {
     deleteMany?: FundScalarWhereInput | FundScalarWhereInput[]
   }
 
-  export type ReportCategoryCreateNestedOneWithoutChildrenInput = {
-    create?: XOR<ReportCategoryCreateWithoutChildrenInput, ReportCategoryUncheckedCreateWithoutChildrenInput>
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutChildrenInput
-    connect?: ReportCategoryWhereUniqueInput
-  }
-
-  export type ReportCategoryCreateNestedManyWithoutParentInput = {
-    create?: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput> | ReportCategoryCreateWithoutParentInput[] | ReportCategoryUncheckedCreateWithoutParentInput[]
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutParentInput | ReportCategoryCreateOrConnectWithoutParentInput[]
-    createMany?: ReportCategoryCreateManyParentInputEnvelope
-    connect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-  }
-
-  export type ReportCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput> | ReportCreateWithoutCategoryInput[] | ReportUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCategoryInput | ReportCreateOrConnectWithoutCategoryInput[]
-    createMany?: ReportCreateManyCategoryInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type ReportCategoryUncheckedCreateNestedManyWithoutParentInput = {
-    create?: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput> | ReportCategoryCreateWithoutParentInput[] | ReportCategoryUncheckedCreateWithoutParentInput[]
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutParentInput | ReportCategoryCreateOrConnectWithoutParentInput[]
-    createMany?: ReportCategoryCreateManyParentInputEnvelope
-    connect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-  }
-
-  export type ReportUncheckedCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput> | ReportCreateWithoutCategoryInput[] | ReportUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCategoryInput | ReportCreateOrConnectWithoutCategoryInput[]
-    createMany?: ReportCreateManyCategoryInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type ReportCategoryUpdateOneWithoutChildrenNestedInput = {
-    create?: XOR<ReportCategoryCreateWithoutChildrenInput, ReportCategoryUncheckedCreateWithoutChildrenInput>
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutChildrenInput
-    upsert?: ReportCategoryUpsertWithoutChildrenInput
-    disconnect?: ReportCategoryWhereInput | boolean
-    delete?: ReportCategoryWhereInput | boolean
-    connect?: ReportCategoryWhereUniqueInput
-    update?: XOR<XOR<ReportCategoryUpdateToOneWithWhereWithoutChildrenInput, ReportCategoryUpdateWithoutChildrenInput>, ReportCategoryUncheckedUpdateWithoutChildrenInput>
-  }
-
-  export type ReportCategoryUpdateManyWithoutParentNestedInput = {
-    create?: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput> | ReportCategoryCreateWithoutParentInput[] | ReportCategoryUncheckedCreateWithoutParentInput[]
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutParentInput | ReportCategoryCreateOrConnectWithoutParentInput[]
-    upsert?: ReportCategoryUpsertWithWhereUniqueWithoutParentInput | ReportCategoryUpsertWithWhereUniqueWithoutParentInput[]
-    createMany?: ReportCategoryCreateManyParentInputEnvelope
-    set?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    disconnect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    delete?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    connect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    update?: ReportCategoryUpdateWithWhereUniqueWithoutParentInput | ReportCategoryUpdateWithWhereUniqueWithoutParentInput[]
-    updateMany?: ReportCategoryUpdateManyWithWhereWithoutParentInput | ReportCategoryUpdateManyWithWhereWithoutParentInput[]
-    deleteMany?: ReportCategoryScalarWhereInput | ReportCategoryScalarWhereInput[]
-  }
-
-  export type ReportUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput> | ReportCreateWithoutCategoryInput[] | ReportUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCategoryInput | ReportCreateOrConnectWithoutCategoryInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutCategoryInput | ReportUpsertWithWhereUniqueWithoutCategoryInput[]
-    createMany?: ReportCreateManyCategoryInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutCategoryInput | ReportUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutCategoryInput | ReportUpdateManyWithWhereWithoutCategoryInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type ReportCategoryUncheckedUpdateManyWithoutParentNestedInput = {
-    create?: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput> | ReportCategoryCreateWithoutParentInput[] | ReportCategoryUncheckedCreateWithoutParentInput[]
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutParentInput | ReportCategoryCreateOrConnectWithoutParentInput[]
-    upsert?: ReportCategoryUpsertWithWhereUniqueWithoutParentInput | ReportCategoryUpsertWithWhereUniqueWithoutParentInput[]
-    createMany?: ReportCategoryCreateManyParentInputEnvelope
-    set?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    disconnect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    delete?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    connect?: ReportCategoryWhereUniqueInput | ReportCategoryWhereUniqueInput[]
-    update?: ReportCategoryUpdateWithWhereUniqueWithoutParentInput | ReportCategoryUpdateWithWhereUniqueWithoutParentInput[]
-    updateMany?: ReportCategoryUpdateManyWithWhereWithoutParentInput | ReportCategoryUpdateManyWithWhereWithoutParentInput[]
-    deleteMany?: ReportCategoryScalarWhereInput | ReportCategoryScalarWhereInput[]
-  }
-
-  export type ReportUncheckedUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput> | ReportCreateWithoutCategoryInput[] | ReportUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCategoryInput | ReportCreateOrConnectWithoutCategoryInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutCategoryInput | ReportUpsertWithWhereUniqueWithoutCategoryInput[]
-    createMany?: ReportCreateManyCategoryInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutCategoryInput | ReportUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutCategoryInput | ReportUpdateManyWithWhereWithoutCategoryInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type ReportCategoryCreateNestedOneWithoutReportsInput = {
-    create?: XOR<ReportCategoryCreateWithoutReportsInput, ReportCategoryUncheckedCreateWithoutReportsInput>
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutReportsInput
-    connect?: ReportCategoryWhereUniqueInput
-  }
-
-  export type OrganizationCreateNestedOneWithoutReportInput = {
-    create?: XOR<OrganizationCreateWithoutReportInput, OrganizationUncheckedCreateWithoutReportInput>
-    connectOrCreate?: OrganizationCreateOrConnectWithoutReportInput
-    connect?: OrganizationWhereUniqueInput
-  }
-
-  export type UserCreateNestedOneWithoutCreatorReportInput = {
-    create?: XOR<UserCreateWithoutCreatorReportInput, UserUncheckedCreateWithoutCreatorReportInput>
-    connectOrCreate?: UserCreateOrConnectWithoutCreatorReportInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserCreateNestedOneWithoutUpdaterReportInput = {
-    create?: XOR<UserCreateWithoutUpdaterReportInput, UserUncheckedCreateWithoutUpdaterReportInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUpdaterReportInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type FileCreateNestedManyWithoutReportInput = {
-    create?: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput> | FileCreateWithoutReportInput[] | FileUncheckedCreateWithoutReportInput[]
-    connectOrCreate?: FileCreateOrConnectWithoutReportInput | FileCreateOrConnectWithoutReportInput[]
-    createMany?: FileCreateManyReportInputEnvelope
-    connect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-  }
-
-  export type FileUncheckedCreateNestedManyWithoutReportInput = {
-    create?: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput> | FileCreateWithoutReportInput[] | FileUncheckedCreateWithoutReportInput[]
-    connectOrCreate?: FileCreateOrConnectWithoutReportInput | FileCreateOrConnectWithoutReportInput[]
-    createMany?: FileCreateManyReportInputEnvelope
-    connect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-  }
-
-  export type ReportCategoryUpdateOneRequiredWithoutReportsNestedInput = {
-    create?: XOR<ReportCategoryCreateWithoutReportsInput, ReportCategoryUncheckedCreateWithoutReportsInput>
-    connectOrCreate?: ReportCategoryCreateOrConnectWithoutReportsInput
-    upsert?: ReportCategoryUpsertWithoutReportsInput
-    connect?: ReportCategoryWhereUniqueInput
-    update?: XOR<XOR<ReportCategoryUpdateToOneWithWhereWithoutReportsInput, ReportCategoryUpdateWithoutReportsInput>, ReportCategoryUncheckedUpdateWithoutReportsInput>
-  }
-
-  export type OrganizationUpdateOneWithoutReportNestedInput = {
-    create?: XOR<OrganizationCreateWithoutReportInput, OrganizationUncheckedCreateWithoutReportInput>
-    connectOrCreate?: OrganizationCreateOrConnectWithoutReportInput
-    upsert?: OrganizationUpsertWithoutReportInput
-    disconnect?: OrganizationWhereInput | boolean
-    delete?: OrganizationWhereInput | boolean
-    connect?: OrganizationWhereUniqueInput
-    update?: XOR<XOR<OrganizationUpdateToOneWithWhereWithoutReportInput, OrganizationUpdateWithoutReportInput>, OrganizationUncheckedUpdateWithoutReportInput>
-  }
-
-  export type UserUpdateOneWithoutCreatorReportNestedInput = {
-    create?: XOR<UserCreateWithoutCreatorReportInput, UserUncheckedCreateWithoutCreatorReportInput>
-    connectOrCreate?: UserCreateOrConnectWithoutCreatorReportInput
-    upsert?: UserUpsertWithoutCreatorReportInput
-    disconnect?: UserWhereInput | boolean
-    delete?: UserWhereInput | boolean
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutCreatorReportInput, UserUpdateWithoutCreatorReportInput>, UserUncheckedUpdateWithoutCreatorReportInput>
-  }
-
-  export type UserUpdateOneWithoutUpdaterReportNestedInput = {
-    create?: XOR<UserCreateWithoutUpdaterReportInput, UserUncheckedCreateWithoutUpdaterReportInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUpdaterReportInput
-    upsert?: UserUpsertWithoutUpdaterReportInput
-    disconnect?: UserWhereInput | boolean
-    delete?: UserWhereInput | boolean
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUpdaterReportInput, UserUpdateWithoutUpdaterReportInput>, UserUncheckedUpdateWithoutUpdaterReportInput>
-  }
-
-  export type FileUpdateManyWithoutReportNestedInput = {
-    create?: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput> | FileCreateWithoutReportInput[] | FileUncheckedCreateWithoutReportInput[]
-    connectOrCreate?: FileCreateOrConnectWithoutReportInput | FileCreateOrConnectWithoutReportInput[]
-    upsert?: FileUpsertWithWhereUniqueWithoutReportInput | FileUpsertWithWhereUniqueWithoutReportInput[]
-    createMany?: FileCreateManyReportInputEnvelope
-    set?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    disconnect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    delete?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    connect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    update?: FileUpdateWithWhereUniqueWithoutReportInput | FileUpdateWithWhereUniqueWithoutReportInput[]
-    updateMany?: FileUpdateManyWithWhereWithoutReportInput | FileUpdateManyWithWhereWithoutReportInput[]
-    deleteMany?: FileScalarWhereInput | FileScalarWhereInput[]
-  }
-
-  export type FileUncheckedUpdateManyWithoutReportNestedInput = {
-    create?: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput> | FileCreateWithoutReportInput[] | FileUncheckedCreateWithoutReportInput[]
-    connectOrCreate?: FileCreateOrConnectWithoutReportInput | FileCreateOrConnectWithoutReportInput[]
-    upsert?: FileUpsertWithWhereUniqueWithoutReportInput | FileUpsertWithWhereUniqueWithoutReportInput[]
-    createMany?: FileCreateManyReportInputEnvelope
-    set?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    disconnect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    delete?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    connect?: FileWhereUniqueInput | FileWhereUniqueInput[]
-    update?: FileUpdateWithWhereUniqueWithoutReportInput | FileUpdateWithWhereUniqueWithoutReportInput[]
-    updateMany?: FileUpdateManyWithWhereWithoutReportInput | FileUpdateManyWithWhereWithoutReportInput[]
-    deleteMany?: FileScalarWhereInput | FileScalarWhereInput[]
-  }
-
   export type RoleCreateNestedOneWithoutUsersInput = {
     create?: XOR<RoleCreateWithoutUsersInput, RoleUncheckedCreateWithoutUsersInput>
     connectOrCreate?: RoleCreateOrConnectWithoutUsersInput
     connect?: RoleWhereUniqueInput
-  }
-
-  export type OrganizationCreateNestedOneWithoutUsersInput = {
-    create?: XOR<OrganizationCreateWithoutUsersInput, OrganizationUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: OrganizationCreateOrConnectWithoutUsersInput
-    connect?: OrganizationWhereUniqueInput
-  }
-
-  export type ProfileCreateNestedOneWithoutUserInput = {
-    create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-    connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
-    connect?: ProfileWhereUniqueInput
-  }
-
-  export type UserPermissionCreateNestedManyWithoutUserInput = {
-    create?: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput> | UserPermissionCreateWithoutUserInput[] | UserPermissionUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutUserInput | UserPermissionCreateOrConnectWithoutUserInput[]
-    createMany?: UserPermissionCreateManyUserInputEnvelope
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-  }
-
-  export type ProfileCreateNestedManyWithoutCreatedByInput = {
-    create?: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput> | ProfileCreateWithoutCreatedByInput[] | ProfileUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutCreatedByInput | ProfileCreateOrConnectWithoutCreatedByInput[]
-    createMany?: ProfileCreateManyCreatedByInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-  }
-
-  export type ProfileCreateNestedManyWithoutUpdatedByInput = {
-    create?: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput> | ProfileCreateWithoutUpdatedByInput[] | ProfileUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutUpdatedByInput | ProfileCreateOrConnectWithoutUpdatedByInput[]
-    createMany?: ProfileCreateManyUpdatedByInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
   }
 
   export type BudgetCreateNestedManyWithoutAssigneeInput = {
@@ -63467,47 +54116,6 @@ export namespace Prisma {
     connect?: StageWhereUniqueInput | StageWhereUniqueInput[]
   }
 
-  export type ReportCreateNestedManyWithoutCreatedByInput = {
-    create?: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput> | ReportCreateWithoutCreatedByInput[] | ReportUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCreatedByInput | ReportCreateOrConnectWithoutCreatedByInput[]
-    createMany?: ReportCreateManyCreatedByInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type ReportCreateNestedManyWithoutUpdatedByInput = {
-    create?: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput> | ReportCreateWithoutUpdatedByInput[] | ReportUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutUpdatedByInput | ReportCreateOrConnectWithoutUpdatedByInput[]
-    createMany?: ReportCreateManyUpdatedByInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type ProfileUncheckedCreateNestedOneWithoutUserInput = {
-    create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-    connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
-    connect?: ProfileWhereUniqueInput
-  }
-
-  export type UserPermissionUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput> | UserPermissionCreateWithoutUserInput[] | UserPermissionUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutUserInput | UserPermissionCreateOrConnectWithoutUserInput[]
-    createMany?: UserPermissionCreateManyUserInputEnvelope
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-  }
-
-  export type ProfileUncheckedCreateNestedManyWithoutCreatedByInput = {
-    create?: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput> | ProfileCreateWithoutCreatedByInput[] | ProfileUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutCreatedByInput | ProfileCreateOrConnectWithoutCreatedByInput[]
-    createMany?: ProfileCreateManyCreatedByInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-  }
-
-  export type ProfileUncheckedCreateNestedManyWithoutUpdatedByInput = {
-    create?: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput> | ProfileCreateWithoutUpdatedByInput[] | ProfileUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutUpdatedByInput | ProfileCreateOrConnectWithoutUpdatedByInput[]
-    createMany?: ProfileCreateManyUpdatedByInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-  }
-
   export type BudgetUncheckedCreateNestedManyWithoutAssigneeInput = {
     create?: XOR<BudgetCreateWithoutAssigneeInput, BudgetUncheckedCreateWithoutAssigneeInput> | BudgetCreateWithoutAssigneeInput[] | BudgetUncheckedCreateWithoutAssigneeInput[]
     connectOrCreate?: BudgetCreateOrConnectWithoutAssigneeInput | BudgetCreateOrConnectWithoutAssigneeInput[]
@@ -63750,20 +54358,6 @@ export namespace Prisma {
     connect?: StageWhereUniqueInput | StageWhereUniqueInput[]
   }
 
-  export type ReportUncheckedCreateNestedManyWithoutCreatedByInput = {
-    create?: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput> | ReportCreateWithoutCreatedByInput[] | ReportUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCreatedByInput | ReportCreateOrConnectWithoutCreatedByInput[]
-    createMany?: ReportCreateManyCreatedByInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type ReportUncheckedCreateNestedManyWithoutUpdatedByInput = {
-    create?: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput> | ReportCreateWithoutUpdatedByInput[] | ReportUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutUpdatedByInput | ReportCreateOrConnectWithoutUpdatedByInput[]
-    createMany?: ReportCreateManyUpdatedByInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
   export type RoleUpdateOneWithoutUsersNestedInput = {
     create?: XOR<RoleCreateWithoutUsersInput, RoleUncheckedCreateWithoutUsersInput>
     connectOrCreate?: RoleCreateOrConnectWithoutUsersInput
@@ -63772,68 +54366,6 @@ export namespace Prisma {
     delete?: RoleWhereInput | boolean
     connect?: RoleWhereUniqueInput
     update?: XOR<XOR<RoleUpdateToOneWithWhereWithoutUsersInput, RoleUpdateWithoutUsersInput>, RoleUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type OrganizationUpdateOneWithoutUsersNestedInput = {
-    create?: XOR<OrganizationCreateWithoutUsersInput, OrganizationUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: OrganizationCreateOrConnectWithoutUsersInput
-    upsert?: OrganizationUpsertWithoutUsersInput
-    disconnect?: OrganizationWhereInput | boolean
-    delete?: OrganizationWhereInput | boolean
-    connect?: OrganizationWhereUniqueInput
-    update?: XOR<XOR<OrganizationUpdateToOneWithWhereWithoutUsersInput, OrganizationUpdateWithoutUsersInput>, OrganizationUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type ProfileUpdateOneWithoutUserNestedInput = {
-    create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-    connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
-    upsert?: ProfileUpsertWithoutUserInput
-    disconnect?: ProfileWhereInput | boolean
-    delete?: ProfileWhereInput | boolean
-    connect?: ProfileWhereUniqueInput
-    update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
-  }
-
-  export type UserPermissionUpdateManyWithoutUserNestedInput = {
-    create?: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput> | UserPermissionCreateWithoutUserInput[] | UserPermissionUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutUserInput | UserPermissionCreateOrConnectWithoutUserInput[]
-    upsert?: UserPermissionUpsertWithWhereUniqueWithoutUserInput | UserPermissionUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: UserPermissionCreateManyUserInputEnvelope
-    set?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    disconnect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    delete?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    update?: UserPermissionUpdateWithWhereUniqueWithoutUserInput | UserPermissionUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: UserPermissionUpdateManyWithWhereWithoutUserInput | UserPermissionUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-  }
-
-  export type ProfileUpdateManyWithoutCreatedByNestedInput = {
-    create?: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput> | ProfileCreateWithoutCreatedByInput[] | ProfileUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutCreatedByInput | ProfileCreateOrConnectWithoutCreatedByInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutCreatedByInput | ProfileUpsertWithWhereUniqueWithoutCreatedByInput[]
-    createMany?: ProfileCreateManyCreatedByInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutCreatedByInput | ProfileUpdateWithWhereUniqueWithoutCreatedByInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutCreatedByInput | ProfileUpdateManyWithWhereWithoutCreatedByInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-  }
-
-  export type ProfileUpdateManyWithoutUpdatedByNestedInput = {
-    create?: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput> | ProfileCreateWithoutUpdatedByInput[] | ProfileUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutUpdatedByInput | ProfileCreateOrConnectWithoutUpdatedByInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutUpdatedByInput | ProfileUpsertWithWhereUniqueWithoutUpdatedByInput[]
-    createMany?: ProfileCreateManyUpdatedByInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutUpdatedByInput | ProfileUpdateWithWhereUniqueWithoutUpdatedByInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutUpdatedByInput | ProfileUpdateManyWithWhereWithoutUpdatedByInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
   }
 
   export type BudgetUpdateManyWithoutAssigneeNestedInput = {
@@ -64323,86 +54855,6 @@ export namespace Prisma {
     deleteMany?: StageScalarWhereInput | StageScalarWhereInput[]
   }
 
-  export type ReportUpdateManyWithoutCreatedByNestedInput = {
-    create?: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput> | ReportCreateWithoutCreatedByInput[] | ReportUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCreatedByInput | ReportCreateOrConnectWithoutCreatedByInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutCreatedByInput | ReportUpsertWithWhereUniqueWithoutCreatedByInput[]
-    createMany?: ReportCreateManyCreatedByInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutCreatedByInput | ReportUpdateWithWhereUniqueWithoutCreatedByInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutCreatedByInput | ReportUpdateManyWithWhereWithoutCreatedByInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type ReportUpdateManyWithoutUpdatedByNestedInput = {
-    create?: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput> | ReportCreateWithoutUpdatedByInput[] | ReportUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutUpdatedByInput | ReportCreateOrConnectWithoutUpdatedByInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutUpdatedByInput | ReportUpsertWithWhereUniqueWithoutUpdatedByInput[]
-    createMany?: ReportCreateManyUpdatedByInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutUpdatedByInput | ReportUpdateWithWhereUniqueWithoutUpdatedByInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutUpdatedByInput | ReportUpdateManyWithWhereWithoutUpdatedByInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type ProfileUncheckedUpdateOneWithoutUserNestedInput = {
-    create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-    connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
-    upsert?: ProfileUpsertWithoutUserInput
-    disconnect?: ProfileWhereInput | boolean
-    delete?: ProfileWhereInput | boolean
-    connect?: ProfileWhereUniqueInput
-    update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
-  }
-
-  export type UserPermissionUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput> | UserPermissionCreateWithoutUserInput[] | UserPermissionUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutUserInput | UserPermissionCreateOrConnectWithoutUserInput[]
-    upsert?: UserPermissionUpsertWithWhereUniqueWithoutUserInput | UserPermissionUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: UserPermissionCreateManyUserInputEnvelope
-    set?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    disconnect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    delete?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    update?: UserPermissionUpdateWithWhereUniqueWithoutUserInput | UserPermissionUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: UserPermissionUpdateManyWithWhereWithoutUserInput | UserPermissionUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-  }
-
-  export type ProfileUncheckedUpdateManyWithoutCreatedByNestedInput = {
-    create?: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput> | ProfileCreateWithoutCreatedByInput[] | ProfileUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutCreatedByInput | ProfileCreateOrConnectWithoutCreatedByInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutCreatedByInput | ProfileUpsertWithWhereUniqueWithoutCreatedByInput[]
-    createMany?: ProfileCreateManyCreatedByInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutCreatedByInput | ProfileUpdateWithWhereUniqueWithoutCreatedByInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutCreatedByInput | ProfileUpdateManyWithWhereWithoutCreatedByInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-  }
-
-  export type ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput = {
-    create?: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput> | ProfileCreateWithoutUpdatedByInput[] | ProfileUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutUpdatedByInput | ProfileCreateOrConnectWithoutUpdatedByInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutUpdatedByInput | ProfileUpsertWithWhereUniqueWithoutUpdatedByInput[]
-    createMany?: ProfileCreateManyUpdatedByInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutUpdatedByInput | ProfileUpdateWithWhereUniqueWithoutUpdatedByInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutUpdatedByInput | ProfileUpdateManyWithWhereWithoutUpdatedByInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-  }
-
   export type BudgetUncheckedUpdateManyWithoutAssigneeNestedInput = {
     create?: XOR<BudgetCreateWithoutAssigneeInput, BudgetUncheckedCreateWithoutAssigneeInput> | BudgetCreateWithoutAssigneeInput[] | BudgetUncheckedCreateWithoutAssigneeInput[]
     connectOrCreate?: BudgetCreateOrConnectWithoutAssigneeInput | BudgetCreateOrConnectWithoutAssigneeInput[]
@@ -64890,34 +55342,6 @@ export namespace Prisma {
     deleteMany?: StageScalarWhereInput | StageScalarWhereInput[]
   }
 
-  export type ReportUncheckedUpdateManyWithoutCreatedByNestedInput = {
-    create?: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput> | ReportCreateWithoutCreatedByInput[] | ReportUncheckedCreateWithoutCreatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutCreatedByInput | ReportCreateOrConnectWithoutCreatedByInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutCreatedByInput | ReportUpsertWithWhereUniqueWithoutCreatedByInput[]
-    createMany?: ReportCreateManyCreatedByInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutCreatedByInput | ReportUpdateWithWhereUniqueWithoutCreatedByInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutCreatedByInput | ReportUpdateManyWithWhereWithoutCreatedByInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type ReportUncheckedUpdateManyWithoutUpdatedByNestedInput = {
-    create?: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput> | ReportCreateWithoutUpdatedByInput[] | ReportUncheckedCreateWithoutUpdatedByInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutUpdatedByInput | ReportCreateOrConnectWithoutUpdatedByInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutUpdatedByInput | ReportUpsertWithWhereUniqueWithoutUpdatedByInput[]
-    createMany?: ReportCreateManyUpdatedByInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutUpdatedByInput | ReportUpdateWithWhereUniqueWithoutUpdatedByInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutUpdatedByInput | ReportUpdateManyWithWhereWithoutUpdatedByInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
   export type UserCreateNestedManyWithoutRoleInput = {
     create?: XOR<UserCreateWithoutRoleInput, UserUncheckedCreateWithoutRoleInput> | UserCreateWithoutRoleInput[] | UserUncheckedCreateWithoutRoleInput[]
     connectOrCreate?: UserCreateOrConnectWithoutRoleInput | UserCreateOrConnectWithoutRoleInput[]
@@ -64930,6 +55354,14 @@ export namespace Prisma {
     connectOrCreate?: UserCreateOrConnectWithoutRoleInput | UserCreateOrConnectWithoutRoleInput[]
     createMany?: UserCreateManyRoleInputEnvelope
     connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type UserUpdateManyWithoutRoleNestedInput = {
@@ -64958,206 +55390,6 @@ export namespace Prisma {
     update?: UserUpdateWithWhereUniqueWithoutRoleInput | UserUpdateWithWhereUniqueWithoutRoleInput[]
     updateMany?: UserUpdateManyWithWhereWithoutRoleInput | UserUpdateManyWithWhereWithoutRoleInput[]
     deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
-  }
-
-  export type UserCreateNestedManyWithoutOrganizationInput = {
-    create?: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput> | UserCreateWithoutOrganizationInput[] | UserUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutOrganizationInput | UserCreateOrConnectWithoutOrganizationInput[]
-    createMany?: UserCreateManyOrganizationInputEnvelope
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-  }
-
-  export type ReportCreateNestedManyWithoutOrganizationInput = {
-    create?: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput> | ReportCreateWithoutOrganizationInput[] | ReportUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutOrganizationInput | ReportCreateOrConnectWithoutOrganizationInput[]
-    createMany?: ReportCreateManyOrganizationInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type UserUncheckedCreateNestedManyWithoutOrganizationInput = {
-    create?: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput> | UserCreateWithoutOrganizationInput[] | UserUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutOrganizationInput | UserCreateOrConnectWithoutOrganizationInput[]
-    createMany?: UserCreateManyOrganizationInputEnvelope
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-  }
-
-  export type ReportUncheckedCreateNestedManyWithoutOrganizationInput = {
-    create?: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput> | ReportCreateWithoutOrganizationInput[] | ReportUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutOrganizationInput | ReportCreateOrConnectWithoutOrganizationInput[]
-    createMany?: ReportCreateManyOrganizationInputEnvelope
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-  }
-
-  export type UserUpdateManyWithoutOrganizationNestedInput = {
-    create?: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput> | UserCreateWithoutOrganizationInput[] | UserUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutOrganizationInput | UserCreateOrConnectWithoutOrganizationInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutOrganizationInput | UserUpsertWithWhereUniqueWithoutOrganizationInput[]
-    createMany?: UserCreateManyOrganizationInputEnvelope
-    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutOrganizationInput | UserUpdateWithWhereUniqueWithoutOrganizationInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutOrganizationInput | UserUpdateManyWithWhereWithoutOrganizationInput[]
-    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
-  }
-
-  export type ReportUpdateManyWithoutOrganizationNestedInput = {
-    create?: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput> | ReportCreateWithoutOrganizationInput[] | ReportUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutOrganizationInput | ReportCreateOrConnectWithoutOrganizationInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutOrganizationInput | ReportUpsertWithWhereUniqueWithoutOrganizationInput[]
-    createMany?: ReportCreateManyOrganizationInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutOrganizationInput | ReportUpdateWithWhereUniqueWithoutOrganizationInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutOrganizationInput | ReportUpdateManyWithWhereWithoutOrganizationInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type UserUncheckedUpdateManyWithoutOrganizationNestedInput = {
-    create?: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput> | UserCreateWithoutOrganizationInput[] | UserUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutOrganizationInput | UserCreateOrConnectWithoutOrganizationInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutOrganizationInput | UserUpsertWithWhereUniqueWithoutOrganizationInput[]
-    createMany?: UserCreateManyOrganizationInputEnvelope
-    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutOrganizationInput | UserUpdateWithWhereUniqueWithoutOrganizationInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutOrganizationInput | UserUpdateManyWithWhereWithoutOrganizationInput[]
-    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
-  }
-
-  export type ReportUncheckedUpdateManyWithoutOrganizationNestedInput = {
-    create?: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput> | ReportCreateWithoutOrganizationInput[] | ReportUncheckedCreateWithoutOrganizationInput[]
-    connectOrCreate?: ReportCreateOrConnectWithoutOrganizationInput | ReportCreateOrConnectWithoutOrganizationInput[]
-    upsert?: ReportUpsertWithWhereUniqueWithoutOrganizationInput | ReportUpsertWithWhereUniqueWithoutOrganizationInput[]
-    createMany?: ReportCreateManyOrganizationInputEnvelope
-    set?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    disconnect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    delete?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    connect?: ReportWhereUniqueInput | ReportWhereUniqueInput[]
-    update?: ReportUpdateWithWhereUniqueWithoutOrganizationInput | ReportUpdateWithWhereUniqueWithoutOrganizationInput[]
-    updateMany?: ReportUpdateManyWithWhereWithoutOrganizationInput | ReportUpdateManyWithWhereWithoutOrganizationInput[]
-    deleteMany?: ReportScalarWhereInput | ReportScalarWhereInput[]
-  }
-
-  export type UserPermissionCreateNestedManyWithoutPermissionInput = {
-    create?: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput> | UserPermissionCreateWithoutPermissionInput[] | UserPermissionUncheckedCreateWithoutPermissionInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutPermissionInput | UserPermissionCreateOrConnectWithoutPermissionInput[]
-    createMany?: UserPermissionCreateManyPermissionInputEnvelope
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-  }
-
-  export type UserPermissionUncheckedCreateNestedManyWithoutPermissionInput = {
-    create?: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput> | UserPermissionCreateWithoutPermissionInput[] | UserPermissionUncheckedCreateWithoutPermissionInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutPermissionInput | UserPermissionCreateOrConnectWithoutPermissionInput[]
-    createMany?: UserPermissionCreateManyPermissionInputEnvelope
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-  }
-
-  export type UserPermissionUpdateManyWithoutPermissionNestedInput = {
-    create?: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput> | UserPermissionCreateWithoutPermissionInput[] | UserPermissionUncheckedCreateWithoutPermissionInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutPermissionInput | UserPermissionCreateOrConnectWithoutPermissionInput[]
-    upsert?: UserPermissionUpsertWithWhereUniqueWithoutPermissionInput | UserPermissionUpsertWithWhereUniqueWithoutPermissionInput[]
-    createMany?: UserPermissionCreateManyPermissionInputEnvelope
-    set?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    disconnect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    delete?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    update?: UserPermissionUpdateWithWhereUniqueWithoutPermissionInput | UserPermissionUpdateWithWhereUniqueWithoutPermissionInput[]
-    updateMany?: UserPermissionUpdateManyWithWhereWithoutPermissionInput | UserPermissionUpdateManyWithWhereWithoutPermissionInput[]
-    deleteMany?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-  }
-
-  export type UserPermissionUncheckedUpdateManyWithoutPermissionNestedInput = {
-    create?: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput> | UserPermissionCreateWithoutPermissionInput[] | UserPermissionUncheckedCreateWithoutPermissionInput[]
-    connectOrCreate?: UserPermissionCreateOrConnectWithoutPermissionInput | UserPermissionCreateOrConnectWithoutPermissionInput[]
-    upsert?: UserPermissionUpsertWithWhereUniqueWithoutPermissionInput | UserPermissionUpsertWithWhereUniqueWithoutPermissionInput[]
-    createMany?: UserPermissionCreateManyPermissionInputEnvelope
-    set?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    disconnect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    delete?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    connect?: UserPermissionWhereUniqueInput | UserPermissionWhereUniqueInput[]
-    update?: UserPermissionUpdateWithWhereUniqueWithoutPermissionInput | UserPermissionUpdateWithWhereUniqueWithoutPermissionInput[]
-    updateMany?: UserPermissionUpdateManyWithWhereWithoutPermissionInput | UserPermissionUpdateManyWithWhereWithoutPermissionInput[]
-    deleteMany?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-  }
-
-  export type UserCreateNestedOneWithoutPermissionsInput = {
-    create?: XOR<UserCreateWithoutPermissionsInput, UserUncheckedCreateWithoutPermissionsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPermissionsInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type PermissionCreateNestedOneWithoutUsersInput = {
-    create?: XOR<PermissionCreateWithoutUsersInput, PermissionUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: PermissionCreateOrConnectWithoutUsersInput
-    connect?: PermissionWhereUniqueInput
-  }
-
-  export type UserUpdateOneRequiredWithoutPermissionsNestedInput = {
-    create?: XOR<UserCreateWithoutPermissionsInput, UserUncheckedCreateWithoutPermissionsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPermissionsInput
-    upsert?: UserUpsertWithoutPermissionsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPermissionsInput, UserUpdateWithoutPermissionsInput>, UserUncheckedUpdateWithoutPermissionsInput>
-  }
-
-  export type PermissionUpdateOneRequiredWithoutUsersNestedInput = {
-    create?: XOR<PermissionCreateWithoutUsersInput, PermissionUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: PermissionCreateOrConnectWithoutUsersInput
-    upsert?: PermissionUpsertWithoutUsersInput
-    connect?: PermissionWhereUniqueInput
-    update?: XOR<XOR<PermissionUpdateToOneWithWhereWithoutUsersInput, PermissionUpdateWithoutUsersInput>, PermissionUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type UserCreateNestedOneWithoutCreatorProfileInput = {
-    create?: XOR<UserCreateWithoutCreatorProfileInput, UserUncheckedCreateWithoutCreatorProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutCreatorProfileInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserCreateNestedOneWithoutUpdaterProfileInput = {
-    create?: XOR<UserCreateWithoutUpdaterProfileInput, UserUncheckedCreateWithoutUpdaterProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUpdaterProfileInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserCreateNestedOneWithoutProfileInput = {
-    create?: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProfileInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserUpdateOneWithoutCreatorProfileNestedInput = {
-    create?: XOR<UserCreateWithoutCreatorProfileInput, UserUncheckedCreateWithoutCreatorProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutCreatorProfileInput
-    upsert?: UserUpsertWithoutCreatorProfileInput
-    disconnect?: UserWhereInput | boolean
-    delete?: UserWhereInput | boolean
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutCreatorProfileInput, UserUpdateWithoutCreatorProfileInput>, UserUncheckedUpdateWithoutCreatorProfileInput>
-  }
-
-  export type UserUpdateOneWithoutUpdaterProfileNestedInput = {
-    create?: XOR<UserCreateWithoutUpdaterProfileInput, UserUncheckedCreateWithoutUpdaterProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUpdaterProfileInput
-    upsert?: UserUpsertWithoutUpdaterProfileInput
-    disconnect?: UserWhereInput | boolean
-    delete?: UserWhereInput | boolean
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUpdaterProfileInput, UserUpdateWithoutUpdaterProfileInput>, UserUncheckedUpdateWithoutUpdaterProfileInput>
-  }
-
-  export type UserUpdateOneRequiredWithoutProfileNestedInput = {
-    create?: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProfileInput
-    upsert?: UserUpsertWithoutProfileInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProfileInput, UserUpdateWithoutProfileInput>, UserUncheckedUpdateWithoutProfileInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -65455,15 +55687,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
     FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
@@ -65498,23 +55726,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutBudgetAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
     FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
@@ -65549,8 +55771,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutBudgetAssigneeInput = {
@@ -65562,15 +55782,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
     FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
@@ -65605,23 +55821,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorBudgetInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
     FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
@@ -65656,8 +55866,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorBudgetInput = {
@@ -65669,15 +55877,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
@@ -65712,23 +55916,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterBudgetInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
@@ -65763,8 +55961,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterBudgetInput = {
@@ -65954,15 +56150,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
     FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
@@ -65997,23 +56189,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutBudgetAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
     FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
@@ -66048,8 +56234,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutCreatorBudgetInput = {
@@ -66067,15 +56251,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
     FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
@@ -66110,23 +56290,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorBudgetInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
     FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
@@ -66161,8 +56335,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterBudgetInput = {
@@ -66180,15 +56352,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
@@ -66223,23 +56391,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterBudgetInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
@@ -66274,8 +56436,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type BudgetItemUpsertWithWhereUniqueWithoutBudgetInput = {
@@ -66577,15 +56737,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -66620,23 +56776,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutFundAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -66671,8 +56821,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutFundAssigneeInput = {
@@ -66684,15 +56832,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -66727,23 +56871,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorFundInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -66778,8 +56916,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorFundInput = {
@@ -66791,15 +56927,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -66834,23 +56966,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterFundInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -66885,8 +57011,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterFundInput = {
@@ -67152,15 +57276,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -67195,23 +57315,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutFundAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -67246,8 +57360,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutCreatorFundInput = {
@@ -67265,15 +57377,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -67308,23 +57416,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorFundInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -67359,8 +57461,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterFundInput = {
@@ -67378,15 +57478,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -67421,23 +57517,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterFundInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -67472,8 +57562,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type FundItemUpsertWithWhereUniqueWithoutFundInput = {
@@ -67861,15 +57949,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -67904,23 +57988,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorExpenseInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -67955,8 +58033,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorExpenseInput = {
@@ -67968,15 +58044,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -68011,23 +58083,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterExpenseInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -68062,8 +58128,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterExpenseInput = {
@@ -68316,15 +58380,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -68359,23 +58419,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorExpenseInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -68410,8 +58464,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterExpenseInput = {
@@ -68429,15 +58481,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -68472,23 +58520,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterExpenseInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -68523,8 +58565,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type FundUpsertWithoutExpensesInput = {
@@ -69288,15 +59328,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -69331,23 +59367,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutPipelineAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -69382,8 +59412,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutPipelineAssigneeInput = {
@@ -69395,15 +59423,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -69438,23 +59462,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutPipelineMemberInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -69489,8 +59507,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutPipelineMemberInput = {
@@ -69502,15 +59518,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -69545,23 +59557,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorPipelineInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -69596,8 +59602,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorPipelineInput = {
@@ -69609,15 +59613,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -69652,23 +59652,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterPipelineInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -69703,8 +59697,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterPipelineInput = {
@@ -70063,15 +60055,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -70106,23 +60094,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPipelineAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -70157,8 +60139,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithWhereUniqueWithoutPipelineMemberInput = {
@@ -70184,11 +60164,11 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     username?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    displayName?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeNullableFilter<"User"> | Date | string | null
     updatedAt?: DateTimeNullableFilter<"User"> | Date | string | null
     status?: StringFilter<"User"> | string
     roleId?: StringNullableFilter<"User"> | string | null
-    organizationId?: StringNullableFilter<"User"> | string | null
   }
 
   export type UserUpsertWithoutCreatorPipelineInput = {
@@ -70206,15 +60186,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -70249,23 +60225,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorPipelineInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -70300,8 +60270,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterPipelineInput = {
@@ -70319,15 +60287,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -70362,23 +60326,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterPipelineInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -70413,8 +60371,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type StageUpsertWithWhereUniqueWithoutPipelineInput = {
@@ -72316,15 +62272,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -72359,23 +62311,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorEventInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -72410,8 +62356,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorEventInput = {
@@ -72423,15 +62367,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -72466,23 +62406,17 @@ export namespace Prisma {
     CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterEventInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -72517,8 +62451,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterEventInput = {
@@ -72684,15 +62616,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -72727,23 +62655,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorEventInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -72778,8 +62700,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterEventInput = {
@@ -72797,15 +62717,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -72840,23 +62756,17 @@ export namespace Prisma {
     CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterEventInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -72891,8 +62801,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type PipelineUpsertWithoutEventsInput = {
@@ -73060,15 +62968,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -73103,23 +63007,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorNoteInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -73154,8 +63052,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorNoteInput = {
@@ -73167,15 +63063,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -73210,23 +63102,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterNoteInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -73261,8 +63147,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterNoteInput = {
@@ -73756,15 +63640,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -73799,23 +63679,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorNoteInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -73850,8 +63724,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterNoteInput = {
@@ -73869,15 +63741,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -73912,23 +63780,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterNoteInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -73963,8 +63825,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type PipelineUpsertWithoutNotesInput = {
@@ -74515,15 +64375,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -74558,23 +64414,17 @@ export namespace Prisma {
     CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorStageInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -74609,8 +64459,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorStageInput = {
@@ -74622,15 +64470,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -74665,23 +64509,17 @@ export namespace Prisma {
     CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterStageInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -74716,8 +64554,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterStageInput = {
@@ -75049,15 +64885,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -75092,23 +64924,17 @@ export namespace Prisma {
     CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorStageInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -75143,8 +64969,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterStageInput = {
@@ -75162,15 +64986,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -75205,23 +65025,17 @@ export namespace Prisma {
     CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterStageInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -75256,8 +65070,6 @@ export namespace Prisma {
     CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type PipelineUpsertWithoutStagesInput = {
@@ -75636,87 +65448,15 @@ export namespace Prisma {
     data: XOR<StageUpdateManyMutationInput, StageUncheckedUpdateManyWithoutTypeInput>
   }
 
-  export type ReportCreateWithoutFilesInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    category: ReportCategoryCreateNestedOneWithoutReportsInput
-    organization?: OrganizationCreateNestedOneWithoutReportInput
-    createdBy?: UserCreateNestedOneWithoutCreatorReportInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterReportInput
-  }
-
-  export type ReportUncheckedCreateWithoutFilesInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportCreateOrConnectWithoutFilesInput = {
-    where: ReportWhereUniqueInput
-    create: XOR<ReportCreateWithoutFilesInput, ReportUncheckedCreateWithoutFilesInput>
-  }
-
-  export type ReportUpsertWithoutFilesInput = {
-    update: XOR<ReportUpdateWithoutFilesInput, ReportUncheckedUpdateWithoutFilesInput>
-    create: XOR<ReportCreateWithoutFilesInput, ReportUncheckedCreateWithoutFilesInput>
-    where?: ReportWhereInput
-  }
-
-  export type ReportUpdateToOneWithWhereWithoutFilesInput = {
-    where?: ReportWhereInput
-    data: XOR<ReportUpdateWithoutFilesInput, ReportUncheckedUpdateWithoutFilesInput>
-  }
-
-  export type ReportUpdateWithoutFilesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: ReportCategoryUpdateOneRequiredWithoutReportsNestedInput
-    organization?: OrganizationUpdateOneWithoutReportNestedInput
-    createdBy?: UserUpdateOneWithoutCreatorReportNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateWithoutFilesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type UserCreateWithoutCreatorClientInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -75751,23 +65491,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorClientInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -75802,8 +65536,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorClientInput = {
@@ -75815,15 +65547,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -75858,23 +65586,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterClientInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -75909,8 +65631,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterClientInput = {
@@ -76183,15 +65903,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -76226,23 +65942,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorClientInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -76277,8 +65987,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterClientInput = {
@@ -76296,15 +66004,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -76339,23 +66043,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterClientInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -76390,8 +66088,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type NoteUpsertWithWhereUniqueWithoutClientInput = {
@@ -76500,15 +66196,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -76543,23 +66235,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorVendorInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -76594,8 +66280,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorVendorInput = {
@@ -76607,15 +66291,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -76650,23 +66330,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterVendorInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -76701,8 +66375,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterVendorInput = {
@@ -76769,15 +66441,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -76812,23 +66480,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorVendorInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -76863,8 +66525,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterVendorInput = {
@@ -76882,15 +66542,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -76925,23 +66581,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterVendorInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -76976,8 +66626,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type NoteUpsertWithWhereUniqueWithoutVendorInput = {
@@ -77000,15 +66648,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -77043,23 +66687,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorProductInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -77094,8 +66732,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorProductInput = {
@@ -77107,15 +66743,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -77150,23 +66782,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterProductInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -77201,8 +66827,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterProductInput = {
@@ -77411,15 +67035,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -77454,23 +67074,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorProductInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -77505,8 +67119,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterProductInput = {
@@ -77524,15 +67136,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -77567,23 +67175,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterProductInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -77618,8 +67220,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type LeadUpsertWithWhereUniqueWithoutProductsInput = {
@@ -77739,15 +67339,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -77782,23 +67378,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutProjectAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -77833,8 +67423,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutProjectAssigneeInput = {
@@ -77846,15 +67434,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -77889,23 +67473,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutProjectMemberInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -77940,8 +67518,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutProjectMemberInput = {
@@ -77953,15 +67529,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -77996,23 +67568,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorProjectInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -78047,8 +67613,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorProjectInput = {
@@ -78060,15 +67624,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -78103,23 +67663,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterProjectInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -78154,8 +67708,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterProjectInput = {
@@ -78499,15 +68051,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -78542,23 +68090,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProjectAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -78593,8 +68135,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithWhereUniqueWithoutProjectMemberInput = {
@@ -78628,15 +68168,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -78671,23 +68207,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -78722,8 +68252,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterProjectInput = {
@@ -78741,15 +68269,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -78784,23 +68308,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -78835,8 +68353,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type MilestoneUpsertWithWhereUniqueWithoutProjectInput = {
@@ -79029,15 +68545,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -79072,23 +68584,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutMilestoneAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -79123,8 +68629,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutMilestoneAssigneeInput = {
@@ -79136,15 +68640,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -79179,23 +68679,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorMilestoneInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -79230,8 +68724,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorMilestoneInput = {
@@ -79243,15 +68735,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -79286,23 +68774,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterMilestoneInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -79337,8 +68819,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterMilestoneInput = {
@@ -79558,15 +69038,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -79601,23 +69077,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutMilestoneAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -79652,8 +69122,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutCreatorMilestoneInput = {
@@ -79671,15 +69139,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -79714,23 +69178,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorMilestoneInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -79765,8 +69223,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterMilestoneInput = {
@@ -79784,15 +69240,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -79827,23 +69279,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterMilestoneInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -79878,8 +69324,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type TaskUpsertWithWhereUniqueWithoutMilestoneInput = {
@@ -80007,15 +69451,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -80050,23 +69490,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutTaskAssigneeInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -80101,8 +69535,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutTaskAssigneeInput = {
@@ -80114,15 +69546,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -80157,23 +69585,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutTaskMemberInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -80208,8 +69630,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutTaskMemberInput = {
@@ -80221,15 +69641,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -80264,23 +69680,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutCreatorTaskInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -80315,8 +69725,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutCreatorTaskInput = {
@@ -80328,15 +69736,11 @@ export namespace Prisma {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -80371,23 +69775,17 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutUpdaterTaskInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
     roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -80422,8 +69820,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutUpdaterTaskInput = {
@@ -80729,15 +70125,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -80772,23 +70164,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTaskAssigneeInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -80823,8 +70209,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithWhereUniqueWithoutTaskMemberInput = {
@@ -80858,15 +70242,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -80901,23 +70281,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCreatorTaskInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -80952,8 +70326,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUpsertWithoutUpdaterTaskInput = {
@@ -80971,15 +70343,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -81014,23 +70382,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUpdaterTaskInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -81065,8 +70427,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type NoteUpsertWithWhereUniqueWithoutTaskInput = {
@@ -81172,793 +70532,6 @@ export namespace Prisma {
     taskId?: StringNullableFilter<"Fund"> | string | null
   }
 
-  export type ReportCategoryCreateWithoutChildrenInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    parent?: ReportCategoryCreateNestedOneWithoutChildrenInput
-    reports?: ReportCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryUncheckedCreateWithoutChildrenInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    parentId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    reports?: ReportUncheckedCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryCreateOrConnectWithoutChildrenInput = {
-    where: ReportCategoryWhereUniqueInput
-    create: XOR<ReportCategoryCreateWithoutChildrenInput, ReportCategoryUncheckedCreateWithoutChildrenInput>
-  }
-
-  export type ReportCategoryCreateWithoutParentInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    children?: ReportCategoryCreateNestedManyWithoutParentInput
-    reports?: ReportCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryUncheckedCreateWithoutParentInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    children?: ReportCategoryUncheckedCreateNestedManyWithoutParentInput
-    reports?: ReportUncheckedCreateNestedManyWithoutCategoryInput
-  }
-
-  export type ReportCategoryCreateOrConnectWithoutParentInput = {
-    where: ReportCategoryWhereUniqueInput
-    create: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput>
-  }
-
-  export type ReportCategoryCreateManyParentInputEnvelope = {
-    data: ReportCategoryCreateManyParentInput | ReportCategoryCreateManyParentInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReportCreateWithoutCategoryInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    organization?: OrganizationCreateNestedOneWithoutReportInput
-    createdBy?: UserCreateNestedOneWithoutCreatorReportInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterReportInput
-    files?: FileCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUncheckedCreateWithoutCategoryInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    files?: FileUncheckedCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportCreateOrConnectWithoutCategoryInput = {
-    where: ReportWhereUniqueInput
-    create: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput>
-  }
-
-  export type ReportCreateManyCategoryInputEnvelope = {
-    data: ReportCreateManyCategoryInput | ReportCreateManyCategoryInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReportCategoryUpsertWithoutChildrenInput = {
-    update: XOR<ReportCategoryUpdateWithoutChildrenInput, ReportCategoryUncheckedUpdateWithoutChildrenInput>
-    create: XOR<ReportCategoryCreateWithoutChildrenInput, ReportCategoryUncheckedCreateWithoutChildrenInput>
-    where?: ReportCategoryWhereInput
-  }
-
-  export type ReportCategoryUpdateToOneWithWhereWithoutChildrenInput = {
-    where?: ReportCategoryWhereInput
-    data: XOR<ReportCategoryUpdateWithoutChildrenInput, ReportCategoryUncheckedUpdateWithoutChildrenInput>
-  }
-
-  export type ReportCategoryUpdateWithoutChildrenInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    parent?: ReportCategoryUpdateOneWithoutChildrenNestedInput
-    reports?: ReportUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryUncheckedUpdateWithoutChildrenInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    parentId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    reports?: ReportUncheckedUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryUpsertWithWhereUniqueWithoutParentInput = {
-    where: ReportCategoryWhereUniqueInput
-    update: XOR<ReportCategoryUpdateWithoutParentInput, ReportCategoryUncheckedUpdateWithoutParentInput>
-    create: XOR<ReportCategoryCreateWithoutParentInput, ReportCategoryUncheckedCreateWithoutParentInput>
-  }
-
-  export type ReportCategoryUpdateWithWhereUniqueWithoutParentInput = {
-    where: ReportCategoryWhereUniqueInput
-    data: XOR<ReportCategoryUpdateWithoutParentInput, ReportCategoryUncheckedUpdateWithoutParentInput>
-  }
-
-  export type ReportCategoryUpdateManyWithWhereWithoutParentInput = {
-    where: ReportCategoryScalarWhereInput
-    data: XOR<ReportCategoryUpdateManyMutationInput, ReportCategoryUncheckedUpdateManyWithoutParentInput>
-  }
-
-  export type ReportCategoryScalarWhereInput = {
-    AND?: ReportCategoryScalarWhereInput | ReportCategoryScalarWhereInput[]
-    OR?: ReportCategoryScalarWhereInput[]
-    NOT?: ReportCategoryScalarWhereInput | ReportCategoryScalarWhereInput[]
-    id?: StringFilter<"ReportCategory"> | string
-    order?: IntFilter<"ReportCategory"> | number
-    name?: StringFilter<"ReportCategory"> | string
-    interval?: StringNullableFilter<"ReportCategory"> | string | null
-    parentId?: StringNullableFilter<"ReportCategory"> | string | null
-    createdAt?: DateTimeFilter<"ReportCategory"> | Date | string
-    updatedAt?: DateTimeFilter<"ReportCategory"> | Date | string
-  }
-
-  export type ReportUpsertWithWhereUniqueWithoutCategoryInput = {
-    where: ReportWhereUniqueInput
-    update: XOR<ReportUpdateWithoutCategoryInput, ReportUncheckedUpdateWithoutCategoryInput>
-    create: XOR<ReportCreateWithoutCategoryInput, ReportUncheckedCreateWithoutCategoryInput>
-  }
-
-  export type ReportUpdateWithWhereUniqueWithoutCategoryInput = {
-    where: ReportWhereUniqueInput
-    data: XOR<ReportUpdateWithoutCategoryInput, ReportUncheckedUpdateWithoutCategoryInput>
-  }
-
-  export type ReportUpdateManyWithWhereWithoutCategoryInput = {
-    where: ReportScalarWhereInput
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyWithoutCategoryInput>
-  }
-
-  export type ReportScalarWhereInput = {
-    AND?: ReportScalarWhereInput | ReportScalarWhereInput[]
-    OR?: ReportScalarWhereInput[]
-    NOT?: ReportScalarWhereInput | ReportScalarWhereInput[]
-    id?: StringFilter<"Report"> | string
-    categoryId?: StringFilter<"Report"> | string
-    periodYear?: StringFilter<"Report"> | string
-    periodMonth?: StringNullableFilter<"Report"> | string | null
-    version?: IntFilter<"Report"> | number
-    organizationId?: StringNullableFilter<"Report"> | string | null
-    createdById?: StringNullableFilter<"Report"> | string | null
-    updatedById?: StringNullableFilter<"Report"> | string | null
-    createdAt?: DateTimeFilter<"Report"> | Date | string
-    updatedAt?: DateTimeFilter<"Report"> | Date | string
-  }
-
-  export type ReportCategoryCreateWithoutReportsInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    parent?: ReportCategoryCreateNestedOneWithoutChildrenInput
-    children?: ReportCategoryCreateNestedManyWithoutParentInput
-  }
-
-  export type ReportCategoryUncheckedCreateWithoutReportsInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    parentId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    children?: ReportCategoryUncheckedCreateNestedManyWithoutParentInput
-  }
-
-  export type ReportCategoryCreateOrConnectWithoutReportsInput = {
-    where: ReportCategoryWhereUniqueInput
-    create: XOR<ReportCategoryCreateWithoutReportsInput, ReportCategoryUncheckedCreateWithoutReportsInput>
-  }
-
-  export type OrganizationCreateWithoutReportInput = {
-    id?: string
-    name: string
-    code?: string | null
-    users?: UserCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationUncheckedCreateWithoutReportInput = {
-    id?: string
-    name: string
-    code?: string | null
-    users?: UserUncheckedCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationCreateOrConnectWithoutReportInput = {
-    where: OrganizationWhereUniqueInput
-    create: XOR<OrganizationCreateWithoutReportInput, OrganizationUncheckedCreateWithoutReportInput>
-  }
-
-  export type UserCreateWithoutCreatorReportInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutCreatorReportInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutCreatorReportInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutCreatorReportInput, UserUncheckedCreateWithoutCreatorReportInput>
-  }
-
-  export type UserCreateWithoutUpdaterReportInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutUpdaterReportInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutUpdaterReportInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutUpdaterReportInput, UserUncheckedCreateWithoutUpdaterReportInput>
-  }
-
-  export type FileCreateWithoutReportInput = {
-    id?: string
-    url: string
-    key: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type FileUncheckedCreateWithoutReportInput = {
-    id?: string
-    url: string
-    key: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type FileCreateOrConnectWithoutReportInput = {
-    where: FileWhereUniqueInput
-    create: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput>
-  }
-
-  export type FileCreateManyReportInputEnvelope = {
-    data: FileCreateManyReportInput | FileCreateManyReportInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReportCategoryUpsertWithoutReportsInput = {
-    update: XOR<ReportCategoryUpdateWithoutReportsInput, ReportCategoryUncheckedUpdateWithoutReportsInput>
-    create: XOR<ReportCategoryCreateWithoutReportsInput, ReportCategoryUncheckedCreateWithoutReportsInput>
-    where?: ReportCategoryWhereInput
-  }
-
-  export type ReportCategoryUpdateToOneWithWhereWithoutReportsInput = {
-    where?: ReportCategoryWhereInput
-    data: XOR<ReportCategoryUpdateWithoutReportsInput, ReportCategoryUncheckedUpdateWithoutReportsInput>
-  }
-
-  export type ReportCategoryUpdateWithoutReportsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    parent?: ReportCategoryUpdateOneWithoutChildrenNestedInput
-    children?: ReportCategoryUpdateManyWithoutParentNestedInput
-  }
-
-  export type ReportCategoryUncheckedUpdateWithoutReportsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    parentId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    children?: ReportCategoryUncheckedUpdateManyWithoutParentNestedInput
-  }
-
-  export type OrganizationUpsertWithoutReportInput = {
-    update: XOR<OrganizationUpdateWithoutReportInput, OrganizationUncheckedUpdateWithoutReportInput>
-    create: XOR<OrganizationCreateWithoutReportInput, OrganizationUncheckedCreateWithoutReportInput>
-    where?: OrganizationWhereInput
-  }
-
-  export type OrganizationUpdateToOneWithWhereWithoutReportInput = {
-    where?: OrganizationWhereInput
-    data: XOR<OrganizationUpdateWithoutReportInput, OrganizationUncheckedUpdateWithoutReportInput>
-  }
-
-  export type OrganizationUpdateWithoutReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: UserUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type OrganizationUncheckedUpdateWithoutReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: UserUncheckedUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type UserUpsertWithoutCreatorReportInput = {
-    update: XOR<UserUpdateWithoutCreatorReportInput, UserUncheckedUpdateWithoutCreatorReportInput>
-    create: XOR<UserCreateWithoutCreatorReportInput, UserUncheckedCreateWithoutCreatorReportInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutCreatorReportInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutCreatorReportInput, UserUncheckedUpdateWithoutCreatorReportInput>
-  }
-
-  export type UserUpdateWithoutCreatorReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutCreatorReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUpsertWithoutUpdaterReportInput = {
-    update: XOR<UserUpdateWithoutUpdaterReportInput, UserUncheckedUpdateWithoutUpdaterReportInput>
-    create: XOR<UserCreateWithoutUpdaterReportInput, UserUncheckedCreateWithoutUpdaterReportInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutUpdaterReportInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutUpdaterReportInput, UserUncheckedUpdateWithoutUpdaterReportInput>
-  }
-
-  export type UserUpdateWithoutUpdaterReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutUpdaterReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-  }
-
-  export type FileUpsertWithWhereUniqueWithoutReportInput = {
-    where: FileWhereUniqueInput
-    update: XOR<FileUpdateWithoutReportInput, FileUncheckedUpdateWithoutReportInput>
-    create: XOR<FileCreateWithoutReportInput, FileUncheckedCreateWithoutReportInput>
-  }
-
-  export type FileUpdateWithWhereUniqueWithoutReportInput = {
-    where: FileWhereUniqueInput
-    data: XOR<FileUpdateWithoutReportInput, FileUncheckedUpdateWithoutReportInput>
-  }
-
-  export type FileUpdateManyWithWhereWithoutReportInput = {
-    where: FileScalarWhereInput
-    data: XOR<FileUpdateManyMutationInput, FileUncheckedUpdateManyWithoutReportInput>
-  }
-
-  export type FileScalarWhereInput = {
-    AND?: FileScalarWhereInput | FileScalarWhereInput[]
-    OR?: FileScalarWhereInput[]
-    NOT?: FileScalarWhereInput | FileScalarWhereInput[]
-    id?: StringFilter<"File"> | string
-    url?: StringFilter<"File"> | string
-    key?: StringFilter<"File"> | string
-    createdAt?: DateTimeFilter<"File"> | Date | string
-    updatedAt?: DateTimeFilter<"File"> | Date | string
-    reportId?: StringNullableFilter<"File"> | string | null
-  }
-
   export type RoleCreateWithoutUsersInput = {
     id?: string
     name: string
@@ -81974,132 +70547,6 @@ export namespace Prisma {
   export type RoleCreateOrConnectWithoutUsersInput = {
     where: RoleWhereUniqueInput
     create: XOR<RoleCreateWithoutUsersInput, RoleUncheckedCreateWithoutUsersInput>
-  }
-
-  export type OrganizationCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    code?: string | null
-    Report?: ReportCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationUncheckedCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    code?: string | null
-    Report?: ReportUncheckedCreateNestedManyWithoutOrganizationInput
-  }
-
-  export type OrganizationCreateOrConnectWithoutUsersInput = {
-    where: OrganizationWhereUniqueInput
-    create: XOR<OrganizationCreateWithoutUsersInput, OrganizationUncheckedCreateWithoutUsersInput>
-  }
-
-  export type ProfileCreateWithoutUserInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdBy?: UserCreateNestedOneWithoutCreatorProfileInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterProfileInput
-  }
-
-  export type ProfileUncheckedCreateWithoutUserInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdById?: string | null
-    updatedById?: string | null
-  }
-
-  export type ProfileCreateOrConnectWithoutUserInput = {
-    where: ProfileWhereUniqueInput
-    create: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-  }
-
-  export type UserPermissionCreateWithoutUserInput = {
-    id?: string
-    createdAt?: Date | string
-    permission: PermissionCreateNestedOneWithoutUsersInput
-  }
-
-  export type UserPermissionUncheckedCreateWithoutUserInput = {
-    id?: string
-    permissionId: string
-    createdAt?: Date | string
-  }
-
-  export type UserPermissionCreateOrConnectWithoutUserInput = {
-    where: UserPermissionWhereUniqueInput
-    create: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput>
-  }
-
-  export type UserPermissionCreateManyUserInputEnvelope = {
-    data: UserPermissionCreateManyUserInput | UserPermissionCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ProfileCreateWithoutCreatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    updatedBy?: UserCreateNestedOneWithoutUpdaterProfileInput
-    user: UserCreateNestedOneWithoutProfileInput
-  }
-
-  export type ProfileUncheckedCreateWithoutCreatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    updatedById?: string | null
-    userId: string
-  }
-
-  export type ProfileCreateOrConnectWithoutCreatedByInput = {
-    where: ProfileWhereUniqueInput
-    create: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput>
-  }
-
-  export type ProfileCreateManyCreatedByInputEnvelope = {
-    data: ProfileCreateManyCreatedByInput | ProfileCreateManyCreatedByInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ProfileCreateWithoutUpdatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdBy?: UserCreateNestedOneWithoutCreatorProfileInput
-    user: UserCreateNestedOneWithoutProfileInput
-  }
-
-  export type ProfileUncheckedCreateWithoutUpdatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdById?: string | null
-    userId: string
-  }
-
-  export type ProfileCreateOrConnectWithoutUpdatedByInput = {
-    where: ProfileWhereUniqueInput
-    create: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput>
-  }
-
-  export type ProfileCreateManyUpdatedByInputEnvelope = {
-    data: ProfileCreateManyUpdatedByInput | ProfileCreateManyUpdatedByInput[]
-    skipDuplicates?: boolean
   }
 
   export type BudgetCreateWithoutAssigneeInput = {
@@ -83919,78 +72366,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type ReportCreateWithoutCreatedByInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    category: ReportCategoryCreateNestedOneWithoutReportsInput
-    organization?: OrganizationCreateNestedOneWithoutReportInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterReportInput
-    files?: FileCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUncheckedCreateWithoutCreatedByInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    files?: FileUncheckedCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportCreateOrConnectWithoutCreatedByInput = {
-    where: ReportWhereUniqueInput
-    create: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput>
-  }
-
-  export type ReportCreateManyCreatedByInputEnvelope = {
-    data: ReportCreateManyCreatedByInput | ReportCreateManyCreatedByInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReportCreateWithoutUpdatedByInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    category: ReportCategoryCreateNestedOneWithoutReportsInput
-    organization?: OrganizationCreateNestedOneWithoutReportInput
-    createdBy?: UserCreateNestedOneWithoutCreatorReportInput
-    files?: FileCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUncheckedCreateWithoutUpdatedByInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    files?: FileUncheckedCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportCreateOrConnectWithoutUpdatedByInput = {
-    where: ReportWhereUniqueInput
-    create: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput>
-  }
-
-  export type ReportCreateManyUpdatedByInputEnvelope = {
-    data: ReportCreateManyUpdatedByInput | ReportCreateManyUpdatedByInput[]
-    skipDuplicates?: boolean
-  }
-
   export type RoleUpsertWithoutUsersInput = {
     update: XOR<RoleUpdateWithoutUsersInput, RoleUncheckedUpdateWithoutUsersInput>
     create: XOR<RoleCreateWithoutUsersInput, RoleUncheckedCreateWithoutUsersInput>
@@ -84012,134 +72387,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     level?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type OrganizationUpsertWithoutUsersInput = {
-    update: XOR<OrganizationUpdateWithoutUsersInput, OrganizationUncheckedUpdateWithoutUsersInput>
-    create: XOR<OrganizationCreateWithoutUsersInput, OrganizationUncheckedCreateWithoutUsersInput>
-    where?: OrganizationWhereInput
-  }
-
-  export type OrganizationUpdateToOneWithWhereWithoutUsersInput = {
-    where?: OrganizationWhereInput
-    data: XOR<OrganizationUpdateWithoutUsersInput, OrganizationUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type OrganizationUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    Report?: ReportUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type OrganizationUncheckedUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    code?: NullableStringFieldUpdateOperationsInput | string | null
-    Report?: ReportUncheckedUpdateManyWithoutOrganizationNestedInput
-  }
-
-  export type ProfileUpsertWithoutUserInput = {
-    update: XOR<ProfileUpdateWithoutUserInput, ProfileUncheckedUpdateWithoutUserInput>
-    create: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
-    where?: ProfileWhereInput
-  }
-
-  export type ProfileUpdateToOneWithWhereWithoutUserInput = {
-    where?: ProfileWhereInput
-    data: XOR<ProfileUpdateWithoutUserInput, ProfileUncheckedUpdateWithoutUserInput>
-  }
-
-  export type ProfileUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdBy?: UserUpdateOneWithoutCreatorProfileNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterProfileNestedInput
-  }
-
-  export type ProfileUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type UserPermissionUpsertWithWhereUniqueWithoutUserInput = {
-    where: UserPermissionWhereUniqueInput
-    update: XOR<UserPermissionUpdateWithoutUserInput, UserPermissionUncheckedUpdateWithoutUserInput>
-    create: XOR<UserPermissionCreateWithoutUserInput, UserPermissionUncheckedCreateWithoutUserInput>
-  }
-
-  export type UserPermissionUpdateWithWhereUniqueWithoutUserInput = {
-    where: UserPermissionWhereUniqueInput
-    data: XOR<UserPermissionUpdateWithoutUserInput, UserPermissionUncheckedUpdateWithoutUserInput>
-  }
-
-  export type UserPermissionUpdateManyWithWhereWithoutUserInput = {
-    where: UserPermissionScalarWhereInput
-    data: XOR<UserPermissionUpdateManyMutationInput, UserPermissionUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type UserPermissionScalarWhereInput = {
-    AND?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-    OR?: UserPermissionScalarWhereInput[]
-    NOT?: UserPermissionScalarWhereInput | UserPermissionScalarWhereInput[]
-    id?: StringFilter<"UserPermission"> | string
-    userId?: StringFilter<"UserPermission"> | string
-    permissionId?: StringFilter<"UserPermission"> | string
-    createdAt?: DateTimeFilter<"UserPermission"> | Date | string
-  }
-
-  export type ProfileUpsertWithWhereUniqueWithoutCreatedByInput = {
-    where: ProfileWhereUniqueInput
-    update: XOR<ProfileUpdateWithoutCreatedByInput, ProfileUncheckedUpdateWithoutCreatedByInput>
-    create: XOR<ProfileCreateWithoutCreatedByInput, ProfileUncheckedCreateWithoutCreatedByInput>
-  }
-
-  export type ProfileUpdateWithWhereUniqueWithoutCreatedByInput = {
-    where: ProfileWhereUniqueInput
-    data: XOR<ProfileUpdateWithoutCreatedByInput, ProfileUncheckedUpdateWithoutCreatedByInput>
-  }
-
-  export type ProfileUpdateManyWithWhereWithoutCreatedByInput = {
-    where: ProfileScalarWhereInput
-    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyWithoutCreatedByInput>
-  }
-
-  export type ProfileScalarWhereInput = {
-    AND?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-    OR?: ProfileScalarWhereInput[]
-    NOT?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-    id?: StringFilter<"Profile"> | string
-    name?: StringNullableFilter<"Profile"> | string | null
-    joinDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    createdById?: StringNullableFilter<"Profile"> | string | null
-    updatedById?: StringNullableFilter<"Profile"> | string | null
-    userId?: StringFilter<"Profile"> | string
-  }
-
-  export type ProfileUpsertWithWhereUniqueWithoutUpdatedByInput = {
-    where: ProfileWhereUniqueInput
-    update: XOR<ProfileUpdateWithoutUpdatedByInput, ProfileUncheckedUpdateWithoutUpdatedByInput>
-    create: XOR<ProfileCreateWithoutUpdatedByInput, ProfileUncheckedCreateWithoutUpdatedByInput>
-  }
-
-  export type ProfileUpdateWithWhereUniqueWithoutUpdatedByInput = {
-    where: ProfileWhereUniqueInput
-    data: XOR<ProfileUpdateWithoutUpdatedByInput, ProfileUncheckedUpdateWithoutUpdatedByInput>
-  }
-
-  export type ProfileUpdateManyWithWhereWithoutUpdatedByInput = {
-    where: ProfileScalarWhereInput
-    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyWithoutUpdatedByInput>
   }
 
   export type BudgetUpsertWithWhereUniqueWithoutAssigneeInput = {
@@ -84793,50 +73040,14 @@ export namespace Prisma {
     data: XOR<StageUpdateManyMutationInput, StageUncheckedUpdateManyWithoutUpdatedByInput>
   }
 
-  export type ReportUpsertWithWhereUniqueWithoutCreatedByInput = {
-    where: ReportWhereUniqueInput
-    update: XOR<ReportUpdateWithoutCreatedByInput, ReportUncheckedUpdateWithoutCreatedByInput>
-    create: XOR<ReportCreateWithoutCreatedByInput, ReportUncheckedCreateWithoutCreatedByInput>
-  }
-
-  export type ReportUpdateWithWhereUniqueWithoutCreatedByInput = {
-    where: ReportWhereUniqueInput
-    data: XOR<ReportUpdateWithoutCreatedByInput, ReportUncheckedUpdateWithoutCreatedByInput>
-  }
-
-  export type ReportUpdateManyWithWhereWithoutCreatedByInput = {
-    where: ReportScalarWhereInput
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyWithoutCreatedByInput>
-  }
-
-  export type ReportUpsertWithWhereUniqueWithoutUpdatedByInput = {
-    where: ReportWhereUniqueInput
-    update: XOR<ReportUpdateWithoutUpdatedByInput, ReportUncheckedUpdateWithoutUpdatedByInput>
-    create: XOR<ReportCreateWithoutUpdatedByInput, ReportUncheckedCreateWithoutUpdatedByInput>
-  }
-
-  export type ReportUpdateWithWhereUniqueWithoutUpdatedByInput = {
-    where: ReportWhereUniqueInput
-    data: XOR<ReportUpdateWithoutUpdatedByInput, ReportUncheckedUpdateWithoutUpdatedByInput>
-  }
-
-  export type ReportUpdateManyWithWhereWithoutUpdatedByInput = {
-    where: ReportScalarWhereInput
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyWithoutUpdatedByInput>
-  }
-
   export type UserCreateWithoutRoleInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
@@ -84872,22 +73083,16 @@ export namespace Prisma {
     UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserUncheckedCreateWithoutRoleInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
     BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
     CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
@@ -84923,8 +73128,6 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
     CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
     UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
   }
 
   export type UserCreateOrConnectWithoutRoleInput = {
@@ -84951,1160 +73154,6 @@ export namespace Prisma {
   export type UserUpdateManyWithWhereWithoutRoleInput = {
     where: UserScalarWhereInput
     data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutRoleInput>
-  }
-
-  export type UserCreateWithoutOrganizationInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutOrganizationInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutOrganizationInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput>
-  }
-
-  export type UserCreateManyOrganizationInputEnvelope = {
-    data: UserCreateManyOrganizationInput | UserCreateManyOrganizationInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReportCreateWithoutOrganizationInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    category: ReportCategoryCreateNestedOneWithoutReportsInput
-    createdBy?: UserCreateNestedOneWithoutCreatorReportInput
-    updatedBy?: UserCreateNestedOneWithoutUpdaterReportInput
-    files?: FileCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportUncheckedCreateWithoutOrganizationInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    files?: FileUncheckedCreateNestedManyWithoutReportInput
-  }
-
-  export type ReportCreateOrConnectWithoutOrganizationInput = {
-    where: ReportWhereUniqueInput
-    create: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput>
-  }
-
-  export type ReportCreateManyOrganizationInputEnvelope = {
-    data: ReportCreateManyOrganizationInput | ReportCreateManyOrganizationInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type UserUpsertWithWhereUniqueWithoutOrganizationInput = {
-    where: UserWhereUniqueInput
-    update: XOR<UserUpdateWithoutOrganizationInput, UserUncheckedUpdateWithoutOrganizationInput>
-    create: XOR<UserCreateWithoutOrganizationInput, UserUncheckedCreateWithoutOrganizationInput>
-  }
-
-  export type UserUpdateWithWhereUniqueWithoutOrganizationInput = {
-    where: UserWhereUniqueInput
-    data: XOR<UserUpdateWithoutOrganizationInput, UserUncheckedUpdateWithoutOrganizationInput>
-  }
-
-  export type UserUpdateManyWithWhereWithoutOrganizationInput = {
-    where: UserScalarWhereInput
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutOrganizationInput>
-  }
-
-  export type ReportUpsertWithWhereUniqueWithoutOrganizationInput = {
-    where: ReportWhereUniqueInput
-    update: XOR<ReportUpdateWithoutOrganizationInput, ReportUncheckedUpdateWithoutOrganizationInput>
-    create: XOR<ReportCreateWithoutOrganizationInput, ReportUncheckedCreateWithoutOrganizationInput>
-  }
-
-  export type ReportUpdateWithWhereUniqueWithoutOrganizationInput = {
-    where: ReportWhereUniqueInput
-    data: XOR<ReportUpdateWithoutOrganizationInput, ReportUncheckedUpdateWithoutOrganizationInput>
-  }
-
-  export type ReportUpdateManyWithWhereWithoutOrganizationInput = {
-    where: ReportScalarWhereInput
-    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyWithoutOrganizationInput>
-  }
-
-  export type UserPermissionCreateWithoutPermissionInput = {
-    id?: string
-    createdAt?: Date | string
-    user: UserCreateNestedOneWithoutPermissionsInput
-  }
-
-  export type UserPermissionUncheckedCreateWithoutPermissionInput = {
-    id?: string
-    userId: string
-    createdAt?: Date | string
-  }
-
-  export type UserPermissionCreateOrConnectWithoutPermissionInput = {
-    where: UserPermissionWhereUniqueInput
-    create: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput>
-  }
-
-  export type UserPermissionCreateManyPermissionInputEnvelope = {
-    data: UserPermissionCreateManyPermissionInput | UserPermissionCreateManyPermissionInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type UserPermissionUpsertWithWhereUniqueWithoutPermissionInput = {
-    where: UserPermissionWhereUniqueInput
-    update: XOR<UserPermissionUpdateWithoutPermissionInput, UserPermissionUncheckedUpdateWithoutPermissionInput>
-    create: XOR<UserPermissionCreateWithoutPermissionInput, UserPermissionUncheckedCreateWithoutPermissionInput>
-  }
-
-  export type UserPermissionUpdateWithWhereUniqueWithoutPermissionInput = {
-    where: UserPermissionWhereUniqueInput
-    data: XOR<UserPermissionUpdateWithoutPermissionInput, UserPermissionUncheckedUpdateWithoutPermissionInput>
-  }
-
-  export type UserPermissionUpdateManyWithWhereWithoutPermissionInput = {
-    where: UserPermissionScalarWhereInput
-    data: XOR<UserPermissionUpdateManyMutationInput, UserPermissionUncheckedUpdateManyWithoutPermissionInput>
-  }
-
-  export type UserCreateWithoutPermissionsInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutPermissionsInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutPermissionsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutPermissionsInput, UserUncheckedCreateWithoutPermissionsInput>
-  }
-
-  export type PermissionCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    resource: string
-    action: string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type PermissionUncheckedCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    resource: string
-    action: string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type PermissionCreateOrConnectWithoutUsersInput = {
-    where: PermissionWhereUniqueInput
-    create: XOR<PermissionCreateWithoutUsersInput, PermissionUncheckedCreateWithoutUsersInput>
-  }
-
-  export type UserUpsertWithoutPermissionsInput = {
-    update: XOR<UserUpdateWithoutPermissionsInput, UserUncheckedUpdateWithoutPermissionsInput>
-    create: XOR<UserCreateWithoutPermissionsInput, UserUncheckedCreateWithoutPermissionsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutPermissionsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutPermissionsInput, UserUncheckedUpdateWithoutPermissionsInput>
-  }
-
-  export type UserUpdateWithoutPermissionsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutPermissionsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type PermissionUpsertWithoutUsersInput = {
-    update: XOR<PermissionUpdateWithoutUsersInput, PermissionUncheckedUpdateWithoutUsersInput>
-    create: XOR<PermissionCreateWithoutUsersInput, PermissionUncheckedCreateWithoutUsersInput>
-    where?: PermissionWhereInput
-  }
-
-  export type PermissionUpdateToOneWithWhereWithoutUsersInput = {
-    where?: PermissionWhereInput
-    data: XOR<PermissionUpdateWithoutUsersInput, PermissionUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type PermissionUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PermissionUncheckedUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    resource?: StringFieldUpdateOperationsInput | string
-    action?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserCreateWithoutCreatorProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutCreatorProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutCreatorProfileInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutCreatorProfileInput, UserUncheckedCreateWithoutCreatorProfileInput>
-  }
-
-  export type UserCreateWithoutUpdaterProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutUpdaterProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutUpdaterProfileInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutUpdaterProfileInput, UserUncheckedCreateWithoutUpdaterProfileInput>
-  }
-
-  export type UserCreateWithoutProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    role?: RoleCreateNestedOneWithoutUsersInput
-    organization?: OrganizationCreateNestedOneWithoutUsersInput
-    permissions?: UserPermissionCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserUncheckedCreateWithoutProfileInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-    organizationId?: string | null
-    permissions?: UserPermissionUncheckedCreateNestedManyWithoutUserInput
-    CreatorProfile?: ProfileUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProfile?: ProfileUncheckedCreateNestedManyWithoutUpdatedByInput
-    BudgetAssignee?: BudgetUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorBudget?: BudgetUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterBudget?: BudgetUncheckedCreateNestedManyWithoutUpdatedByInput
-    FundAssignee?: FundUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorFund?: FundUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterFund?: FundUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorExpense?: ExpenseUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterExpense?: ExpenseUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineAssignee?: PipelineUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorPipeline?: PipelineUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterPipeline?: PipelineUncheckedCreateNestedManyWithoutUpdatedByInput
-    PipelineMember?: PipelineUncheckedCreateNestedManyWithoutMembersInput
-    ProjectAssignee?: ProjectUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorProject?: ProjectUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProject?: ProjectUncheckedCreateNestedManyWithoutUpdatedByInput
-    ProjectMember?: ProjectUncheckedCreateNestedManyWithoutMembersInput
-    MilestoneAssignee?: MilestoneUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorMilestone?: MilestoneUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterMilestone?: MilestoneUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskAssignee?: TaskUncheckedCreateNestedManyWithoutAssigneeInput
-    CreatorTask?: TaskUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterTask?: TaskUncheckedCreateNestedManyWithoutUpdatedByInput
-    TaskMember?: TaskUncheckedCreateNestedManyWithoutMembersInput
-    CreatorProduct?: ProductUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterProduct?: ProductUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorClient?: ClientUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterClient?: ClientUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorVendor?: VendorUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterVendor?: VendorUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorNote?: NoteUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterNote?: NoteUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorEvent?: EventUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterEvent?: EventUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorStage?: StageUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterStage?: StageUncheckedCreateNestedManyWithoutUpdatedByInput
-    CreatorReport?: ReportUncheckedCreateNestedManyWithoutCreatedByInput
-    UpdaterReport?: ReportUncheckedCreateNestedManyWithoutUpdatedByInput
-  }
-
-  export type UserCreateOrConnectWithoutProfileInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
-  }
-
-  export type UserUpsertWithoutCreatorProfileInput = {
-    update: XOR<UserUpdateWithoutCreatorProfileInput, UserUncheckedUpdateWithoutCreatorProfileInput>
-    create: XOR<UserCreateWithoutCreatorProfileInput, UserUncheckedCreateWithoutCreatorProfileInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutCreatorProfileInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutCreatorProfileInput, UserUncheckedUpdateWithoutCreatorProfileInput>
-  }
-
-  export type UserUpdateWithoutCreatorProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutCreatorProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUpsertWithoutUpdaterProfileInput = {
-    update: XOR<UserUpdateWithoutUpdaterProfileInput, UserUncheckedUpdateWithoutUpdaterProfileInput>
-    create: XOR<UserCreateWithoutUpdaterProfileInput, UserUncheckedCreateWithoutUpdaterProfileInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutUpdaterProfileInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutUpdaterProfileInput, UserUncheckedUpdateWithoutUpdaterProfileInput>
-  }
-
-  export type UserUpdateWithoutUpdaterProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutUpdaterProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUpsertWithoutProfileInput = {
-    update: XOR<UserUpdateWithoutProfileInput, UserUncheckedUpdateWithoutProfileInput>
-    create: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutProfileInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutProfileInput, UserUncheckedUpdateWithoutProfileInput>
-  }
-
-  export type UserUpdateWithoutProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutProfileInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type BudgetItemCreateManyBudgetInput = {
@@ -86871,15 +73920,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -86914,23 +73959,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPipelineMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -86965,19 +74004,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateManyWithoutPipelineMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StageUpdateWithoutPipelineInput = {
@@ -88611,15 +75648,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -88654,23 +75687,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProjectMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -88705,19 +75732,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateManyWithoutProjectMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type MilestoneUpdateWithoutProjectInput = {
@@ -89320,15 +76345,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     role?: RoleUpdateOneWithoutUsersNestedInput
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -89363,23 +76384,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTaskMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -89414,19 +76429,17 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateManyWithoutTaskMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
     roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type NoteUpdateWithoutTaskInput = {
@@ -89685,154 +76698,6 @@ export namespace Prisma {
     assigneeId?: NullableStringFieldUpdateOperationsInput | string | null
     createdById?: NullableStringFieldUpdateOperationsInput | string | null
     updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type ReportCategoryCreateManyParentInput = {
-    id?: string
-    order?: number
-    name: string
-    interval?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportCreateManyCategoryInput = {
-    id?: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportCategoryUpdateWithoutParentInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    children?: ReportCategoryUpdateManyWithoutParentNestedInput
-    reports?: ReportUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryUncheckedUpdateWithoutParentInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    children?: ReportCategoryUncheckedUpdateManyWithoutParentNestedInput
-    reports?: ReportUncheckedUpdateManyWithoutCategoryNestedInput
-  }
-
-  export type ReportCategoryUncheckedUpdateManyWithoutParentInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    interval?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ReportUpdateWithoutCategoryInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    organization?: OrganizationUpdateOneWithoutReportNestedInput
-    createdBy?: UserUpdateOneWithoutCreatorReportNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterReportNestedInput
-    files?: FileUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateWithoutCategoryInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    files?: FileUncheckedUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateManyWithoutCategoryInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type FileCreateManyReportInput = {
-    id?: string
-    url: string
-    key: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type FileUpdateWithoutReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    key?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type FileUncheckedUpdateWithoutReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    key?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type FileUncheckedUpdateManyWithoutReportInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    key?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionCreateManyUserInput = {
-    id?: string
-    permissionId: string
-    createdAt?: Date | string
-  }
-
-  export type ProfileCreateManyCreatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    updatedById?: string | null
-    userId: string
-  }
-
-  export type ProfileCreateManyUpdatedByInput = {
-    id?: string
-    name?: string | null
-    joinDate?: Date | string | null
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    createdById?: string | null
-    userId: string
   }
 
   export type BudgetCreateManyAssigneeInput = {
@@ -90404,108 +77269,6 @@ export namespace Prisma {
     taskId?: string | null
     budgetId?: string | null
     fundId?: string | null
-  }
-
-  export type ReportCreateManyCreatedByInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ReportCreateManyUpdatedByInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    organizationId?: string | null
-    createdById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type UserPermissionUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    permission?: PermissionUpdateOneRequiredWithoutUsersNestedInput
-  }
-
-  export type UserPermissionUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    permissionId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionUncheckedUpdateManyWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    permissionId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProfileUpdateWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedBy?: UserUpdateOneWithoutUpdaterProfileNestedInput
-    user?: UserUpdateOneRequiredWithoutProfileNestedInput
-  }
-
-  export type ProfileUncheckedUpdateWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ProfileUncheckedUpdateManyWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ProfileUpdateWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdBy?: UserUpdateOneWithoutCreatorProfileNestedInput
-    user?: UserUpdateOneRequiredWithoutProfileNestedInput
-  }
-
-  export type ProfileUncheckedUpdateWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ProfileUncheckedUpdateManyWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    joinDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type BudgetUpdateWithoutAssigneeInput = {
@@ -92611,104 +79374,24 @@ export namespace Prisma {
     fundId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type ReportUpdateWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: ReportCategoryUpdateOneRequiredWithoutReportsNestedInput
-    organization?: OrganizationUpdateOneWithoutReportNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterReportNestedInput
-    files?: FileUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    files?: FileUncheckedUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateManyWithoutCreatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ReportUpdateWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: ReportCategoryUpdateOneRequiredWithoutReportsNestedInput
-    organization?: OrganizationUpdateOneWithoutReportNestedInput
-    createdBy?: UserUpdateOneWithoutCreatorReportNestedInput
-    files?: FileUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    files?: FileUncheckedUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateManyWithoutUpdatedByInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type UserCreateManyRoleInput = {
     id?: string
     username: string
     password: string
+    displayName?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     status?: string
-    organizationId?: string | null
   }
 
   export type UserUpdateWithoutRoleInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
-    organization?: OrganizationUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
@@ -92744,22 +79427,16 @@ export namespace Prisma {
     UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateWithoutRoleInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
     BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
     CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
@@ -92795,214 +79472,16 @@ export namespace Prisma {
     UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
     CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
     UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
   }
 
   export type UserUncheckedUpdateManyWithoutRoleInput = {
     id?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    displayName?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: StringFieldUpdateOperationsInput | string
-    organizationId?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type UserCreateManyOrganizationInput = {
-    id?: string
-    username: string
-    password: string
-    createdAt?: Date | string | null
-    updatedAt?: Date | string | null
-    status?: string
-    roleId?: string | null
-  }
-
-  export type ReportCreateManyOrganizationInput = {
-    id?: string
-    categoryId: string
-    periodYear: string
-    periodMonth?: string | null
-    version?: number
-    createdById?: string | null
-    updatedById?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type UserUpdateWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    role?: RoleUpdateOneWithoutUsersNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    permissions?: UserPermissionUncheckedUpdateManyWithoutUserNestedInput
-    CreatorProfile?: ProfileUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProfile?: ProfileUncheckedUpdateManyWithoutUpdatedByNestedInput
-    BudgetAssignee?: BudgetUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorBudget?: BudgetUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterBudget?: BudgetUncheckedUpdateManyWithoutUpdatedByNestedInput
-    FundAssignee?: FundUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorFund?: FundUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterFund?: FundUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorExpense?: ExpenseUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterExpense?: ExpenseUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineAssignee?: PipelineUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorPipeline?: PipelineUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterPipeline?: PipelineUncheckedUpdateManyWithoutUpdatedByNestedInput
-    PipelineMember?: PipelineUncheckedUpdateManyWithoutMembersNestedInput
-    ProjectAssignee?: ProjectUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorProject?: ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProject?: ProjectUncheckedUpdateManyWithoutUpdatedByNestedInput
-    ProjectMember?: ProjectUncheckedUpdateManyWithoutMembersNestedInput
-    MilestoneAssignee?: MilestoneUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorMilestone?: MilestoneUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterMilestone?: MilestoneUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskAssignee?: TaskUncheckedUpdateManyWithoutAssigneeNestedInput
-    CreatorTask?: TaskUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterTask?: TaskUncheckedUpdateManyWithoutUpdatedByNestedInput
-    TaskMember?: TaskUncheckedUpdateManyWithoutMembersNestedInput
-    CreatorProduct?: ProductUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterProduct?: ProductUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorClient?: ClientUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterClient?: ClientUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorVendor?: VendorUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterVendor?: VendorUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorNote?: NoteUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterNote?: NoteUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorEvent?: EventUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterEvent?: EventUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorStage?: StageUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterStage?: StageUncheckedUpdateManyWithoutUpdatedByNestedInput
-    CreatorReport?: ReportUncheckedUpdateManyWithoutCreatedByNestedInput
-    UpdaterReport?: ReportUncheckedUpdateManyWithoutUpdatedByNestedInput
-  }
-
-  export type UserUncheckedUpdateManyWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    roleId?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type ReportUpdateWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: ReportCategoryUpdateOneRequiredWithoutReportsNestedInput
-    createdBy?: UserUpdateOneWithoutCreatorReportNestedInput
-    updatedBy?: UserUpdateOneWithoutUpdaterReportNestedInput
-    files?: FileUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    files?: FileUncheckedUpdateManyWithoutReportNestedInput
-  }
-
-  export type ReportUncheckedUpdateManyWithoutOrganizationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
-    periodYear?: StringFieldUpdateOperationsInput | string
-    periodMonth?: NullableStringFieldUpdateOperationsInput | string | null
-    version?: IntFieldUpdateOperationsInput | number
-    createdById?: NullableStringFieldUpdateOperationsInput | string | null
-    updatedById?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionCreateManyPermissionInput = {
-    id?: string
-    userId: string
-    createdAt?: Date | string
-  }
-
-  export type UserPermissionUpdateWithoutPermissionInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutPermissionsNestedInput
-  }
-
-  export type UserPermissionUncheckedUpdateWithoutPermissionInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserPermissionUncheckedUpdateManyWithoutPermissionInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

@@ -406,9 +406,6 @@ model File {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  report   Report? @relation(fields: [reportId], references: [id])
-  reportId String?
 }
 
 model Client {
@@ -635,68 +632,19 @@ model Task {
   funds    Fund[]
 }
 
-model ReportCategory {
-  id       String  @id @default(uuid())
-  order    Int     @default(0)
-  name     String  @unique
-  interval String?
-
-  parent   ReportCategory? @relation("CategoryHierarchy", fields: [parentId], references: [id])
-  parentId String?
-
-  children ReportCategory[] @relation("CategoryHierarchy")
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  reports Report[]
-}
-
-model Report {
-  id         String         @id @default(uuid())
-  category   ReportCategory @relation(fields: [categoryId], references: [id])
-  categoryId String
-
-  periodYear  String
-  periodMonth String?
-
-  version Int @default(1)
-
-  organization   Organization? @relation(fields: [organizationId], references: [id])
-  organizationId String?
-
-  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
-  createdById String?
-
-  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
-  updatedById String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  files File[]
-}
-
 model User {
-  id       String @id @default(uuid())
-  username String @unique
-  password String
+  id          String  @id @default(uuid())
+  username    String  @unique
+  password    String
+  displayName String?
 
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
 
   status String @default("ACTIVE")
 
-  role           Role?         @relation(fields: [roleId], references: [id])
-  roleId         String?
-  organization   Organization? @relation(fields: [organizationId], references: [id])
-  organizationId String?
-
-  profile     Profile?
-  permissions UserPermission[]
-
-  CreatorProfile Profile[] @relation("CreatedBy")
-  UpdaterProfile Profile[] @relation("UpdatedBy")
+  role   Role?   @relation(fields: [roleId], references: [id])
+  roleId String?
 
   BudgetAssignee Budget[] @relation("Assignee")
   CreatorBudget  Budget[] @relation("CreatedBy")
@@ -745,9 +693,6 @@ model User {
 
   CreatorStage Stage[] @relation("CreatedBy")
   UpdaterStage Stage[] @relation("UpdatedBy")
-
-  CreatorReport Report[] @relation("CreatedBy")
-  UpdaterReport Report[] @relation("UpdatedBy")
 }
 
 model Role {
@@ -756,60 +701,6 @@ model Role {
   level Int
 
   users User[]
-}
-
-model Organization {
-  id   String  @id @default(uuid())
-  name String  @unique
-  code String? @unique
-
-  users  User[]
-  Report Report[]
-}
-
-model Permission {
-  id          String   @id @default(uuid())
-  name        String   @unique
-  resource    String
-  action      String
-  description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  users UserPermission[]
-
-  @@unique([resource, action])
-  @@index([resource])
-}
-
-model UserPermission {
-  id           String @id @default(uuid())
-  userId       String
-  permissionId String
-
-  createdAt DateTime @default(now())
-
-  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-}
-
-model Profile {
-  id       String    @id @default(uuid())
-  name     String?
-  joinDate DateTime?
-
-  createdAt DateTime? @default(now())
-  updatedAt DateTime? @updatedAt
-
-  createdBy   User?   @relation("CreatedBy", fields: [createdById], references: [id])
-  createdById String?
-  updatedBy   User?   @relation("UpdatedBy", fields: [updatedById], references: [id])
-  updatedById String?
-
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @unique
 }
 
 model Session {

@@ -13,10 +13,9 @@ export async function seedRoles(prisma: any) {
 
     const rolesToSeed = [
       { name: "superadmin", level: 1 },
-      { name: "leader", level: 2 },
-      { name: "manager", level: 3 },
-      { name: "user", level: 4 },
-      { name: "guest", level: 5 },
+      { name: "manager", level: 2 },
+      { name: "user", level: 3 },
+      { name: "guest", level: 4 },
     ];
 
     let createdCount = 0;
@@ -66,9 +65,7 @@ export async function seedUsers(prisma: any) {
         username: "superadmin@test.com",
         password: await argon2.hash("P@ssw0rd"),
         roleName: "superadmin",
-        profile: {
-          name: "Administrator",
-        },
+        displayName: "superadmin",
       },
     ];
 
@@ -99,9 +96,7 @@ export async function seedUsers(prisma: any) {
             username: userData.username,
             password: userData.password,
             roleId: role.id,
-            profile: {
-              create: userData.profile,
-            },
+            displayName: userData.displayName,
           },
         });
         console.log(` ✅ Created user: ${userData.username}`);

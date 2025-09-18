@@ -1,8 +1,8 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import prisma from "../lib/prisma";
 import argon2 from "argon2";
-import { AuthUser } from "../types/auth";
+import prisma from "@/lib/prisma";
+import { AuthUser } from "@/types/auth";
 
 passport.use(
   new LocalStrategy(
@@ -19,13 +19,6 @@ passport.use(
             role: {
               select: {
                 level: true,
-              },
-            },
-            organization: {
-              select: {
-                id: true,
-                name: true,
-                code: true,
               },
             },
           },
@@ -72,13 +65,6 @@ passport.deserializeUser(async (id: string, done) => {
         role: {
           select: {
             level: true,
-          },
-        },
-        organization: {
-          select: {
-            id: true,
-            name: true,
-            code: true,
           },
         },
       },

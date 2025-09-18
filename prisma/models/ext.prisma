@@ -103,7 +103,4 @@ model File {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    report   Report? @relation(fields: [reportId], references: [id])
-    reportId String?
 }

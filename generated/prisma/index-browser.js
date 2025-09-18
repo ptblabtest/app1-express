@@ -367,8 +367,7 @@ exports.Prisma.FileScalarFieldEnum = {
   url: 'url',
   key: 'key',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  reportId: 'reportId'
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.ClientScalarFieldEnum = {
@@ -517,78 +516,21 @@ exports.Prisma.TaskScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.ReportCategoryScalarFieldEnum = {
-  id: 'id',
-  order: 'order',
-  name: 'name',
-  interval: 'interval',
-  parentId: 'parentId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.ReportScalarFieldEnum = {
-  id: 'id',
-  categoryId: 'categoryId',
-  periodYear: 'periodYear',
-  periodMonth: 'periodMonth',
-  version: 'version',
-  organizationId: 'organizationId',
-  createdById: 'createdById',
-  updatedById: 'updatedById',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   username: 'username',
   password: 'password',
+  displayName: 'displayName',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   status: 'status',
-  roleId: 'roleId',
-  organizationId: 'organizationId'
+  roleId: 'roleId'
 };
 
 exports.Prisma.RoleScalarFieldEnum = {
   id: 'id',
   name: 'name',
   level: 'level'
-};
-
-exports.Prisma.OrganizationScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  code: 'code'
-};
-
-exports.Prisma.PermissionScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  resource: 'resource',
-  action: 'action',
-  description: 'description',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.UserPermissionScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  permissionId: 'permissionId',
-  createdAt: 'createdAt'
-};
-
-exports.Prisma.ProfileScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  joinDate: 'joinDate',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  createdById: 'createdById',
-  updatedById: 'updatedById',
-  userId: 'userId'
 };
 
 exports.Prisma.SessionScalarFieldEnum = {
@@ -649,14 +591,8 @@ exports.Prisma.ModelName = {
   Project: 'Project',
   Milestone: 'Milestone',
   Task: 'Task',
-  ReportCategory: 'ReportCategory',
-  Report: 'Report',
   User: 'User',
   Role: 'Role',
-  Organization: 'Organization',
-  Permission: 'Permission',
-  UserPermission: 'UserPermission',
-  Profile: 'Profile',
   Session: 'Session'
 };
 

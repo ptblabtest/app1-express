@@ -29,9 +29,10 @@ export async function seedStageType(prisma: any) {
         { order: "3", value: "Approved" },
       ],
       pipeline: [
-        { order: "1", value: "Pipeline Created" },
-        { order: "2", value: "WON" },
-        { order: "3", value: "LOST" },
+        { order: "1", value: "On Progress" },
+        { order: "2", value: "Deal" },
+        { order: "0", value: "No Response" },
+        { order: "0", value: "Decline" },
       ],
       project: [
         { order: "0", value: "Draft" },

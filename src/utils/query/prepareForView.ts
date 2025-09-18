@@ -40,9 +40,31 @@ export function prepareForView(data: any) {
       result.members?.map((member: any) => member.username).join(", ") || "";
   }
 
+  if (result.role) {
+    result.roleName = result.role.name || null;
+    result.roleId = result.role.id || null;
+  }
+
+  if (result.organization) {
+    result.organizationName = result.organization.name || null;
+    result.organizationId = result.organization.id || null;
+  }
+
+  if (result.organizations && Array.isArray(result.organizations)) {
+    result.organizationName = result.organizations.length
+      ? result.organizations.map((org: any) => org.name).join(", ")
+      : null;
+    result.organizationIds = result.organizations.length
+      ? result.organizations.map((org: any) => org.id).join(", ")
+      : null;
+  }
+
   delete result.assignee;
   delete result.createdBy;
   delete result.updatedBy;
+  delete result.role;
+  delete result.organization;
+  delete result.organizations;
 
   return result;
 }

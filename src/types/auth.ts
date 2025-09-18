@@ -1,32 +1,19 @@
 export interface AuthUser {
   id: string;
   username: string;
+  displayName: string;
   status: string;
   roleId: string | null;
-  organizationId: string | null;
   role?: {
     id: string;
     name: string;
     level: number;
-  };
-  organization?: {
-    id: string;
-    name: string;
-    code: string;
-  };
-  profile?: {
-    id: string;
-    name: string | null;
-    joinDate: Date | null;
   };
 }
 
 export interface RegisterRequest {
   username: string;
   password: string;
-  roleId?: string;      
-  organizationId?: string; 
-  departmentId?: string;  
 }
 
 export interface LoginRequest {

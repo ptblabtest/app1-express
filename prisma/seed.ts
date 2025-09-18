@@ -1,24 +1,40 @@
 import { PrismaClient } from "../generated/prisma";
-import { seedOrganizations } from "./seeds/organization";
+import { seedCategories } from "./seeds/categories";
 import { seedRoles, seedUsers } from "./seeds/userTrials";
-// import { seedCountries } from "./seeds/countries";
-// import { seedStageType } from "./seeds/stageType";
-// import { seedProducts } from "./seeds/products";
-// import { seedCostType } from "./seeds/costType";
-// import { seedCategories } from "./seeds/categories";
+import { seedStageType } from "./seeds/stageType";
+import { seedCostType } from "./seeds/costType";
 
 const prisma = new PrismaClient();
 
 async function main() {
+  try {
+    // Test database connection and check if tables exist
+    await prisma.$connect();
+    console.log("✅ Database connected successfully");
+
+    // Try to query each table to ensure they exist
+    await prisma.role.findFirst();
+    await prisma.user.findFirst();
+    await prisma.category.findFirst();
+    await prisma.stageType.findFirst();
+    await prisma.costType.findFirst();
+
+    console.log("✅ All required tables exist");
+  } catch (error) {
+    console.error("❌ Database or tables don't exist:", error);
+    console.log(
+      "Please run 'npx prisma migrate dev' or 'npx prisma db push' first"
+    );
+    await prisma.$disconnect();
+    return;
+  }
+
   const seeds = [
-    // { name: "Countries", fn: () => seedCountries(prisma) },
-    // { name: "Stage Type", fn: () => seedStageType(prisma) },
-    // { name: "Cost Type", fn: () => seedCostType(prisma) },
-    // { name: "Categories", fn: () => seedCategories(prisma) },
-    // { name: "Products", fn: () => seedProducts(prisma) },
     { name: "Roles", fn: () => seedRoles(prisma) },
     { name: "Users", fn: () => seedUsers(prisma) },
-    { name: "Organizations", fn: () => seedOrganizations(prisma) },
+    { name: "Categories", fn: () => seedCategories(prisma) },
+    { name: "Stage Type", fn: () => seedStageType(prisma) },
+    { name: "Cost Type", fn: () => seedCostType(prisma) },
   ];
 
   for (const { name, fn } of seeds) {
